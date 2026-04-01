@@ -2,7 +2,7 @@
 slug: "innovations-orthopaedic-implant-technology"
 title: "Innovations in Orthopaedic Implant Technology"
 description: "From locking plate systems to advanced surface coatings — how implant technology continues to evolve and improve surgical outcomes for fracture patients."
-date: "2024-01-30"
+date: "2026-01-30"
 tag: "Innovation"
 author: "Neovantis Clinical Team"
 image: src="/images/neovantis-clinton-visagie.png"

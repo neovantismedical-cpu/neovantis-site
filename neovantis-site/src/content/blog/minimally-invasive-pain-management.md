@@ -2,7 +2,7 @@
 slug: "minimally-invasive-pain-management"
 title: "Minimally Invasive Approaches to Pain Management"
 description: "Exploring the growing role of interventional pain management techniques — including RF ablation, nerve blocks, and image-guided procedures — in reducing reliance on opioid pharmacotherapy."
-date: "2024-01-10"
+date: "2026-01-10"
 tag: "Pain Management"
 author: "Neovantis Clinical Team"
 image: "/images/precision-pain-management-system.png"

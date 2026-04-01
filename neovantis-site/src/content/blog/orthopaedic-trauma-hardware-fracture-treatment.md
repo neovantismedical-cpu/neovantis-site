@@ -2,7 +2,7 @@
 slug: "orthopaedic-trauma-hardware-fracture-treatment"
 title: "Orthopaedic Trauma Hardware in Modern Fracture Treatment"
 description: "An overview of how modern trauma plates, screws, and fixation systems have transformed the management of complex fractures — from acute stabilisation through to definitive fixation."
-date: "2024-03-15"
+date: "2026-03-15"
 tag: "Orthopaedics"
 author: "Neovantis Clinical Team"
 image: "https://picsum.photos/id/450/1200/600"

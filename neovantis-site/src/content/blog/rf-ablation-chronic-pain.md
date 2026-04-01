@@ -2,7 +2,7 @@
 slug: "rf-ablation-chronic-pain"
 title: "RF Ablation for Chronic Pain Management"
 description: "How radiofrequency ablation is providing durable, minimally invasive relief for patients with facet joint pain, sacroiliac dysfunction, and other chronic musculoskeletal pain conditions."
-date: "2024-02-22"
+date: "2026-02-22"
 tag: "Pain Management"
 author: "Neovantis Clinical Team"
 image: "https://picsum.photos/id/287/1200/600"
