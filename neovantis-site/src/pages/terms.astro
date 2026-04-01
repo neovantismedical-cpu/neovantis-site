@@ -1,0 +1,82 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+const updated = '15 March 2024';
+---
+
+<MainLayout
+  title="Terms of Use | Neovantis"
+  description="Terms and conditions governing your use of the Neovantis website and digital services."
+>
+
+  <section class="page-hero" style="min-height:35vh;">
+    <div class="page-hero-bg" style="background-image:url('https://picsum.photos/id/1/1920/600');filter:brightness(0.2) saturate(0.4);"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <h1 style="font-size:clamp(2rem,4vw,3.5rem);">Terms of Use</h1>
+        <div class="accent-bar" style="margin-left:auto;"></div>
+        <p style="color:rgba(255,255,255,0.55);font-size:0.85rem;margin-top:0.75rem;">Last updated: {updated}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--lg">
+    <div class="container">
+      <div class="prose">
+
+        <div class="alert">
+          By accessing and using this website, you accept and agree to be bound by these Terms of Use. If you do not agree, please discontinue use of this website.
+        </div>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>These Terms of Use govern your access to and use of the Neovantis website at neovantis.co.za (the "Site"), operated by Neovantis (Pty) Ltd, a company registered in South Africa. By using this Site, you confirm that you are at least 18 years of age and have the legal capacity to enter into these terms.</p>
+
+        <h2>2. Purpose of This Website</h2>
+        <p>This website is intended to provide information about Neovantis products and services to healthcare professionals, medical distributors, and members of the public. It is not intended to replace professional medical advice, diagnosis, or treatment. See our <a href="/medical-disclaimer" style="color:var(--blue-accent);">Medical Disclaimer</a> for further information.</p>
+
+        <h2>3. Intellectual Property</h2>
+        <p>All content on this Site — including text, graphics, logos, images, product descriptions, and code — is the property of Neovantis (Pty) Ltd or its content suppliers and is protected by applicable South African and international intellectual property laws.</p>
+        <p>You may not reproduce, distribute, modify, create derivative works of, publicly display, or exploit any content from this Site without the prior written permission of Neovantis.</p>
+
+        <h2>4. Permitted Use</h2>
+        <p>You may use this Site for lawful purposes only. You agree not to:</p>
+        <ul>
+          <li>Use the Site in any way that violates applicable local, national, or international law</li>
+          <li>Transmit unsolicited commercial communications (spam)</li>
+          <li>Attempt to gain unauthorised access to any part of the Site or its underlying systems</li>
+          <li>Use automated means (bots, scrapers) to access the Site without our express written permission</li>
+          <li>Impersonate Neovantis, its employees, or any other person or entity</li>
+          <li>Submit false, misleading, or fraudulent information through any form on this Site</li>
+        </ul>
+
+        <h2>5. Product Information Accuracy</h2>
+        <p>We make every reasonable effort to ensure that product descriptions, specifications, and availability information on this Site are accurate. However, Neovantis does not warrant that product descriptions or other content is accurate, complete, reliable, current, or error-free. All product information is subject to change without notice.</p>
+        <p>Product availability and pricing are subject to confirmation by our sales team. Information on this Site does not constitute a binding offer.</p>
+
+        <h2>6. Links to Third-Party Websites</h2>
+        <p>This Site may contain links to third-party websites for informational purposes. Neovantis does not control these sites and is not responsible for their content, privacy practices, or accuracy. The inclusion of a link does not imply endorsement by Neovantis.</p>
+
+        <h2>7. Disclaimer of Warranties</h2>
+        <p>This Site is provided on an "as is" and "as available" basis without any warranties of any kind, whether express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+        <p>Neovantis does not warrant that this Site will be uninterrupted, error-free, or free of viruses or other harmful components.</p>
+
+        <h2>8. Limitation of Liability</h2>
+        <p>To the fullest extent permitted by applicable law, Neovantis shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or in connection with your use of, or inability to use, this Site or its content.</p>
+
+        <h2>9. Governing Law</h2>
+        <p>These Terms of Use shall be governed by and construed in accordance with the laws of the Republic of South Africa. Any disputes arising out of or relating to these terms shall be subject to the exclusive jurisdiction of the courts of South Africa.</p>
+
+        <h2>10. Contact</h2>
+        <p>For any queries regarding these Terms of Use, contact us at <a href="mailto:info@neovantis.co.za" style="color:var(--blue-accent);">info@neovantis.co.za</a> or call 031 463 1188.</p>
+
+      </div>
+
+      <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);">
+        <a href="/" class="btn btn-ghost">← Back to Home</a>
+        <a href="/privacy-policy" class="btn btn-ghost" style="margin-left:1rem;">Privacy Policy</a>
+        <a href="/medical-disclaimer" class="btn btn-ghost" style="margin-left:1rem;">Medical Disclaimer</a>
+      </div>
+    </div>
+  </section>
+
+</MainLayout>

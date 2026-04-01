@@ -1,0 +1,161 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="Solutions | Orthopaedic Hardware & RF Ablation | Neovantis"
+  description="Neovantis provides two core medical solution categories: orthopaedic trauma hardware for fracture management, and RF ablation technology for chronic pain treatment."
+>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('https://picsum.photos/id/49/1920/800')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">What We Offer</p>
+        <h1>Our Solutions</h1>
+        <div class="accent-bar" style="margin-left:auto;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Two Areas of Clinical Excellence</h2>
+        <div class="section-divider"></div>
+        <p>Neovantis operates across two specialised medical technology disciplines — orthopaedic trauma hardware for fracture management and RF ablation for chronic pain treatment.</p>
+      </div>
+      <div class="grid-2" style="gap:2rem;">
+        <a href="#orthopaedic" class="card" style="text-decoration:none;display:flex;gap:1.25rem;align-items:flex-start;">
+          <div class="feature-icon" style="font-size:1.75rem;flex-shrink:0;">🦴</div>
+          <div>
+            <h4 style="margin-bottom:0.5rem;">Orthopaedic Trauma Hardware</h4>
+            <p style="font-size:0.9rem;">Implants, plates, screws, and fixation systems for fracture management and bone repair surgery.</p>
+          </div>
+        </a>
+        <a href="#rf-ablation" class="card" style="text-decoration:none;display:flex;gap:1.25rem;align-items:flex-start;">
+          <div class="feature-icon" style="font-size:1.75rem;flex-shrink:0;">⚡</div>
+          <div>
+            <h4 style="margin-bottom:0.5rem;">RF Ablation Pain Treatment</h4>
+            <p style="font-size:0.9rem;">Radiofrequency ablation generators, electrodes, and procedure kits for minimally invasive chronic pain relief.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Orthopaedic Section -->
+  <section class="angled-panel" id="orthopaedic">
+    <div class="geo-overlay"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <div style="max-width:900px;margin:0 auto;">
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;text-align:center;">Solution 01</p>
+        <h2 style="text-align:center;margin-bottom:1rem;">Orthopaedic Trauma Hardware</h2>
+        <div class="section-divider"></div>
+        <p style="text-align:center;margin-bottom:3rem;font-size:1.05rem;">Neovantis supplies a comprehensive range of orthopaedic trauma implants and fixation systems designed for the surgical management of acute fractures, non-unions, and associated skeletal injuries.</p>
+      </div>
+
+      <div class="grid-3" style="margin-bottom:3rem;">
+        {[
+          { icon: '🔩', title: 'Trauma Plates', desc: 'Anatomically pre-contoured locking and non-locking plates for distal radius, proximal humerus, tibial plateau, distal femur, and periarticular regions. Available in standard and low-profile configurations.' },
+          { icon: '🪛', title: 'Bone Screws', desc: 'Cortical, cancellous, and cannulated screws in a full range of diameters and lengths. Designed for maximum pullout strength and reliable fixation in both cortical and cancellous bone.' },
+          { icon: '🔧', title: 'Intramedullary Nails', desc: 'Titanium and stainless steel IM nails for femoral, tibial, and humeral shaft fractures. Available with proximal and distal locking options for rotational stability.' },
+          { icon: '⚙️', title: 'Fixation Systems', desc: 'Complete fixation system sets including external fixator frames, K-wires, Steinmann pins, and tension band wire systems for diverse fracture configurations.' },
+          { icon: '🏥', title: 'Surgical Instruments', desc: 'Complementary instrumentation sets designed to work seamlessly with implant systems — drill guides, targeting arms, depth gauges, and torque-limited drivers.' },
+          { icon: '📦', title: 'Procedure Kits', desc: 'Pre-configured procedure kits for common trauma scenarios, enabling efficient surgical preparation and consistent intraoperative workflow.' },
+        ].map(item => (
+          <div class="card">
+            <div class="feature-icon">{item.icon}</div>
+            <h4 style="margin-bottom:0.75rem;">{item.title}</h4>
+            <p style="font-size:0.9rem;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="alert" style="max-width:800px;margin:0 auto;text-align:center;">
+        All Neovantis orthopaedic products are sourced from certified manufacturers and meet applicable international standards including ISO 13485 quality management requirements.
+      </div>
+
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="/products" class="btn btn-outline">View Product Catalogue</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RF Ablation Section -->
+  <section class="section section--lg" id="rf-ablation">
+    <div class="container">
+      <div style="max-width:900px;margin:0 auto;">
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;text-align:center;">Solution 02</p>
+        <h2 style="text-align:center;margin-bottom:1rem;">RF Ablation Pain Treatment</h2>
+        <div class="section-divider"></div>
+        <p style="text-align:center;margin-bottom:1.5rem;font-size:1.05rem;">Radiofrequency (RF) ablation is a minimally invasive procedure in which controlled thermal energy is applied to specific nerve pathways, disrupting pain signal transmission and providing durable relief for patients with chronic musculoskeletal and neuropathic pain conditions.</p>
+        <p style="text-align:center;margin-bottom:3rem;">Neovantis supplies RF ablation generators, electrodes, and ancillary equipment used by pain management specialists, anaesthesiologists, and interventional radiologists in South African specialist and hospital settings.</p>
+      </div>
+
+      <div class="grid-2" style="gap:3rem;align-items:start;margin-bottom:3rem;">
+        <div>
+          <h3 style="color:var(--blue-accent);margin-bottom:1.25rem;">Clinical Applications</h3>
+          <span class="accent-bar accent-bar--left"></span>
+          <ul style="list-style:none;margin-bottom:2rem;">
+            {[
+              'Facet joint denervation (lumbar, cervical, thoracic)',
+              'Sacroiliac joint pain treatment',
+              'Trigeminal neuralgia procedures',
+              'Sympathetic chain ablation',
+              'Peripheral nerve procedures',
+              'Knee genicular nerve ablation',
+              'Cancer pain management',
+            ].map(item => (
+              <li style="display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.75rem;color:rgba(255,255,255,0.75);font-family:var(--font-prose);font-size:0.95rem;">
+                <span style="color:var(--blue-accent);margin-top:2px;">▸</span> {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h3 style="color:var(--blue-accent);margin-bottom:1.25rem;">Equipment Supplied</h3>
+          <span class="accent-bar accent-bar--left"></span>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            {[
+              { label: 'RF Generators', desc: 'Precision temperature-controlled generators with multiple programme settings.' },
+              { label: 'Thermocouple Electrodes', desc: 'A full range of gauge, length, and active-tip configurations for various anatomical approaches.' },
+              { label: 'Grounding Pads', desc: 'Patient grounding pads for safe and effective current dispersal.' },
+              { label: 'Cannulae & Introducers', desc: 'Matched cannulae and introducer needles for accurate electrode placement.' },
+              { label: 'Procedure Accessories', desc: 'Extension cables, adaptors, and complete single-use procedure sets.' },
+            ].map(item => (
+              <div class="card" style="padding:1rem 1.25rem;display:flex;gap:1rem;">
+                <span style="color:var(--blue-accent);font-size:1rem;margin-top:2px;">⚡</span>
+                <div>
+                  <strong style="font-family:var(--font-display);font-size:0.9rem;letter-spacing:0.05em;">{item.label}</strong>
+                  <p style="font-size:0.85rem;margin-top:0.25rem;">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;">
+        <a href="/products" class="btn btn-primary">View RF Product Range</a>
+        <a href="/contact" class="btn btn-ghost" style="margin-left:1rem;">Request Clinical Info</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="container" style="position:relative;z-index:1;">
+      <h2>Speak With a Clinical Specialist</h2>
+      <p>Our team is available to provide detailed product information, clinical references, and technical support for both product categories.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-outline">Contact Us</a>
+        <a href="/healthcare-professionals" class="btn btn-primary" style="background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);">For Healthcare Professionals</a>
+      </div>
+    </div>
+  </div>
+
+</MainLayout>

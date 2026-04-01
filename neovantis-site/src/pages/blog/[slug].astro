@@ -1,0 +1,119 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await Astro.glob('../../content/blog/*.md');
+  return posts.map(post => ({
+    params: { slug: post.frontmatter.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { title, description, date, tag, image, author = 'Neovantis Clinical Team' } = post.frontmatter;
+
+const formattedDate = new Date(date).toLocaleDateString('en-ZA', {
+  year: 'numeric', month: 'long', day: 'numeric'
+});
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": title,
+  "description": description,
+  "datePublished": date,
+  "author": {
+    "@type": "Organization",
+    "name": "Neovantis"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Neovantis",
+    "url": "https://neovantis.co.za"
+  }
+};
+---
+
+<MainLayout title={`${title} | Neovantis Blog`} description={description} image={image} schema={articleSchema}>
+
+  <!-- Article Hero -->
+  <section class="page-hero" style="min-height:55vh;">
+    <div class="page-hero-bg" style={`background-image:url('${image}')`}></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content" style="text-align:left;margin-left:0;max-width:700px;">
+        <div style="display:flex;gap:1rem;align-items:center;margin-bottom:1rem;">
+          <span class="blog-tag">{tag}</span>
+          <span class="blog-date" style="color:rgba(255,255,255,0.6);font-size:0.85rem;">{formattedDate}</span>
+        </div>
+        <h1 style="font-size:clamp(2rem,4vw,3.5rem);text-transform:none;letter-spacing:0.01em;font-family:var(--font-display);">{title}</h1>
+        <div class="accent-bar" style="margin-left:0;margin-top:1rem;"></div>
+        <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;margin-top:0.75rem;">By {author}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Body -->
+  <section class="section section--lg">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 320px;gap:4rem;align-items:start;">
+
+        <!-- Article Content -->
+        <article class="prose">
+          <post.Content />
+        </article>
+
+        <!-- Sidebar -->
+        <aside>
+          <div class="card" style="margin-bottom:1.5rem;">
+            <h4 style="font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:1.25rem;">More Articles</h4>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:0.75rem;">
+              {[
+                { slug: 'orthopaedic-trauma-hardware-fracture-treatment', title: 'Orthopaedic Trauma Hardware in Fracture Treatment' },
+                { slug: 'rf-ablation-chronic-pain', title: 'RF Ablation for Chronic Pain' },
+                { slug: 'innovations-orthopaedic-implant-technology', title: 'Innovations in Implant Technology' },
+                { slug: 'minimally-invasive-pain-management', title: 'Minimally Invasive Pain Management' },
+              ].filter(p => p.slug !== post.frontmatter.slug).map(p => (
+                <li>
+                  <a href={`/blog/${p.slug}`} style="font-size:0.9rem;color:var(--text-muted);transition:color 0.3s;line-height:1.4;display:block;" onmouseenter="this.style.color='var(--blue-accent)'" onmouseleave="this.style.color='var(--text-muted)'">{p.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="card" style="text-align:center;">
+            <div style="font-size:2rem;margin-bottom:0.75rem;">🩺</div>
+            <h4 style="margin-bottom:0.75rem;font-size:1rem;">Clinical Enquiries</h4>
+            <p style="font-size:0.85rem;margin-bottom:1.25rem;">Contact our clinical team for product information and support.</p>
+            <a href="/contact" class="btn btn-primary" style="width:100%;justify-content:center;font-size:0.85rem;">Contact Us</a>
+          </div>
+
+          <div class="card" style="margin-top:1.5rem;">
+            <h4 style="font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:1rem;">Medical Disclaimer</h4>
+            <p style="font-size:0.8rem;line-height:1.6;">This article is for educational purposes only and does not constitute medical advice. Consult a qualified healthcare professional for clinical decisions. <a href="/medical-disclaimer" style="color:var(--blue-accent);">Full disclaimer →</a></p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Blog -->
+  <section class="section section--sm" style="padding-top:0;">
+    <div class="container">
+      <a href="/blog" style="display:inline-flex;align-items:center;gap:0.5rem;color:var(--blue-accent);font-family:var(--font-display);font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;">
+        ← Back to All Articles
+      </a>
+    </div>
+  </section>
+
+</MainLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*='grid-template-columns:1fr 320px'] {
+      display: block !important;
+    }
+    aside { margin-top: 3rem; }
+  }
+</style>

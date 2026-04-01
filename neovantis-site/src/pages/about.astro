@@ -1,0 +1,126 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="About Us | Neovantis"
+  description="Learn about Neovantis — a South African medical technology company delivering orthopaedic trauma hardware and RF ablation solutions to healthcare professionals."
+>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+ <div class="page-hero-bg" style="background-image: url('/images/neoventis-about-hero.png');"></div>
+       <div class="page-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">Who We Are</p>
+        <h1>About Us</h1>
+        <div class="accent-bar" style="margin-left:auto;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Overview -->
+  <section class="section section--lg">
+    <div class="container">
+      <div class="grid-2" style="align-items:center;gap:4rem;">
+        <div>
+          <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;">Company Overview</p>
+          <h2 style="margin-bottom:1rem;">Advancing Medical Care<br/>Across South Africa</h2>
+          <span class="accent-bar"></span>
+          <p style="margin-bottom:1.25rem;">Neovantis is a South African medical technology company based in Durban, specialising in the supply of orthopaedic trauma hardware and radiofrequency (RF) ablation pain treatment devices.</p>
+          <p style="margin-bottom:1.25rem;">We work directly with orthopaedic surgeons, pain management specialists, hospitals, surgical centres, and medical distributors to provide products that meet the highest clinical and regulatory standards.</p>
+          <p>Our team brings together deep medical device expertise and a genuine commitment to improving patient outcomes — one product, one procedure, one life at a time.</p>
+        </div>
+ <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(31,127,182,0.3);">
+  <img src="/images/neovantis-clinton-visagie.png" alt="Neovantis representative" style="width:100%;height:420px;object-fit:cover;object-position:center top;display:block;" />
+</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section class="section section--sm" style="background:#040c16;">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Our Core Values</h2>
+        <div class="section-divider"></div>
+        <p>Four principles that guide everything we do — from product selection to clinical partnerships.</p>
+      </div>
+      <div class="grid-4">
+        {[
+          { title: 'HONESTY', sub: 'is our only policy', desc: 'We operate with complete transparency with our clients, partners, and the healthcare professionals who trust our products.' },
+          { title: 'PASSION', sub: 'our drive, our reason', desc: 'We are driven by a genuine passion for improving patient outcomes and advancing the standard of care in South Africa.' },
+          { title: 'INTEGRITY', sub: 'works hand in hand with honesty', desc: 'Every product we supply, every commitment we make — backed by unwavering integrity and accountability.' },
+          { title: 'INNOVATION', sub: 'creativity is our strength', desc: 'We continuously seek out and evaluate emerging medical technologies that can make a meaningful clinical difference.' },
+        ].map(v => (
+          <div class="value-item card" style="text-align:center;">
+            <h3 style="color:var(--blue-accent);font-size:1.6rem;margin-bottom:0.25rem;">{v.title}</h3>
+            <p style="font-size:0.85rem;color:var(--text-muted);font-style:italic;margin-bottom:0.75rem;">{v.sub}</p>
+            <div style="width:40px;height:2px;background:linear-gradient(90deg,var(--blue-dark),var(--blue-accent));margin:0 auto 0.75rem;"></div>
+            <p style="font-size:0.9rem;">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Statement -->
+  <section class="angled-panel">
+    <div class="geo-overlay"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <div style="text-align:center;max-width:820px;margin:0 auto;">
+        <h2>MISSION<br/>STATEMENT</h2>
+        <div class="section-divider" style="margin:1rem auto 2rem;"></div>
+        <p style="font-size:1.1rem;line-height:1.9;color:rgba(255,255,255,0.85);">Neovantis is a leader in the medical industry for providing safe, high-quality hospital-grade medical and surgical equipment. Our dedicated teams' focus on improving lives by investing time and resources into your facility. Our aim is to provide excellent customer service as we are on a mission to revolutionize the healthcare pain industry, one product at a time. We strive to empower every organisation to achieve brilliance in world-class medical care.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision Statement -->
+  <section class="angled-panel" style="background:linear-gradient(135deg,#040e18 0%,#0e3a56 50%,#040e18 100%);margin-top:-1px;">
+    <div class="geo-overlay"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <div style="text-align:center;max-width:820px;margin:0 auto;">
+        <h2>VISION<br/>STATEMENT</h2>
+        <div class="section-divider" style="margin:1rem auto 2rem;"></div>
+        <p style="font-size:1.1rem;line-height:1.9;color:rgba(255,255,255,0.85);">As a gold standard organisation we are proud to have attained such efficiency and high standards. We thrive on originality and functionality. Our dream is to aspire to achieve a world where exceptional medical care is available for all.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team / Location -->
+  <section class="section section--lg">
+    <div class="container">
+      <div class="grid-2" style="align-items:center;gap:4rem;">
+        <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(31,127,182,0.3);">
+      <img src="/images/neovantis-healthcare-professionals.png" alt="Neovantis healthcare professionals" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;" />
+              </div>
+        <div>
+          <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;">Based in Durban, South Africa</p>
+          <h2 style="margin-bottom:1rem;">Serving Healthcare<br/>Across the Country</h2>
+          <span class="accent-bar"></span>
+          <p style="margin-bottom:1.5rem;">Operating out of Durban, Neovantis supplies orthopaedic trauma hardware and RF ablation equipment to medical facilities, hospitals, and distributors across South Africa.</p>
+          <p style="margin-bottom:2rem;">Our local presence means responsive technical support, reliable delivery, and clinical teams that understand the demands of the South African healthcare environment.</p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+            <a href="/contact" class="btn btn-primary">Contact Us</a>
+            <a href="/distributors" class="btn btn-ghost">Partner With Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="container" style="position:relative;z-index:1;">
+      <h2>Work With Neovantis</h2>
+      <p>Explore our product range or get in touch to discuss how we can support your clinical or distribution requirements.</p>
+      <div class="cta-actions">
+        <a href="/solutions" class="btn btn-outline">View Solutions</a>
+        <a href="/contact" class="btn btn-primary" style="background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+
+</MainLayout>

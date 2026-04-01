@@ -1,0 +1,282 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import BlogCard from '../components/BlogCard.astro';
+
+const images = [
+  {
+    img: '/images/neovantis-advanced-implant-design.png',
+    title: 'Orthopaedic Implant Innovation',
+    desc: 'Engineered implant systems designed to support precision placement, stability, and reliable orthopaedic outcomes.'
+  },
+  {
+    img: '/images/neovantis-minimally-invasive-pain-management.png',
+    title: 'Advanced Surgical Implant Systems',
+    desc: 'Purpose-built solutions that support less invasive procedures, improved patient comfort, and shorter recovery times.'
+  },
+  {
+    img: '/images/neovantis-precision-pain-management.png',
+    title: 'Targeted Pain Relief',
+    desc: 'Advanced treatment technology developed to help specialists deliver accurate, targeted, and effective chronic pain relief.'
+  }
+];
+---
+
+<MainLayout
+  title="Neovantis | Advanced Orthopaedic & RF Ablation Medical Solutions"
+  description="Neovantis delivers high-quality orthopaedic trauma hardware and RF ablation pain treatment solutions to surgeons and healthcare facilities across South Africa."
+>
+  <Hero
+    eyebrow="Medical Technology — South Africa"
+    headline="Improving Lives Through"
+    highlight="Medical Innovation"
+    subheadline="Advanced orthopaedic trauma hardware and RF ablation pain treatment solutions engineered to the highest clinical standards."
+    primaryCta={{ label: 'View Solutions', href: '/solutions' }}
+    secondaryCta={{ label: 'Contact Our Team', href: '/contact' }}
+  />
+
+  <Section
+    title="About Neovantis"
+    subtitle="A trusted South African medical technology company dedicated to improving patient outcomes through precision hardware and innovative pain treatment technology."
+    bg="default"
+    size="lg"
+  >
+    <div class="grid-2" style="align-items:center; gap:4rem;">
+      <div>
+        <span class="accent-bar"></span>
+        <p style="margin-bottom:1.5rem;">
+          Founded on the principles of honesty, integrity, passion, and innovation, Neovantis partners with orthopaedic surgeons, hospitals, and surgical centres to supply medical-grade trauma implants and fixation systems that meet the demands of modern surgical practice.
+        </p>
+        <p>
+          Our RF ablation technology supports specialist practitioners in delivering targeted, minimally invasive chronic pain relief, helping patients regain quality of life.
+        </p>
+        <div style="margin-top:2rem;">
+          <a href="/about" class="btn btn-primary">Our Story</a>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+        <div class="card text-center">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">Years in MedTech</span>
+        </div>
+        <div class="card text-center">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Products Supplied</span>
+        </div>
+        <div class="card text-center">
+          <span class="stat-number">100+</span>
+          <span class="stat-label">Healthcare Partners</span>
+        </div>
+        <div class="card text-center">
+          <span class="stat-number">4</span>
+          <span class="stat-label">Core Values</span>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <section class="angled-panel">
+    <div class="geo-overlay"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <div class="grid-2" style="align-items:center; gap:4rem;">
+        <div>
+          <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;">
+            Product Category 01
+          </p>
+          <h2 style="color:#fff;margin-bottom:1rem;">Orthopaedic<br />Trauma Hardware</h2>
+          <div class="accent-bar"></div>
+          <p style="margin-bottom:1.5rem;">
+            Our comprehensive range of trauma implants and fixation systems is designed to address complex fracture management requirements. From anatomically contoured plates to high-tensile bone screws and locking systems, every product is manufactured to exacting surgical standards.
+          </p>
+          <ul style="margin-left:0; list-style:none; margin-bottom:2rem;">
+            {[
+              'Trauma Plates & Locking Systems',
+              'Cortical & Cancellous Bone Screws',
+              'Intramedullary Nails',
+              'Fixation Systems & Hardware Sets',
+              'Surgical Instrumentation'
+            ].map((item) => (
+              <li style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.6rem;color:rgba(255,255,255,0.75);font-family:var(--font-prose);">
+                <span style="color:var(--blue-accent);font-size:1.1rem;">✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href="/solutions#orthopaedic" class="btn btn-outline">Explore Hardware</a>
+        </div>
+
+        <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(31,127,182,0.3);">
+          <img
+            src="/images/neovantis-orthopaedic-trauma-plate.png"
+            alt="Orthopaedic trauma plate"
+            style="width:100%;height:100%;object-fit:cover;display:block;"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Section
+    title="RF Ablation Pain Treatment"
+    subtitle="Radiofrequency ablation technology that enables specialist practitioners to deliver targeted, long-lasting relief for patients with chronic pain conditions."
+    size="lg"
+    bg="secondary"
+  >
+    <div class="grid-2" style="align-items:center; gap:4rem;">
+      <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(31,127,182,0.3);">
+        <img
+          src="/images/neovantis-rf-ablation-technology.png"
+          alt="RF ablation pain treatment equipment"
+          style="width:100%;height:360px;object-fit:cover;filter:brightness(0.8) saturate(0.6);"
+        />
+      </div>
+
+      <div>
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;">
+          Product Category 02
+        </p>
+        <h2 style="margin-bottom:1rem;">RF Ablation<br />Technology</h2>
+        <span class="accent-bar"></span>
+        <p style="margin-bottom:1.5rem;">
+          Radiofrequency ablation is a minimally invasive procedure used by pain management specialists, anaesthesiologists, and neurosurgeons to interrupt nerve signals responsible for chronic pain. Neovantis supplies precision RF equipment trusted in specialist clinical settings.
+        </p>
+        <ul style="margin-left:0; list-style:none; margin-bottom:2rem;">
+          {[
+            'RF Generators & Control Units',
+            'Thermocouple RF Electrodes',
+            'Grounding Pads & Accessories',
+            'Procedure Kits & Disposables',
+            'Technical Support & Training'
+          ].map((item) => (
+            <li style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.6rem;color:rgba(255,255,255,0.75);font-family:var(--font-prose);">
+              <span style="color:var(--blue-accent);font-size:1.1rem;">✓</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <a href="/solutions#rf-ablation" class="btn btn-primary">Explore RF Solutions</a>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="Why Healthcare Professionals Choose Neovantis"
+    subtitle="We combine clinical expertise with superior product quality to support surgeons and healthcare facilities at every stage."
+    bg="angled"
+    size="lg"
+  >
+    <div class="grid-4" style="margin-top:1rem;">
+      {[
+        {
+          icon: '🏥',
+          title: 'Clinical Grade Quality',
+          desc: 'Products manufactured and sourced to meet stringent international medical device standards.'
+        },
+        {
+          icon: '🔬',
+          title: 'Specialist Support',
+          desc: 'Dedicated clinical support teams providing technical guidance and on-site assistance.'
+        },
+        {
+          icon: '⚡',
+          title: 'Reliable Supply',
+          desc: 'Consistent stock availability and rapid delivery to surgical centres and hospitals.'
+        },
+        {
+          icon: '📋',
+          title: 'Regulatory Compliant',
+          desc: 'Full compliance with South African medical device regulatory requirements and SAHPRA guidelines.'
+        }
+      ].map((f) => (
+        <div class="card">
+          <div class="feature-icon">{f.icon}</div>
+          <h4 style="margin-bottom:0.75rem;">{f.title}</h4>
+          <p style="font-size:0.9rem;">{f.desc}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <Section
+    title="Innovation in Medical Technology"
+    subtitle="Neovantis stays at the forefront of orthopaedic and pain management innovation, continuously expanding our product portfolio to meet evolving clinical needs."
+    bg="default"
+    size="lg"
+  >
+    <div class="grid-3">
+      {images.map((item) => (
+        <div class="card" style="padding:0;overflow:hidden;">
+          <div style="overflow:hidden;height:220px;">
+            <img
+              src={item.img}
+              alt={item.title}
+              style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.82) saturate(0.7);"
+            />
+          </div>
+          <div style="padding:1.5rem;">
+            <h4 style="margin-bottom:0.75rem;">{item.title}</h4>
+            <p style="font-size:0.9rem;">{item.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <Section
+    title="Clinical Insights"
+    subtitle="Latest articles from the Neovantis team on orthopaedic trauma, pain management, and medical technology."
+    bg="secondary"
+  >
+    <div class="grid-3" style="margin-bottom:2.5rem;">
+      <BlogCard
+        slug="orthopaedic-trauma-hardware-fracture-treatment"
+        title="Orthopaedic Trauma Hardware in Fracture Treatment"
+        excerpt="An overview of how modern trauma plates, screws, and fixation systems have transformed the management of complex fractures."
+        date="2024-03-15"
+        tag="Orthopaedics"
+        image="/images/orthopaedic-fracture-treatment.png"
+      />
+
+      <BlogCard
+        slug="rf-ablation-chronic-pain"
+        title="RF Ablation for Chronic Pain Management"
+        excerpt="How radiofrequency ablation is providing durable, minimally invasive relief for patients with facet joint pain and other chronic conditions."
+        date="2024-02-22"
+        tag="Pain Management"
+        image="/images/RF-ablation-for-pain-management.png"
+      />
+
+      <BlogCard
+        slug="innovations-orthopaedic-implant-technology"
+        title="Innovations in Orthopaedic Implant Technology"
+        excerpt="From locking plate systems to bioresorbable materials, implant technology continues to evolve and improve patient outcomes."
+        date="2024-01-30"
+        tag="Innovation"
+        image="/images/innovations-in-orthopaedic-technology.png"
+      />
+    </div>
+
+    <div class="text-center">
+      <a href="/blog" class="btn btn-ghost">View All Articles</a>
+    </div>
+  </Section>
+
+  <div class="cta-banner">
+    <div class="container" style="position:relative;z-index:1;">
+      <h2>Ready to Partner With Neovantis?</h2>
+      <p>Whether you are a surgeon, hospital procurement team, or medical distributor, we are ready to support your clinical requirements.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-outline">Contact Our Team</a>
+        <a
+          href="/products"
+          class="btn btn-primary"
+          style="background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);"
+        >
+          View Products
+        </a>
+      </div>
+    </div>
+  </div>
+</MainLayout>

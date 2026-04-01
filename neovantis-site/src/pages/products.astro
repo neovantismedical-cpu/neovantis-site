@@ -1,0 +1,265 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+---
+
+<MainLayout
+  title="Product Catalogue | Orthopaedic & RF Ablation Products | Neovantis"
+  description="Browse the Neovantis product catalogue — trauma plates, bone screws, fixation systems, and RF ablation equipment for surgical and pain management specialists."
+>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('/images/products banner hero.png')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">Clinical Product Range</p>
+        <h1>Products</h1>
+        <div class="accent-bar" style="margin-left:auto;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="section section--sm">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Our Product Catalogue</h2>
+        <div class="section-divider"></div>
+        <p>Neovantis supplies medical-grade orthopaedic trauma hardware and RF ablation equipment to hospitals, surgical centres, and specialist practices across South Africa. All products are sourced from certified manufacturers.</p>
+      </div>
+      <!-- Category nav -->
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:1rem;">
+        {['Trauma Plates','Bone Screws','Fixation Systems','RF Ablation Equipment'].map(cat => (
+          <a href={`#${cat.toLowerCase().replace(/\s+/g,'-')}`} class="btn btn-ghost" style="font-size:0.8rem;padding:0.6rem 1.25rem;">{cat}</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Trauma Plates -->
+  <section class="section section--lg" id="trauma-plates" style="background:#040c16;">
+    <div class="container">
+      <div class="section-heading" style="text-align:left;">
+        <p style="font-family:var(--font-display);font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">Category 01</p>
+        <h2>Trauma Plates</h2>
+        <div class="section-divider section-divider--left"></div>
+        <p style="max-width:650px;">Anatomically contoured locking and compression plates for fracture fixation across a range of anatomical regions and fracture patterns.</p>
+      </div>
+      <div class="grid-3">
+        <ProductCard
+          category="Trauma Plates"
+          title="Distal Radius Locking Plate"
+          description="Low-profile titanium locking plate designed for distal radius fractures. Variable angle screw configuration allows optimal fixation in osteoporotic bone."
+          image="/images/neovantis-distal-radius-implant-and-screws.png"
+          specs={[
+            { label: 'Material', value: 'Titanium alloy (Ti-6Al-4V)' },
+            { label: 'Profile', value: '1.5mm low-profile' },
+            { label: 'Screw diameter', value: '2.4mm / 2.7mm' },
+            { label: 'Sizes available', value: 'S, M, L (left/right)' },
+            { label: 'Sterility', value: 'Non-sterile, reprocessable' },
+          ]}
+        />
+        <ProductCard
+          category="Trauma Plates"
+          title="Proximal Humerus Plate"
+          description="Angular stable locking plate system for three- and four-part proximal humerus fractures. Calcar screw option provides medial column support."
+          image="/images/Proximal Humerus Plate.png"
+          specs={[
+            { label: 'Material', value: 'Titanium alloy' },
+            { label: 'Profile', value: '3.5mm standard' },
+            { label: 'Screw diameter', value: '3.5mm locking' },
+            { label: 'Hole configuration', value: '8–14 holes' },
+            { label: 'Coating', value: 'Anodised surface' },
+          ]}
+        />
+        <ProductCard
+          category="Trauma Plates"
+          title="Tibial Plateau Plate"
+          description="Periarticular locking plate for medial and lateral tibial plateau fractures. Raft screw configuration supports articular surface reduction."
+          image="/images/Tibial Plateau Plate.png"
+          specs={[
+            { label: 'Material', value: 'Stainless steel 316L' },
+            { label: 'Plate length', value: '80–200mm' },
+            { label: 'Screw options', value: '4.5mm locking/non-locking' },
+            { label: 'Sides', value: 'Left and right variants' },
+            { label: 'Finish', value: 'Electropolished' },
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Bone Screws -->
+  <section class="section section--lg" id="bone-screws">
+    <div class="container">
+      <div class="section-heading" style="text-align:left;">
+        <p style="font-family:var(--font-display);font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">Category 02</p>
+        <h2>Bone Screws</h2>
+        <div class="section-divider section-divider--left"></div>
+        <p style="max-width:650px;">Full range of cortical, cancellous, and cannulated bone screws offering reliable fixation strength across all fracture types.</p>
+      </div>
+      <div class="grid-3">
+        <ProductCard
+          category="Bone Screws"
+          title="Cortical Bone Screw Set"
+          description="Standard and self-tapping cortical screws for cortical bone fixation. Full metric diameter and length range for universal compatibility."
+          image="/images/Cortical Bone Screw Set.png"
+          specs={[
+            { label: 'Material', value: 'Titanium / SS 316L' },
+            { label: 'Diameters', value: '2.0, 2.7, 3.5, 4.5mm' },
+            { label: 'Lengths', value: '10–80mm' },
+            { label: 'Drive', value: 'Hex / Torx compatible' },
+            { label: 'Thread type', value: 'Cortical self-tapping' },
+          ]}
+        />
+        <ProductCard
+          category="Bone Screws"
+          title="Cancellous Screw Set"
+          description="Fully and partially threaded cancellous screws designed for metaphyseal and epiphyseal fixation with optimal pullout resistance in cancellous bone."
+          image="/images/Cancellous Screw Set (2).png"
+          specs={[
+            { label: 'Material', value: 'Titanium alloy' },
+            { label: 'Diameters', value: '3.5, 4.0, 6.5, 7.0mm' },
+            { label: 'Thread options', value: 'Full / partial thread' },
+            { label: 'Lengths', value: '20–100mm' },
+            { label: 'Head type', value: 'Countersunk hex' },
+          ]}
+        />
+        <ProductCard
+          category="Bone Screws"
+          title="Cannulated Screw System"
+          description="Hollow-core cannulated screws for guidewire-assisted placement in percutaneous and minimally invasive fracture fixation procedures."
+          image="/images/Cannulated Screw System.png"
+          specs={[
+            { label: 'Material', value: 'Titanium alloy' },
+            { label: 'Diameters', value: '3.0, 4.0, 6.5, 7.3mm' },
+            { label: 'Cannula diameter', value: '1.6mm / 2.4mm' },
+            { label: 'Lengths', value: '25–90mm' },
+            { label: 'Washer option', value: 'Flat / serrated' },
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Fixation Systems -->
+  <section class="section section--lg" id="fixation-systems" style="background:#040c16;">
+    <div class="container">
+      <div class="section-heading" style="text-align:left;">
+        <p style="font-family:var(--font-display);font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">Category 03</p>
+        <h2>Fixation Systems</h2>
+        <div class="section-divider section-divider--left"></div>
+        <p style="max-width:650px;">Complete fixation hardware systems including intramedullary nails, external fixators, and K-wire systems for diverse trauma presentations.</p>
+      </div>
+      <div class="grid-3">
+        <ProductCard
+          category="Fixation Systems"
+          title="Femoral IM Nail System"
+          description="Antegrade and retrograde titanium intramedullary nail system for femoral shaft fractures. Multiple proximal interlocking options for rotational control."
+          image="/images/Femoral IM Nail System.png"
+          specs={[
+            { label: 'Material', value: 'Titanium alloy' },
+            { label: 'Nail diameters', value: '9–16mm' },
+            { label: 'Nail lengths', value: '320–480mm' },
+            { label: 'Interlocking', value: 'Proximal + distal static/dynamic' },
+            { label: 'Entry option', value: 'Antegrade / retrograde' },
+          ]}
+        />
+        <ProductCard
+          category="Fixation Systems"
+          title="External Fixator System"
+          description="Modular external fixation system for temporary and definitive stabilisation of open fractures, periarticular fractures, and limb-lengthening procedures."
+          image="/images/External Fixator System.png"
+          specs={[
+            { label: 'Material', value: 'Aluminium / carbon fibre' },
+            { label: 'Pin diameter', value: '4.0, 5.0, 6.0mm' },
+            { label: 'Clamp types', value: 'Single / double / swivel' },
+            { label: 'Rod diameter', value: '11mm standard' },
+            { label: 'Radiolucency', value: 'Carbon rods available' },
+          ]}
+        />
+        <ProductCard
+          category="Fixation Systems"
+          title="K-Wire & Pin Set"
+          description="Stainless steel and titanium K-wires in multiple diameters for percutaneous pinning, provisional fixation, and paediatric fracture management."
+          image="/images/K-Wire & Pin Set.png"
+          specs={[
+            { label: 'Material', value: 'SS 316L / titanium' },
+            { label: 'Diameters', value: '1.0, 1.2, 1.6, 2.0, 2.5mm' },
+            { label: 'Lengths', value: '100–400mm' },
+            { label: 'Tip options', value: 'Trocar / diamond / olive' },
+            { label: 'Packaging', value: 'Box of 10 / sterile single' },
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- RF Ablation Equipment -->
+  <section class="section section--lg" id="rf-ablation-equipment">
+    <div class="container">
+      <div class="section-heading" style="text-align:left;">
+        <p style="font-family:var(--font-display);font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">Category 04</p>
+        <h2>RF Ablation Equipment</h2>
+        <div class="section-divider section-divider--left"></div>
+        <p style="max-width:650px;">Precision radiofrequency ablation generators, electrodes, and procedure kits for specialist pain management practitioners.</p>
+      </div>
+      <div class="grid-3">
+        <ProductCard
+          category="RF Ablation"
+          title="RF Generator System"
+          description="Temperature-controlled RF generator with multi-programme capability for conventional, pulsed, and cooled RF procedures. Touch-screen interface with procedure logging."
+          image="/images/rf generator system.png"
+          specs={[
+            { label: 'Output frequency', value: '500kHz ±10%' },
+            { label: 'Max output power', value: '50W' },
+            { label: 'Temperature range', value: '30–95°C' },
+            { label: 'Modes', value: 'Conventional / pulsed RF' },
+            { label: 'Certification', value: 'CE marked' },
+          ]}
+        />
+        <ProductCard
+          category="RF Ablation"
+          title="Thermocouple RF Electrodes"
+          description="Single-use thermocouple RF cannula electrodes with integrated active tip temperature sensing. Available in multiple gauges, lengths, and active tip configurations."
+          image="/images/Thermocouple RF Electrodes.png"
+          specs={[
+            { label: 'Gauge options', value: '18G, 20G, 22G' },
+            { label: 'Lengths', value: '50, 100, 150mm' },
+            { label: 'Active tip', value: '5, 10, 15, 20mm' },
+            { label: 'Temperature sensing', value: 'Integrated thermocouple' },
+            { label: 'Sterility', value: 'Single use, EO sterile' },
+          ]}
+        />
+        <ProductCard
+          category="RF Ablation"
+          title="RF Procedure Kit"
+          description="Complete single-use RF ablation procedure kit including cannulae, stylets, grounding pad, extension cable, and prep accessories for streamlined theatre setup."
+          image="/images/RF Procedure Kit.png"
+          specs={[
+            { label: 'Kit contents', value: '12-piece procedure set' },
+            { label: 'Grounding pad', value: 'Single-use adult / paediatric' },
+            { label: 'Cable length', value: '1.5m extension' },
+            { label: 'Packaging', value: 'Sterile blister pack' },
+            { label: 'Compatibility', value: 'Universal RF generator fit' },
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="container" style="position:relative;z-index:1;">
+      <h2>Request Product Information or a Quote</h2>
+      <p>Contact our team for detailed specifications, pricing, availability, and clinical data on any Neovantis product.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-outline">Request a Quote</a>
+        <a href="/healthcare-professionals" class="btn btn-primary" style="background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);">Healthcare Professionals</a>
+      </div>
+    </div>
+  </div>
+
+</MainLayout>

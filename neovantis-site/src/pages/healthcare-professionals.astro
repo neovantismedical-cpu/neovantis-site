@@ -1,0 +1,175 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="Healthcare Professionals | Neovantis"
+  description="Clinical information, product documentation, and technical support for orthopaedic surgeons, pain specialists, and hospital procurement teams."
+>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('https://picsum.photos/id/49/1920/800')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">Surgeons & Specialists</p>
+        <h1>Healthcare<br/>Professionals</h1>
+        <div class="accent-bar" style="margin-left:auto;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Supporting Clinical Excellence</h2>
+        <div class="section-divider"></div>
+        <p>Neovantis is dedicated to providing the clinical support infrastructure that enables surgeons, pain specialists, and hospital teams to work with confidence — from product selection through to post-procedural follow-up.</p>
+      </div>
+      <div class="grid-4">
+        {[
+          { icon: '📋', label: 'Clinical Information' },
+          { icon: '📁', label: 'Product Documentation' },
+          { icon: '🛠️', label: 'Technical Support' },
+          { icon: '🎓', label: 'Training Resources' },
+        ].map(item => (
+          <div class="card text-center">
+            <div style="font-size:2rem;margin-bottom:0.75rem;">{item.icon}</div>
+            <h4>{item.label}</h4>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Clinical Information -->
+  <section class="angled-panel">
+    <div class="geo-overlay"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <div class="grid-2" style="align-items:center;gap:4rem;">
+        <div>
+          <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;">Clinical Information</p>
+          <h2 style="margin-bottom:1rem;">Evidence-Based<br/>Clinical Data</h2>
+          <span class="accent-bar"></span>
+          <p style="margin-bottom:1.5rem;">Neovantis provides access to clinical evidence, surgical technique guides, and peer-reviewed references supporting the use of our orthopaedic and pain management product range.</p>
+          <ul style="list-style:none;">
+            {[
+              'Surgical technique guides for implant systems',
+              'Biomechanical performance data',
+              'Clinical study references and white papers',
+              'Indication and patient selection guidelines',
+              'Complication avoidance and management notes',
+            ].map(item => (
+              <li style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.7rem;color:rgba(255,255,255,0.8);font-family:var(--font-prose);">
+                <span style="color:var(--blue-accent);">✓</span> {item}
+              </li>
+            ))}
+          </ul>
+          <div style="margin-top:2rem;">
+            <a href="/contact" class="btn btn-outline">Request Clinical Information</a>
+          </div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(31,127,182,0.3);">
+          <img src="https://picsum.photos/id/287/600/420" alt="Clinical team reviewing data" style="width:100%;height:360px;object-fit:cover;filter:brightness(0.75) saturate(0.6);" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Documentation -->
+  <section class="section section--lg">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Product Documentation</h2>
+        <div class="section-divider"></div>
+        <p>Comprehensive technical documentation available for all Neovantis product lines — accessible on request from our clinical support team.</p>
+      </div>
+      <div class="grid-3">
+        {[
+          { icon: '📐', title: 'Surgical Technique Guides', desc: 'Step-by-step illustrated technique guides for each implant system, developed in consultation with specialist surgeons.' },
+          { icon: '📊', title: 'Product Specifications', desc: 'Detailed dimensional specifications, material data, and compatibility charts for all trauma hardware and RF ablation products.' },
+          { icon: '🔬', title: 'IFU Documents', desc: 'Instructions for Use (IFU) documents meeting regulatory requirements for all marketed medical devices.' },
+          { icon: '📸', title: 'Imaging References', desc: 'Pre- and post-operative imaging case references demonstrating implant performance across clinical indications.' },
+          { icon: '⚠️', title: 'Safety Information', desc: 'Contraindication summaries, MRI compatibility status, and post-market surveillance information.' },
+          { icon: '🔄', title: 'Reprocessing Guides', desc: 'Validated instrument reprocessing and sterilisation protocols for reusable surgical instrumentation sets.' },
+        ].map(item => (
+          <div class="card">
+            <div class="feature-icon">{item.icon}</div>
+            <h4 style="margin-bottom:0.75rem;">{item.title}</h4>
+            <p style="font-size:0.9rem;margin-bottom:1rem;">{item.desc}</p>
+            <button onclick="alert('Contact info@neovantis.co.za to request this document.')" class="btn btn-ghost" style="font-size:0.75rem;padding:0.5rem 1rem;">Request Document</button>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Support -->
+  <section class="section" style="background:#040c16;">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Technical Support</h2>
+        <div class="section-divider"></div>
+        <p>Our technical support team is available to assist with instrument queries, implant sizing, and intraoperative guidance.</p>
+      </div>
+      <div class="grid-2" style="gap:2rem;">
+        {[
+          { title: 'Pre-operative Planning Assistance', desc: 'Consult with our clinical support specialists on implant selection, sizing, and surgical approach planning for complex cases.' },
+          { title: 'Intraoperative Support', desc: 'On-call technical assistance during procedures, available via phone or on-site upon request for major trauma and pain management cases.' },
+          { title: 'Instrument Troubleshooting', desc: 'Immediate technical guidance for instrument-related queries, compatibility questions, and equipment issues during procedures.' },
+          { title: 'Post-operative Follow-up', desc: 'Clinical liaison support for post-operative product queries, revision planning, and product feedback reporting.' },
+        ].map(item => (
+          <div class="card" style="display:flex;gap:1.25rem;">
+            <div style="color:var(--blue-accent);font-size:1.5rem;flex-shrink:0;margin-top:2px;">⚙️</div>
+            <div>
+              <h4 style="margin-bottom:0.5rem;">{item.title}</h4>
+              <p style="font-size:0.9rem;">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Training -->
+  <section class="section section--lg">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Training Resources</h2>
+        <div class="section-divider"></div>
+        <p>Neovantis invests in the ongoing education and training of the healthcare professionals we work with.</p>
+      </div>
+      <div class="grid-3">
+        {[
+          { icon: '🎓', title: 'Cadaveric Workshops', desc: 'Hands-on anatomical training workshops for orthopaedic surgical techniques, conducted in collaboration with regional academic institutions.' },
+          { icon: '💻', title: 'Online Product Training', desc: 'Digital training modules covering product features, surgical technique, and clinical indications — accessible on request.' },
+          { icon: '🏥', title: 'In-Hospital Proctoring', desc: 'Experienced clinical educators available for proctored cases as surgeons adopt new implant systems or techniques.' },
+          { icon: '📹', title: 'Surgical Video Library', desc: 'Curated library of peer-reviewed surgical technique videos for orthopaedic trauma and RF ablation procedures.' },
+          { icon: '📚', title: 'CME Support', desc: 'Support for continuing medical education initiatives, including sponsorship of relevant surgical training events.' },
+          { icon: '🤝', title: 'KOL Collaboration', desc: 'Partnership with key opinion leaders for collaborative research, case study development, and technique refinement.' },
+        ].map(item => (
+          <div class="card">
+            <div class="feature-icon">{item.icon}</div>
+            <h4 style="margin-bottom:0.75rem;">{item.title}</h4>
+            <p style="font-size:0.9rem;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="container" style="position:relative;z-index:1;">
+      <h2>Request Product Information</h2>
+      <p>Contact our clinical team to request product documentation, arrange a demo, or discuss a specific clinical requirement.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-outline">Get in Touch</a>
+        <a href="https://wa.me/27745630777" class="btn btn-primary" style="background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);">WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+
+</MainLayout>

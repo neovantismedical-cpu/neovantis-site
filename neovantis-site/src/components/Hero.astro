@@ -1,0 +1,45 @@
+---
+interface Props {
+  eyebrow?: string;
+  headline: string;
+  highlight?: string;
+  subheadline?: string;
+  primaryCta?: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
+  image?: string;
+}
+const {
+  eyebrow = 'Medical Technology',
+  headline,
+  highlight,
+  subheadline,
+  primaryCta,
+  secondaryCta,
+  image = '/images/hero-orthopaedic-surgery.png',
+} = Astro.props;
+---
+
+<section class="hero">
+  <div class="hero-bg" style="background-image: url('/images/hero-orthopaedic-surgery.png');"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content fade-up">
+      {eyebrow && (
+        <p class="hero-eyebrow">{eyebrow}</p>
+      )}
+      <h1>
+        {headline}
+        {highlight && <span class="text-blue"><br />{highlight}</span>}
+      </h1>
+      {subheadline && <p class="hero-sub">{subheadline}</p>}
+      <div class="hero-actions">
+        {primaryCta && (
+          <a href={primaryCta.href} class="btn btn-primary">{primaryCta.label}</a>
+        )}
+        {secondaryCta && (
+          <a href={secondaryCta.href} class="btn btn-outline">{secondaryCta.label}</a>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,99 @@
+---
+import Logo from './Logo.astro';
+---
+
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-logo">
+        <Logo size="md" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/solutions">Solutions</a></li>
+        <li><a href="/products">Products</a></li>
+        <li><a href="/healthcare-professionals">For Professionals</a></li>
+        <li><a href="/distributors">Distributors</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="/contact" class="btn btn-primary">Contact Us</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu" style="position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;">✕</button>
+  <a href="/" onclick="closeMobile()">Home</a>
+  <a href="/about" onclick="closeMobile()">About Us</a>
+  <a href="/solutions" onclick="closeMobile()">Solutions</a>
+  <a href="/products" onclick="closeMobile()">Products</a>
+  <a href="/healthcare-professionals" onclick="closeMobile()">For Professionals</a>
+  <a href="/distributors" onclick="closeMobile()">Distributors</a>
+  <a href="/blog" onclick="closeMobile()">Blog</a>
+  <a href="/contact" onclick="closeMobile()" class="btn btn-primary" style="margin-top:1rem">Contact Us</a>
+</div>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileClose = document.getElementById('mobileClose');
+
+  window.addEventListener('scroll', () => {
+    navbar?.classList.toggle('scrolled', window.scrollY > 30);
+  });
+
+  hamburger?.addEventListener('click', () => {
+    mobileMenu?.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+
+  mobileClose?.addEventListener('click', closeMobile);
+
+  function closeMobile() {
+    mobileMenu?.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  (window as any).closeMobile = closeMobile;
+</script>
+<style>
+  .mobile-menu {
+    display: none;
+  }
+
+  .mobile-menu.open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    .nav-links,
+    .nav-cta {
+      display: none;
+    }
+
+    .hamburger {
+      display: inline-flex;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+  }
+</style>

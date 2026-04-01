@@ -1,0 +1,46 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  divider?: boolean;
+  centered?: boolean;
+  size?: 'sm' | 'md' | 'lg';
+  bg?: 'default' | 'secondary' | 'angled';
+  id?: string;
+}
+const {
+  title,
+  subtitle,
+  divider = true,
+  centered = true,
+  size = 'md',
+  bg = 'default',
+  id,
+} = Astro.props;
+
+const sectionClass = [
+  'section',
+  size === 'sm' ? 'section--sm' : size === 'lg' ? 'section--lg' : '',
+  bg === 'secondary' ? 'section-secondary' : '',
+  bg === 'angled' ? 'angled-panel' : '',
+].filter(Boolean).join(' ');
+---
+
+<section class={sectionClass} id={id}>
+  {bg === 'angled' && <div class="geo-overlay"></div>}
+  <div class="container">
+    {title && (
+      <div class={`section-heading${centered ? '' : ' section-heading--left'}`}>
+        <h2>{title}</h2>
+        {divider && <div class={`section-divider${centered ? '' : ' section-divider--left'}`}></div>}
+        {subtitle && <p>{subtitle}</p>}
+      </div>
+    )}
+    <slot />
+  </div>
+</section>
+
+<style>
+.section-secondary { background: #040c16; }
+.section-heading--left { text-align: left; }
+</style>

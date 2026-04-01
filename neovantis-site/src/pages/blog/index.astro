@@ -1,0 +1,135 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+
+const posts = [
+  {
+    slug: 'orthopaedic-trauma-hardware-fracture-treatment',
+    title: 'Orthopaedic Trauma Hardware in Fracture Treatment',
+    excerpt: 'An overview of how modern trauma plates, screws, and fixation systems have transformed the management of complex fractures.',
+    date: '2024-03-15',
+    tag: 'Orthopaedics',
+    image: '/images/orthopaedic-fracture-treatment.png',
+  },
+  {
+    slug: 'rf-ablation-chronic-pain',
+    title: 'RF Ablation for Chronic Pain Management',
+    excerpt: 'How radiofrequency ablation is providing durable, minimally invasive relief for patients with chronic pain conditions.',
+    date: '2024-02-22',
+    tag: 'Pain Management',
+    image: '/images/RF-ablation-for-pain-management.png',
+  },
+  {
+    slug: 'innovations-orthopaedic-implant-technology',
+    title: 'Innovations in Orthopaedic Implant Technology',
+    excerpt: 'From locking plate systems to advanced surface coatings, implant technology continues to evolve and improve patient outcomes.',
+    date: '2024-01-30',
+    tag: 'Innovation',
+    image: '/images/innovations-in-orthopaedic-technology.png',
+  },
+];
+---
+
+<MainLayout
+  title="Clinical Insights Blog | Neovantis"
+  description="Orthopaedic trauma, RF ablation pain management, and medical technology articles from the Neovantis clinical team."
+>
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div
+      class="page-hero-bg"
+      style="background-image:url('/images/clinical insights hero.png')"
+    ></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">
+          Knowledge Hub
+        </p>
+        <h1>Clinical Insights</h1>
+        <div class="accent-bar" style="margin-left:auto;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Grid -->
+  <section class="section section--lg">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Latest Articles</h2>
+        <div class="section-divider"></div>
+        <p>
+          Clinical perspectives on orthopaedic trauma, pain management technology, and surgical innovation from the Neovantis team.
+        </p>
+      </div>
+
+      <!-- Featured Post -->
+      <div
+        class="card"
+        style="display:grid;grid-template-columns:1fr 1fr;gap:0;overflow:hidden;padding:0;margin-bottom:3rem;border-radius:var(--radius-lg);"
+      >
+        <div style="overflow:hidden;height:100%;min-height:320px;">
+          <img
+            src={posts[0].image}
+            alt={posts[0].title}
+            style="width:100%;height:100%;object-fit:cover;filter:brightness(0.8) saturate(0.7);transition:transform 0.6s;"
+            onmouseenter="this.style.transform='scale(1.03)'"
+            onmouseleave="this.style.transform='scale(1)'"
+          />
+        </div>
+        <div style="padding:3rem;display:flex;flex-direction:column;justify-content:center;">
+          <div style="display:flex;gap:1rem;align-items:center;margin-bottom:1rem;">
+            <span class="blog-tag">{posts[0].tag}</span>
+            <span class="blog-date">
+              {new Date(posts[0].date).toLocaleDateString('en-ZA', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </span>
+          </div>
+          <h2 style="font-size:1.7rem;margin-bottom:1rem;">{posts[0].title}</h2>
+          <p style="margin-bottom:1.75rem;">{posts[0].excerpt}</p>
+          <a href={`/blog/${posts[0].slug}`} class="btn btn-primary" style="align-self:flex-start;">
+            Read Article →
+          </a>
+        </div>
+      </div>
+
+      <!-- Remaining Posts Grid -->
+      <div class="grid-3">
+        {posts.slice(1).map((post) => (
+          <BlogCard {...post} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="container" style="position:relative;z-index:1;">
+      <h2>Have a Clinical Question?</h2>
+      <p>
+        Our team is available to discuss clinical applications, product performance data, and evidence-based practice guidance.
+      </p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-outline">Contact Our Team</a>
+        <a
+          href="/solutions"
+          class="btn btn-primary"
+          style="background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);"
+        >
+          View Solutions
+        </a>
+      </div>
+    </div>
+  </div>
+</MainLayout>
+
+<style>
+  @media (max-width: 768px) {
+    .card[style*='grid-template-columns'] {
+      display: block !important;
+    }
+  }
+</style>

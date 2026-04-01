@@ -1,0 +1,71 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="Medical Disclaimer | Neovantis"
+  description="Important medical disclaimer for the Neovantis website. Content is for educational purposes only and does not replace professional medical advice."
+>
+
+  <section class="page-hero" style="min-height:35vh;">
+    <div class="page-hero-bg" style="background-image:url('https://picsum.photos/id/1/1920/600');filter:brightness(0.2) saturate(0.4);"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <h1 style="font-size:clamp(2rem,4vw,3.5rem);">Medical Disclaimer</h1>
+        <div class="accent-bar" style="margin-left:auto;"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--lg">
+    <div class="container">
+      <div class="prose">
+
+        <div class="alert" style="border-left-color:#e8a020;background:rgba(232,160,32,0.08);font-size:1rem;">
+          <strong>Important Notice:</strong> The information contained on this website is provided for <strong>educational and informational purposes only</strong> and does not constitute, replace, or supplement professional medical advice, diagnosis, or treatment.
+        </div>
+
+        <h2>Educational Purpose Only</h2>
+        <p>All content published on neovantis.co.za — including product descriptions, clinical articles, blog posts, and procedure information — is intended to provide general information about medical technology, orthopaedic trauma hardware, and pain management techniques for healthcare professionals and members of the public.</p>
+        <p><strong>This information does not replace professional medical advice.</strong> Always seek the advice of a qualified, registered healthcare professional with respect to any medical condition, treatment, procedure, or medication. Never disregard professional medical advice or delay seeking it because of information you have read on this website.</p>
+
+        <h2>No Medical Relationship</h2>
+        <p>Use of this website does not establish a physician-patient relationship, a healthcare provider-patient relationship, or any other professional medical relationship between Neovantis and the reader. Neovantis is a medical device supplier and does not provide medical consultations, diagnoses, or treatment recommendations.</p>
+
+        <h2>Product Use and Prescribing</h2>
+        <p>All Neovantis products — including orthopaedic trauma implants, fixation systems, and RF ablation equipment — are medical devices intended for use exclusively by qualified, trained healthcare professionals in appropriate clinical settings. These products must be used in accordance with their respective Instructions for Use (IFU) documents.</p>
+        <p>The use of any medical device described on this website requires formal medical training and the exercise of independent professional judgement. Neovantis accepts no responsibility for the application of product information by unqualified individuals.</p>
+
+        <h2>Clinical Information and Evidence</h2>
+        <p>Clinical information presented on this website, including descriptions of surgical techniques, clinical applications, and procedural outcomes, reflects general industry knowledge and published literature available at the time of publication. Medical knowledge evolves continuously; this information may not reflect the most current clinical evidence, guidelines, or best practice standards.</p>
+        <p>Readers are encouraged to consult current peer-reviewed literature, clinical guidelines, and specialist opinion when making clinical decisions.</p>
+
+        <h2>Individual Patient Variation</h2>
+        <p>Medical outcomes vary significantly between individuals based on factors including patient anatomy, bone quality, comorbidities, surgical technique, post-operative management, and many other variables. No information on this website should be interpreted as predicting, guaranteeing, or implying a specific clinical outcome for any individual patient.</p>
+
+        <h2>Emergency Situations</h2>
+        <p>If you or someone in your care is experiencing a medical emergency, contact your local emergency services immediately. In South Africa, call <strong>10177</strong> (National Ambulance) or proceed to your nearest emergency department. Do not rely on information from this website in an emergency situation.</p>
+
+        <h2>Regulatory and Jurisdiction Variation</h2>
+        <p>Medical device regulations, approved indications, and clinical practice standards vary between countries and jurisdictions. Information on this website is primarily relevant to the South African medical context and may not be applicable in other regulatory environments.</p>
+
+        <h2>Contact for Clinical Queries</h2>
+        <p>Healthcare professionals seeking specific clinical, technical, or product-related information are encouraged to contact the Neovantis clinical support team directly:</p>
+        <ul>
+          <li>Email: <a href="mailto:info@neovantis.co.za" style="color:var(--blue-accent);">info@neovantis.co.za</a></li>
+          <li>Telephone: <a href="tel:+27314631188" style="color:var(--blue-accent);">031 463 1188</a></li>
+          <li>WhatsApp: <a href="https://wa.me/27745630777" style="color:var(--blue-accent);">074 563 0777</a></li>
+        </ul>
+
+      </div>
+
+      <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);">
+        <a href="/" class="btn btn-ghost">← Back to Home</a>
+        <a href="/privacy-policy" class="btn btn-ghost" style="margin-left:1rem;">Privacy Policy</a>
+        <a href="/terms" class="btn btn-ghost" style="margin-left:1rem;">Terms of Use</a>
+      </div>
+    </div>
+  </section>
+
+</MainLayout>
