@@ -23,7 +23,13 @@ import Logo from './Logo.astro';
         <a href="/contact" class="btn btn-primary">Contact Us</a>
       </div>
 
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
         <span></span>
         <span></span>
         <span></span>
@@ -32,9 +38,8 @@ import Logo from './Logo.astro';
   </div>
 </nav>
 
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" id="mobileClose" aria-label="Close menu" style="position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;">✕</button>
+<!-- Mobile Menu — fixed panel that slides in below the navbar -->
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
   <a href="/" onclick="closeMobile()">Home</a>
   <a href="/about" onclick="closeMobile()">About Us</a>
   <a href="/solutions" onclick="closeMobile()">Solutions</a>
@@ -42,33 +47,91 @@ import Logo from './Logo.astro';
   <a href="/healthcare-professionals" onclick="closeMobile()">For Professionals</a>
   <a href="/distributors" onclick="closeMobile()">Distributors</a>
   <a href="/blog" onclick="closeMobile()">Blog</a>
-  <a href="/contact" onclick="closeMobile()" class="btn btn-primary" style="margin-top:1rem">Contact Us</a>
+  <div class="mobile-cta">
+    <a href="/contact" onclick="closeMobile()" class="btn btn-primary">Contact Us</a>
+  </div>
 </div>
 
 <script>
   const navbar = document.getElementById('navbar');
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
-  const mobileClose = document.getElementById('mobileClose');
+
+  function updateMenuPosition() {
+    if (navbar && mobileMenu) {
+      mobileMenu.style.top = navbar.getBoundingClientRect().height + 'px';
+    }
+  }
 
   window.addEventListener('scroll', () => {
     navbar?.classList.toggle('scrolled', window.scrollY > 30);
+    if (mobileMenu?.classList.contains('open')) {
+      updateMenuPosition();
+    }
+  }, { passive: true });
+
+  window.addEventListener('resize', () => {
+    updateMenuPosition();
+    if (window.innerWidth > 900) {
+      closeMobile();
+    }
   });
 
   hamburger?.addEventListener('click', () => {
-    mobileMenu?.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    updateMenuPosition();
+    const isOpen = mobileMenu?.classList.contains('open');
+    if (isOpen) {
+      closeMobile();
+    } else {
+      mobileMenu?.classList.add('open');
+      hamburger?.classList.add('active');
+      hamburger?.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
   });
-
-  mobileClose?.addEventListener('click', closeMobile);
 
   function closeMobile() {
     mobileMenu?.classList.remove('open');
+    hamburger?.classList.remove('active');
+    hamburger?.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   }
   (window as any).closeMobile = closeMobile;
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMobile();
+  });
+
+  updateMenuPosition();
 </script>
+
 <style>
+  /* ── Logo: constrain size so it never crowds the hamburger ── */
+  .navbar-logo img {
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* ── Hamburger: hidden on desktop ── */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    /* 44×44 minimum touch target */
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: none;
+    border: none;
+    flex-shrink: 0;
+    border-radius: 4px;
+  }
+
+  /* ── Mobile menu: hidden by default ── */
   .mobile-menu {
     display: none;
   }
@@ -78,10 +141,7 @@ import Logo from './Logo.astro';
     flex-direction: column;
   }
 
-  .hamburger {
-    display: none;
-  }
-
+  /* ── 900px breakpoint: switch to mobile layout ── */
   @media (max-width: 900px) {
     .nav-links,
     .nav-cta {
@@ -91,9 +151,12 @@ import Logo from './Logo.astro';
     .hamburger {
       display: inline-flex;
     }
+  }
 
-    .mobile-menu.open {
-      display: flex;
+  /* ── Small phones ≤400px: shrink logo further to prevent overlap ── */
+  @media (max-width: 400px) {
+    .navbar-logo img {
+      width: 160px;
     }
   }
 </style>
