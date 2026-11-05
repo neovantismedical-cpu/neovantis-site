@@ -1,0 +1,111 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_URL, INDEXING_ENABLED, GTM_ID, business } from '../config/site';
+import { organizationSchema, websiteSchema, breadcrumbSchema } from '../lib/schema';
+
+export interface Crumb { name: string; href: string; }
+interface Props {
+  title: string;
+  description: string;
+  /** Force noindex regardless of the indexing switch (utility pages, drafts) */
+  noindex?: boolean;
+  breadcrumbs?: Crumb[];
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  /** Additional JSON-LD nodes for this page (e.g. Article) */
+  schema?: Record<string, unknown>[];
+  /** Omit canonical (404) */
+  canonical?: boolean;
+}
+
+const { title, description, noindex = false, breadcrumbs, ogImage = '/images/optimised/og-neovantis.png', ogType = 'website', schema = [], canonical = true } = Astro.props;
+
+const pageTitle = title.includes('Neovantis') ? title : `${title} | Neovantis`;
+const canonicalURL = new URL(Astro.url.pathname, SITE_URL).href;
+const imageURL = new URL(ogImage, SITE_URL).href;
+const robots = !INDEXING_ENABLED || noindex ? 'noindex, nofollow' : 'index, follow';
+
+const webPage = {
+  '@type': 'WebPage',
+  '@id': `${canonicalURL}#webpage`,
+  url: canonicalURL,
+  name: pageTitle,
+  description,
+  isPartOf: { '@id': `${SITE_URL}/#website` },
+  about: { '@id': `${SITE_URL}/#organization` },
+  inLanguage: 'en-ZA',
+  ...(breadcrumbs ? { breadcrumb: { '@id': `${canonicalURL}#breadcrumb` } } : {}),
+};
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [organizationSchema(), websiteSchema(), webPage, ...(breadcrumbs ? [breadcrumbSchema(breadcrumbs, canonicalURL)] : []), ...schema],
+};
+---
+<!doctype html>
+<html lang="en-ZA">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={description} />
+  <meta name="robots" content={robots} />
+  {canonical && <link rel="canonical" href={canonicalURL} />}
+  <link rel="icon" href="/images/optimised/icon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="/images/optimised/icon-180.png" />
+  <meta name="theme-color" content="#0a2540" />
+  <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/barlow-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:site_name" content={business.name} />
+  <meta property="og:locale" content="en_ZA" />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:image" content={imageURL} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Neovantis logo with the tagline Improving Lives Together" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <noscript><style>
+    .nav-toggle { display: none; } .header-inner { flex-wrap: wrap; } .site-nav { display: block; flex-basis: 100%; padding-bottom: 1rem; }
+    .submenu[hidden] { display: block; }
+    @media (min-width: 1100px) { .site-nav { flex-basis: auto; padding: 0; } .submenu[hidden] { display: none; } }
+  </style></noscript>
+
+  <script type="application/ld+json" set:html={JSON.stringify(graph)} />
+  <slot name="head" />
+
+  {GTM_ID && (
+    <script is:inline define:vars={{ GTM_ID }}>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',GTM_ID);
+    </script>
+  )}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <slot name="banner" />
+  <Header />
+  <main id="main" tabindex="-1">
+    <slot />
+  </main>
+  <Footer />
+  <script>
+    // Analytics events: sent only if a tag manager has created window.dataLayer.
+    // No personal details, form text or patient information are ever included.
+    import { track } from '../lib/track';
+    document.addEventListener('click', (e) => {
+      const el = (e.target as Element)?.closest?.('a, button');
+      if (!el) return;
+      const href = el.getAttribute('href') || '';
+      const spec = el.getAttribute('data-track-speciality');
+      if (spec) track('speciality_enquiry_click', { speciality: spec });
+      else if (href.startsWith('tel:')) track('phone_click', { location: el.closest('footer') ? 'footer' : 'page' });
+      else if (href.startsWith('mailto:')) track('email_click', { location: el.closest('footer') ? 'footer' : 'page' });
+    });
+  </script>
+</body>
+</html>

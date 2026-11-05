@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { specialities, contactHref } from '../config/site';
+
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Support', href: '/support/' }];
+
+const topics = [
+  {
+    h: 'Product information',
+    p: 'Ask about the products in our six speciality areas, including specifications, sizes and pack sizes.',
+    needs: 'The product type and, where you know them, the specification or size you use.',
+  },
+  {
+    h: 'Compatibility and instruments',
+    p: 'Many implants and consumables work as part of a system. Ask which instruments, trays or accessories go with the products you need.',
+    needs: 'The system, platform or generator you use or are considering, by make and model where possible.',
+  },
+  {
+    h: 'Quantities and timing',
+    p: 'Discuss quantities for a planned case, a theatre list or regular replenishment, and when you need them.',
+    needs: 'Quantities, the date you are working towards and, for stock, how often you reorder.',
+  },
+  {
+    h: 'Equipment and support arrangements',
+    p: 'For equipment such as RF generators, you can raise questions about technical support, training or other arrangements as part of your enquiry.',
+    needs: 'The equipment involved and your specific question. Arrangements depend on the device, so our team will confirm what applies.',
+  },
+  {
+    h: 'Documentation',
+    p: 'Procurement and biomedical engineering teams can ask for product information or technical documentation needed for evaluation or procurement.',
+    needs: 'The documents your facility’s process requires.',
+  },
+];
+---
+<BaseLayout
+  title="Supply Enquiry Support for Healthcare Buyers"
+  description="What clinicians, theatre teams and procurement buyers can ask Neovantis about, and a checklist of details to include in a specialist medical supply enquiry."
+  breadcrumbs={crumbs}
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={crumbs} />
+      <h1>Support for professional buyers</h1>
+      <p class="lead">Clinicians, theatre teams, procurement and biomedical engineering teams can contact Neovantis about products, compatibility, quantities and timing, and equipment arrangements. This page explains what you can ask about and which details help us answer.</p>
+    </div>
+  </div>
+
+  <section class="section" aria-labelledby="topics-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="topics-heading">What you can ask about</h2>
+      </div>
+      <ul class="card-grid">
+        {topics.map((t) => (
+          <li>
+            <div class="panel" style="height:100%">
+              <h3>{t.h}</h3>
+              <p>{t.p}</p>
+              <p style="margin:0;color:var(--muted)"><strong style="color:var(--navy-800)">What we need to check it:</strong> {t.needs}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--tint" aria-labelledby="checklist-heading">
+    <div class="container two-col">
+      <div>
+        <h2 id="checklist-heading">Enquiry checklist</h2>
+        <p>Including these details helps our team respond to the right product first time.</p>
+        <ol class="checklist" style="list-style:none">
+          <li>The speciality</li>
+          <li>The product, specification, size or system</li>
+          <li>The quantity</li>
+          <li>The date you are working towards, such as a planned case or replenishment</li>
+          <li>Any instruments, trays or accessories you also need</li>
+          <li>Any documentation your facility requires</li>
+          <li>Your organisation, and the best way to contact you</li>
+        </ol>
+        <div class="notice"><p><strong>Please do not include patient names, scans or other patient information.</strong> Supply enquiries can be answered without them.</p></div>
+      </div>
+      <div class="panel">
+        <h3>Speciality-specific guidance</h3>
+        <p>Each speciality page lists the details that matter for that product area.</p>
+        <ul class="checklist">
+          {specialities.map((s) => <li><a href={`/specialities/${s.slug}/`}>{s.name}</a></li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="scope-heading">
+    <div class="container measure">
+      <h2 id="scope-heading">What this website does not cover</h2>
+      <p>Neovantis handles professional supply enquiries. We do not provide patient consultations, diagnosis, treatment advice or device settings. Clinical decisions remain with the treating healthcare professional.</p>
+      <p>Product availability and supply arrangements are confirmed with our team for each enquiry.</p>
+      <p><a class="btn btn-primary" href={contactHref()}>Send an enquiry</a></p>
+    </div>
+  </section>
+
+  <CtaBand />
+</BaseLayout>

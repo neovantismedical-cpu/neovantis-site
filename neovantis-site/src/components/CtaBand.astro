@@ -1,0 +1,24 @@
+---
+import { business, contactHref } from '../config/site';
+interface Props { heading?: string; text?: string; speciality?: string; buttonLabel?: string; }
+const {
+  heading = 'Discuss your next supply requirement',
+  text = 'Tell us the speciality and what you need. Our team will discuss the relevant product information and supply arrangements with you.',
+  speciality,
+  buttonLabel = 'Speak to our team',
+} = Astro.props;
+---
+<section class="section" aria-labelledby="cta-heading">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <h2 id="cta-heading">{heading}</h2>
+        <p>{text}</p>
+        <p class="cta-contact">Prefer to call? <a href={business.phone.href}>{business.phone.display}</a> or email <a href={`mailto:${business.email}`}>{business.email}</a></p>
+      </div>
+      <div>
+        <a class="btn btn-light" href={contactHref(speciality)} data-track-speciality={speciality}>{buttonLabel}</a>
+      </div>
+    </div>
+  </div>
+</section>

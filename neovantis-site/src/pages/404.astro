@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SpecialityCards from '../components/SpecialityCards.astro';
+import { contactHref } from '../config/site';
+---
+<BaseLayout title="Page not found" description="The page you were looking for could not be found." noindex canonical={false}>
+  <section class="section">
+    <div class="container">
+      <div class="measure">
+        <h1>Page not found</h1>
+        <p class="lead">The page you were looking for has moved or no longer exists. Our product pages are now organised by speciality.</p>
+        <div class="btn-row" style="margin:1.5rem 0 2.5rem">
+          <a class="btn btn-primary" href="/specialities/">View all specialities</a>
+          <a class="btn btn-secondary" href={contactHref()}>Speak to our team</a>
+        </div>
+      </div>
+      <h2>Specialities</h2>
+      <SpecialityCards />
+    </div>
+  </section>
+</BaseLayout>

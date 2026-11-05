@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SpecialityCards from '../../components/SpecialityCards.astro';
+import SpecialityIcon from '../../components/SpecialityIcon.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { specialities, contactHref, type Speciality } from '../../config/site';
+
+export function getStaticPaths() {
+  return specialities.map((s) => ({ params: { slug: s.slug }, props: { s } }));
+}
+
+const { s } = Astro.props as { s: Speciality };
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Specialities', href: '/specialities/' },
+  { name: s.name, href: `/specialities/${s.slug}/` },
+];
+---
+<BaseLayout title={s.metaTitle} description={s.metaDescription} breadcrumbs={crumbs}>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={crumbs} />
+      <div class:list={['page-hero-grid', 'has-media']}>
+        <div>
+          <span class="eyebrow" style="margin-top:1.25rem">{s.name}</span>
+          <h1 style="margin-top:0">{s.h1}</h1>
+          <div class="measure">
+            <p class="lead">{s.intro[0]}</p>
+            <p>{s.intro[1]}</p>
+          </div>
+          <div class="btn-row" style="margin-top:1.5rem">
+            <a class="btn btn-primary" href={contactHref(s.slug)} data-track-speciality={s.slug}>{s.button}</a>
+          </div>
+        </div>
+        {s.image ? (
+          <figure class="page-hero-media">
+            <img src={s.image.src} srcset={s.image.srcset} sizes="(min-width: 900px) 40vw, 92vw" width={s.image.width} height={s.image.height} alt={s.image.alt} fetchpriority="high" decoding="async" />
+            <figcaption>Illustrative image, not a photograph of a specific Neovantis product.</figcaption>
+          </figure>
+        ) : (
+          <div class="speciality-mark" aria-hidden="true"><SpecialityIcon slug={s.slug} /></div>
+        )}
+      </div>
+    </div>
+  </div>
+
+  <section class="section" aria-labelledby="details-heading">
+    <div class="container">
+      <h2 id="details-heading" class="visually-hidden">Preparing your enquiry</h2>
+      <div class="two-col">
+        {s.sections.map((sec) => (
+          <div class="panel panel--tint">
+            <h3>{sec.heading}</h3>
+            {sec.intro && <p>{sec.intro}</p>}
+            {sec.items && <ul class="checklist">{sec.items.map((i) => <li>{i}</li>)}</ul>}
+            {sec.note && <div class="notice"><p>{sec.note}</p></div>}
+          </div>
+        ))}
+        <div class="panel">
+          <h3>Requesting documentation</h3>
+          <p>If your facility needs product information or technical documentation for evaluation or procurement, say so in your enquiry and our team will tell you what can be provided.</p>
+          <p style="margin:0">Questions about how we handle enquiries? See <a href="/support/">Support</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint" aria-labelledby="other-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="other-heading">Other specialities</h2>
+      </div>
+      <SpecialityCards exclude={s.slug} />
+    </div>
+  </section>
+
+  <CtaBand
+    heading="Discuss your next supply requirement"
+    text={`Send us your ${s.name.toLowerCase()} enquiry and our team will discuss the relevant product information and supply arrangements.`}
+    speciality={s.slug}
+    buttonLabel={s.button}
+  />
+</BaseLayout>

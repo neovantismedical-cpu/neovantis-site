@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "build:review": "node scripts/build-review.mjs",
     "preview": "astro preview",
+    "images": "node scripts/optimise-images.mjs",
     "astro": "astro"
   },
   "dependencies": {

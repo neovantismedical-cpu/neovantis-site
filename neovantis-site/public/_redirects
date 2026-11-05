@@ -1,0 +1,43 @@
+# Legacy URL redirects (Netlify). Specific rules first. Both slash variants are listed for clarity.
+# Full map and rationale: SEO_ROUTE_MAP.md. Inventory live-domain URLs before launch.
+
+# Retired section pages
+/products                           /specialities/                        301
+/products/                          /specialities/                        301
+/solutions                          /specialities/                        301
+/solutions/                         /specialities/                        301
+/healthcare-professionals           /support/                             301
+/healthcare-professionals/          /support/                             301
+/distributors                       /contact/                             301
+/distributors/                      /contact/                             301
+
+# Former speciality pages
+/orthopaedic-trauma                 /specialities/orthopaedics/           301
+/orthopaedic-trauma/                /specialities/orthopaedics/           301
+/neuro-plating                      /specialities/neurosurgery/           301
+/neuro-plating/                     /specialities/neurosurgery/           301
+/urology-solutions                  /specialities/urology/                301
+/urology-solutions/                 /specialities/urology/                301
+/rf-ablation-pain-management        /specialities/pain-management/        301
+/rf-ablation-pain-management/       /specialities/pain-management/        301
+/radiation-protection-gloves        /specialities/radiation-protection/   301
+/radiation-protection-gloves/       /specialities/radiation-protection/   301
+
+# Former blog articles with a useful equivalent
+/blog/understanding-rf-ablation-pain-management     /specialities/pain-management/   301
+/blog/understanding-rf-ablation-pain-management/    /specialities/pain-management/   301
+/blog/rf-ablation-chronic-pain                      /specialities/pain-management/   301
+/blog/rf-ablation-chronic-pain/                     /specialities/pain-management/   301
+/blog/minimally-invasive-pain-management            /specialities/pain-management/   301
+/blog/minimally-invasive-pain-management/           /specialities/pain-management/   301
+/blog/urology-solutions-modern-clinical-care        /specialities/urology/           301
+/blog/urology-solutions-modern-clinical-care/       /specialities/urology/           301
+/blog/orthopaedic-trauma-hardware-fracture-treatment  /specialities/orthopaedics/    301
+/blog/orthopaedic-trauma-hardware-fracture-treatment/ /specialities/orthopaedics/    301
+# Deliberately not redirected (no equivalent; return the genuine 404 page):
+#   /blog/clinically-trusted-medical-solutions
+#   /blog/innovations-orthopaedic-implant-technology
+
+# Blog index
+/blog                               /insights/                            301
+/blog/                              /insights/                            301

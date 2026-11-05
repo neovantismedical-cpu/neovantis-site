@@ -1,193 +1,116 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import Hero from '../components/Hero.astro';
-import Section from '../components/Section.astro';
-import BlogCard from '../components/BlogCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SpecialityCards from '../components/SpecialityCards.astro';
+import Credentials from '../components/Credentials.astro';
+import CtaBand from '../components/CtaBand.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { business, contactHref } from '../config/site';
+import { getVisibleInsights } from '../lib/insights';
 
-const solutionAreas = [
-  {
-    icon: '🦴',
-    title: 'Orthopaedic Trauma Solutions',
-    desc: 'Comprehensive trauma and fixation solutions designed to support surgical precision, stability, and dependable clinical performance across a range of orthopaedic applications.',
-    href: '/orthopaedic-trauma',
-  },
-  {
-    icon: '⚡',
-    title: 'RF Ablation & Pain Management',
-    desc: 'Specialist radiofrequency solutions for minimally invasive pain management, supporting precise treatment pathways for chronic and procedure-led clinical care.',
-    href: '/rf-ablation-pain-management',
-  },
-  {
-    icon: '🧠',
-    title: 'Neuro Plating Systems',
-    desc: 'Advanced cranial fixation and reconstruction solutions designed for accuracy, anatomical conformity, and reliable performance in neurosurgical settings.',
-    href: '/neuro-plating',
-  },
-  {
-    icon: '🔬',
-    title: 'Urology Solutions',
-    desc: 'A broad portfolio of urology solutions supporting access, dilation, drainage, retrieval, and minimally invasive intervention across modern clinical environments.',
-    href: '/urology-solutions',
-  },
-  {
-    icon: '🧤',
-    title: 'Radiation Protection Gloves',
-    desc: 'Protective glove solutions developed for demanding interventional and imaging environments, balancing protection, comfort, grip, and clinical usability.',
-    href: '/radiation-protection-gloves',
-  },
-];
-
-const whyNeovantis = [
-  { icon: '✓', title: 'Clinically Trusted Innovation', desc: 'Solutions selected for dependable clinical performance and alignment with modern healthcare standards.' },
-  { icon: '✓', title: 'Specialist Medical Focus', desc: 'Dedicated to specialist disciplines — orthopaedics, pain management, neuro plating, urology, and more.' },
-  { icon: '✓', title: 'South African-Led, Regional Reach', desc: 'Proudly South African, serving healthcare providers across South Africa and neighbouring African markets.' },
-  { icon: '✓', title: 'Professional Support & Service', desc: 'Responsive teams providing clinical guidance, technical support, and reliable product access.' },
-];
-
-const latestPosts = [
-  {
-    slug: 'understanding-rf-ablation-pain-management',
-    title: 'Understanding RF Ablation in Modern Pain Management',
-    excerpt: 'A high-level overview of radiofrequency ablation — what it is, how it works, and why precision matters in minimally invasive pain management.',
-    date: '2026-04-05',
-    tag: 'Pain Management',
-    image: '/images/neovantis-rf-ablation-technology.png',
-  },
-  {
-    slug: 'urology-solutions-modern-clinical-care',
-    title: 'The Growing Role of Urology Solutions in Modern Clinical Care',
-    excerpt: 'Dependable urology solutions support clinicians across access, drainage, retrieval, and minimally invasive intervention in busy healthcare environments.',
-    date: '2026-03-20',
-    tag: 'Urology',
-    image: '/images/neovantis-precision-pain-management.png',
-  },
-  {
-    slug: 'clinically-trusted-medical-solutions',
-    title: 'Why Clinically Trusted Medical Solutions Matter in High-Performance Healthcare',
-    excerpt: 'Precision, reliability, and specialist support — why healthcare providers increasingly value well-supported medical solution partners.',
-    date: '2026-03-05',
-    tag: 'Innovation',
-    image: '/images/neovantis-advanced-implant-design.png',
-  },
-];
+const previews = (await getVisibleInsights()).slice(0, 2);
 ---
-
-<MainLayout
-  title="Neovantis | Advanced Medical Solutions for Precision, Performance & Better Outcomes"
-  description="Neovantis is a South African-led medical company providing clinically trusted solutions across orthopaedics, pain management, urology, neuro plating, and specialist healthcare throughout South Africa and neighbouring African markets."
+<BaseLayout
+  title="Specialist Medical Device Supplier in Durban | Neovantis"
+  description="Specialist medical device supplier based in Umhlanga, Durban, supplying surgical implants, instruments and equipment to healthcare professionals and institutions."
 >
-  <Hero
-    eyebrow="Medical Solutions — South Africa"
-    headline="Advanced Medical Solutions for"
-    highlight="Precision & Better Outcomes"
-    subheadline="Clinically trusted solutions across orthopaedics, pain management, neuro plating, urology, and radiation protection — serving South Africa and neighbouring African markets."
-    primaryCta={{ label: 'Explore Solutions', href: '/solutions' }}
-    secondaryCta={{ label: 'Contact Our Team', href: '/contact' }}
-  />
-
-  <!-- About Neovantis -->
-  <Section
-    title="About Neovantis"
-    subtitle="A South African-led medical company dedicated to improving lives through clinically trusted innovation, serving healthcare providers across South Africa and neighbouring African countries."
-    bg="default"
-    size="lg"
-  >
-    <div class="grid-2" style="align-items:center; gap:4rem;">
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="container hero-grid">
       <div>
-        <span class="accent-bar"></span>
-        <p style="margin-bottom:1.5rem;">
-          Founded on the principles of honesty, integrity, passion, and innovation, Neovantis partners with orthopaedic surgeons, hospitals, pain management specialists, and surgical centres to deliver high-quality medical solutions that meet the demands of modern clinical practice.
-        </p>
-        <p>
-          Our focus spans specialist disciplines — from orthopaedic trauma fixation and RF ablation pain management to neuro plating, urology, and radiation protection — supporting physician precision, patient outcomes, and dependable clinical performance.
-        </p>
-        <div style="margin-top:2rem;">
-          <a href="/about" class="btn btn-primary">Our Story</a>
+        <span class="eyebrow">Specialist medical supply | South Africa</span>
+        <h1 id="hero-heading">Specialist medical and surgical solutions.</h1>
+        <p class="tagline">{business.tagline}</p>
+        <p class="lead">Based in Umhlanga, Durban, Neovantis supplies specialist medical devices, surgical implants, instruments and equipment to healthcare professionals and institutions. Explore our six portfolio areas or contact our team about your requirements.</p>
+        <div class="btn-row" style="margin-top:1.75rem">
+          <a class="btn btn-light" href="/specialities/">Explore our specialities</a>
+          <a class="btn btn-ghost-light" href={contactHref()}>Speak to our team</a>
         </div>
       </div>
 
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
-        {whyNeovantis.map(item => (
-          <div class="card">
-            <span style="color:var(--blue-accent);font-size:1.2rem;font-weight:700;">{item.icon}</span>
-            <h4 style="margin:0.5rem 0 0.5rem;font-size:1rem;">{item.title}</h4>
-            <p style="font-size:0.85rem;color:var(--text);">{item.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </Section>
-
-  <!-- Clinical Focus Areas -->
-  <section class="angled-panel">
-    <div class="geo-overlay"></div>
-    <div class="container" style="position:relative;z-index:2;">
-      <div style="text-align:center;max-width:720px;margin:0 auto 3rem;">
-        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;">What We Do</p>
-        <h2 style="color:#fff;margin-bottom:1rem;">Our Clinical Focus Areas</h2>
-        <div class="section-divider"></div>
-        <p style="color:rgba(255,255,255,0.82);">Neovantis provides specialised medical solutions across key clinical disciplines, designed to support precision, safety, and dependable performance in demanding healthcare environments.</p>
-      </div>
-
-      <div class="grid-3" style="gap:1.5rem;">
-        {solutionAreas.slice(0, 3).map(area => (
-          <a href={area.href} class="card" style="text-decoration:none;display:flex;flex-direction:column;gap:0.75rem;">
-            <div class="feature-icon" style="font-size:1.75rem;">{area.icon}</div>
-            <h4 style="margin-bottom:0.25rem;">{area.title}</h4>
-            <p style="font-size:0.9rem;flex:1;color:var(--text);">{area.desc}</p>
-            <span style="color:var(--blue-accent);font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;margin-top:0.5rem;">Learn More →</span>
-          </a>
-        ))}
-      </div>
-
-      <div class="grid-2" style="gap:1.5rem;margin-top:1.5rem;max-width:800px;margin-left:auto;margin-right:auto;">
-        {solutionAreas.slice(3).map(area => (
-          <a href={area.href} class="card" style="text-decoration:none;display:flex;flex-direction:column;gap:0.75rem;">
-            <div class="feature-icon" style="font-size:1.75rem;">{area.icon}</div>
-            <h4 style="margin-bottom:0.25rem;">{area.title}</h4>
-            <p style="font-size:0.9rem;flex:1;color:var(--text);">{area.desc}</p>
-            <span style="color:var(--blue-accent);font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;margin-top:0.5rem;">Learn More →</span>
-          </a>
-        ))}
-      </div>
-
-      <div style="text-align:center;margin-top:2.5rem;">
-        <a href="/solutions" class="btn btn-outline">View All Solutions</a>
+      <div class="hero-visual">
+        <figure class="hv-main">
+          <img
+            src="/images/optimised/k-wire-tray-illustration-960.webp"
+            srcset="/images/optimised/k-wire-tray-illustration-640.webp 640w, /images/optimised/k-wire-tray-illustration-960.webp 960w, /images/optimised/k-wire-tray-illustration-1280.webp 1280w"
+            sizes="(min-width: 1200px) 560px, (min-width: 960px) 46vw, 92vw"
+            width="960" height="640"
+            alt="Illustration of wires and pins arranged in an instrument tray"
+            fetchpriority="high" decoding="async"
+          />
+        </figure>
+        <figure class="hv-small">
+          <img
+            src="/images/optimised/rf-electrodes-illustration-480.webp"
+            width="480" height="480"
+            alt="Illustration of radiofrequency electrodes on a sterile drape"
+            decoding="async"
+          />
+        </figure>
+        <div class="hv-tile">
+          <strong>Six specialist portfolio areas</strong>
+          <span>From orthopaedics to radiation protection</span>
+        </div>
+        <p class="figure-note">Illustrative images, not photographs of specific Neovantis products.</p>
       </div>
     </div>
   </section>
 
-  <!-- Clinical Insights -->
-  <Section
-    title="Clinical Insights"
-    subtitle="Educational articles and perspectives on medical technology, clinical practice, and specialist healthcare solutions from the Neovantis team."
-    bg="secondary"
-  >
-    <div class="grid-3" style="margin-bottom:2.5rem;">
-      {latestPosts.map(post => (
-        <BlogCard {...post} />
-      ))}
-    </div>
-
-    <div class="text-center">
-      <a href="/blog" class="btn btn-ghost">View All Articles</a>
-    </div>
-  </Section>
-
-  <div class="cta-banner">
-    <div class="container" style="position:relative;z-index:1;">
-      <h2>Ready to Partner With Neovantis?</h2>
-      <p>Whether you are a surgeon, hospital procurement team, or medical distributor, we are ready to support your clinical requirements across our specialist solution portfolio.</p>
-      <div class="cta-actions">
-        <a href="/contact" class="btn btn-outline">Contact Our Team</a>
-        <a
-          href="/products"
-          class="btn btn-primary"
-          style="background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);"
-        >
-          Request Product Information
-        </a>
+  <section class="section" aria-labelledby="specialities-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Our specialities</span>
+        <h2 id="specialities-heading">Six portfolio areas for specialist teams</h2>
+        <p>Choose a speciality to see what you can enquire about and the details that help our team respond.</p>
       </div>
+      <SpecialityCards />
     </div>
-  </div>
-</MainLayout>
+  </section>
+
+  <section class="section section--tint" aria-labelledby="plan-heading">
+    <div class="container">
+      <div class="two-col two-col--wide-left" style="margin-bottom:2.5rem">
+        <div class="section-head" style="margin-bottom:0">
+          <span class="eyebrow">How we help</span>
+          <h2 id="plan-heading">The information clinical teams need to plan</h2>
+        </div>
+        <div>
+          <p>Start with the relevant speciality page to see the products you can enquire about. From there, you can request product and compatibility information, ask about instruments and documentation, and discuss quantities and timing for your case or stock cycle.</p>
+          <p style="margin:0">Availability and supply arrangements are confirmed with our team for each enquiry.</p>
+        </div>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>Tell us the speciality and your requirements</h3>
+          <p>Include the product, specification or system, quantity and the date you are working towards.</p>
+        </li>
+        <li>
+          <h3>Discuss the relevant product information</h3>
+          <p>Our team discusses specifications, compatibility and any documentation your facility needs.</p>
+        </li>
+        <li>
+          <h3>Confirm supply arrangements with the team</h3>
+          <p>Agree quantities, timing and how the order will be supplied.</p>
+        </li>
+      </ol>
+      <p style="margin-top:1.5rem"><a class="text-link" href="/support/">What to include in your enquiry →</a></p>
+    </div>
+  </section>
+
+  <Credentials tint={false} />
+
+  {previews.length > 0 && (
+    <section class="section section--tint" aria-labelledby="insights-heading">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Insights</span>
+          <h2 id="insights-heading">Professional insights</h2>
+          <p>Practical guidance on preparing supply and procurement enquiries.</p>
+        </div>
+        <ul class="article-grid">
+          {previews.map((a) => <li><ArticleCard article={a} /></li>)}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <CtaBand />
+</BaseLayout>

@@ -1,0 +1,20 @@
+---
+import { specialities } from '../config/site';
+import SpecialityIcon from './SpecialityIcon.astro';
+interface Props { headingLevel?: 'h2' | 'h3'; exclude?: string; }
+const { headingLevel = 'h3', exclude } = Astro.props;
+const H = headingLevel;
+const list = specialities.filter((s) => s.slug !== exclude);
+---
+<ul class="card-grid">
+  {list.map((s) => (
+    <li>
+      <article class="spec-card">
+        <span class="icon"><SpecialityIcon slug={s.slug} /></span>
+        <H><a href={`/specialities/${s.slug}/`}>{s.name}</a></H>
+        <p>{s.card}</p>
+        <span class="more" aria-hidden="true">View speciality →</span>
+      </article>
+    </li>
+  ))}
+</ul>

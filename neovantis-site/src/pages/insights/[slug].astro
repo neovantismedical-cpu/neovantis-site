@@ -1,0 +1,69 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { getVisibleInsights } from '../../lib/insights';
+import { SITE_URL, specialityBySlug } from '../../config/site';
+
+export async function getStaticPaths() {
+  const articles = await getVisibleInsights();
+  return articles.map((article) => ({ params: { slug: article.slug }, props: { article } }));
+}
+
+const { article } = Astro.props as { article: CollectionEntry<'insights'> };
+const { Content } = await article.render();
+const d = article.data;
+const isDraft = d.status === 'draft';
+const url = new URL(`/insights/${article.slug}/`, SITE_URL).href;
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Insights', href: '/insights/' },
+  { name: d.title, href: `/insights/${article.slug}/` },
+];
+const articleSchema = {
+  '@type': 'Article',
+  '@id': `${url}#article`,
+  headline: d.title,
+  description: d.description,
+  mainEntityOfPage: { '@id': `${url}#webpage` },
+  author: { '@id': `${SITE_URL}/#organization` },
+  publisher: { '@id': `${SITE_URL}/#organization` },
+  inLanguage: 'en-ZA',
+  ...(d.image ? { image: new URL(d.image.src, SITE_URL).href } : {}),
+  ...(d.published ? { datePublished: d.published } : {}),
+  ...(d.updated ? { dateModified: d.updated } : {}),
+};
+const related = d.related.map((r) => specialityBySlug(r)).filter(Boolean);
+---
+<BaseLayout title={d.title} description={d.description} breadcrumbs={crumbs} noindex={isDraft} ogType="article" schema={[articleSchema]}>
+  {isDraft && <div slot="banner" class="draft-banner" role="note">Draft for review. Not published: excluded from the production build and sitemap.</div>}
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={crumbs} />
+      <h1 style="max-width:28ch">{d.title}</h1>
+      <p class="lead">{d.description}</p>
+      <p style="margin:0;color:var(--muted)">By the Neovantis team</p>
+    </div>
+  </div>
+
+  <article class="section">
+    <div class="container">
+      {d.image && (
+        <figure class="article-figure">
+          <img src={d.image.src} srcset={d.image.srcset} sizes="(min-width: 960px) 900px, 92vw" width={d.image.width} height={d.image.height} alt={d.image.alt} decoding="async" />
+          <figcaption>Illustrative image.</figcaption>
+        </figure>
+      )}
+      <div class="prose"><Content /></div>
+      {related.length > 0 && (
+        <aside class="panel panel--tint measure" style="margin-top:2.5rem" aria-label="Related specialities">
+          <h2 style="font-size:1.25rem">Related specialities</h2>
+          <ul class="checklist" style="margin:0">{related.map((s) => <li><a href={`/specialities/${s!.slug}/`}>{s!.name}</a></li>)}</ul>
+        </aside>
+      )}
+    </div>
+  </article>
+
+  <CtaBand />
+</BaseLayout>

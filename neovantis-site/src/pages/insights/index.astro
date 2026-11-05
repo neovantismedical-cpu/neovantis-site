@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { getVisibleInsights, getApprovedInsights } from '../../lib/insights';
+
+const articles = await getVisibleInsights();
+const approved = await getApprovedInsights();
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Insights', href: '/insights/' }];
+---
+<BaseLayout
+  title="Insights for Clinical Teams and Buyers"
+  description="Practical guidance from Neovantis on preparing specialist medical supply and procurement enquiries."
+  breadcrumbs={crumbs}
+  noindex={approved.length === 0}
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={crumbs} />
+      <h1>Insights</h1>
+      <p class="lead">Practical guidance for clinical teams and buyers on preparing supply and procurement enquiries.</p>
+    </div>
+  </div>
+
+  <section class="section" aria-label="Articles">
+    <div class="container">
+      {articles.length > 0 ? (
+        <>
+          {approved.length < articles.length && (
+            <div class="notice notice--draft" style="margin-bottom:1.5rem"><p>Review mode: draft articles are visible in this local or review build only. They are excluded from the production site and sitemap.</p></div>
+          )}
+          <ul class="article-grid">{articles.map((a) => <li><ArticleCard article={a} headingLevel="h2" /></li>)}</ul>
+        </>
+      ) : (
+        <div class="measure">
+          <p>New articles are being prepared. In the meantime, explore our <a href="/specialities/">specialities</a> or read <a href="/support/">how to prepare an enquiry</a>.</p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <CtaBand />
+</BaseLayout>

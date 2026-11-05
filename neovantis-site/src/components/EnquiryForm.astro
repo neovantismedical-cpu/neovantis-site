@@ -1,0 +1,214 @@
+---
+import { formSpecialities, enquiryTypes, regions, business } from '../config/site';
+---
+<form
+  id="enquiry-form"
+  class="form panel"
+  name="enquiry"
+  method="POST"
+  action="/thank-you/"
+  data-netlify="true"
+  netlify-honeypot="company_website"
+  aria-describedby="form-intro"
+>
+  <input type="hidden" name="form-name" value="enquiry" />
+  <p class="honeypot" aria-hidden="true">
+    <label>Leave this field empty <input name="company_website" tabindex="-1" autocomplete="off" /></label>
+  </p>
+
+  <div>
+    <h2 style="margin-bottom:0.35rem">Send an enquiry</h2>
+    <p id="form-intro" class="hint" style="margin:0;color:var(--muted)">Fields marked <span class="req">*</span> are required.</p>
+  </div>
+
+  <div class="form-status form-status--error" id="form-errors" tabindex="-1" role="alert" hidden></div>
+
+  <div class="patient-warning" id="patient-warning">
+    <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path fill="currentColor" d="M12 2 1 21h22L12 2Zm0 6 .01 0L13 15h-2l1-7Zm-1 9h2v2h-2v-2Z"/></svg>
+    <p><strong>Please do not include patient names, scans or other patient information.</strong></p>
+  </div>
+
+  <div class="form-row">
+    <div class="field">
+      <label for="f-name">Name <span class="req" aria-hidden="true">*</span></label>
+      <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err" />
+      <p class="error" id="f-name-err"></p>
+    </div>
+    <div class="field">
+      <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+      <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-err" />
+      <p class="error" id="f-email-err"></p>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="field">
+      <label for="f-organisation">Organisation <span class="opt">(optional)</span></label>
+      <input id="f-organisation" name="organisation" type="text" autocomplete="organization" />
+    </div>
+    <div class="field">
+      <label for="f-role">Professional role <span class="opt">(optional)</span></label>
+      <input id="f-role" name="role" type="text" autocomplete="organization-title" aria-describedby="f-role-hint" />
+      <p class="hint" id="f-role-hint">For example surgeon, theatre manager or procurement officer.</p>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="field">
+      <label for="f-region">Region <span class="opt">(optional)</span></label>
+      <select id="f-region" name="region" autocomplete="address-level1">
+        <option value="">Select a region</option>
+        {regions.map((r) => <option value={r}>{r}</option>)}
+      </select>
+    </div>
+    <div class="field">
+      <label for="f-phone">Telephone <span class="opt">(optional)</span></label>
+      <input id="f-phone" name="telephone" type="tel" autocomplete="tel" />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="field">
+      <label for="f-speciality">Speciality <span class="req" aria-hidden="true">*</span></label>
+      <select id="f-speciality" name="speciality" required aria-describedby="f-speciality-err">
+        <option value="">Select a speciality</option>
+        {formSpecialities.map((s) => <option value={s.value} data-slug={s.slug}>{s.value}</option>)}
+      </select>
+      <p class="error" id="f-speciality-err"></p>
+    </div>
+    <div class="field">
+      <label for="f-type">Enquiry type <span class="req" aria-hidden="true">*</span></label>
+      <select id="f-type" name="enquiry_type" required aria-describedby="f-type-err">
+        <option value="">Select an enquiry type</option>
+        {enquiryTypes.map((t) => <option value={t}>{t}</option>)}
+      </select>
+      <p class="error" id="f-type-err"></p>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="f-message">Message <span class="req" aria-hidden="true">*</span></label>
+    <textarea id="f-message" name="message" required rows="7" maxlength="4000" aria-describedby="f-message-hint f-message-err"></textarea>
+    <p class="hint" id="f-message-hint">Include the product, specification or system, quantity and the date you are working towards.</p>
+    <p class="error" id="f-message-err"></p>
+  </div>
+
+  <p class="hint" style="margin:0">We use these details only to respond to your enquiry. See our <a href="/privacy-policy/">privacy policy</a>.</p>
+
+  <div>
+    <button class="btn btn-primary" type="submit" id="f-submit">Send enquiry</button>
+  </div>
+  <p class="hint" style="margin:0">You can also call <a href={business.phone.href}>{business.phone.display}</a> or email <a href={`mailto:${business.email}`}>{business.email}</a>.</p>
+</form>
+
+<script>
+  import { track } from '../lib/track';
+
+  const form = document.getElementById('enquiry-form') as HTMLFormElement | null;
+  const summary = document.getElementById('form-errors') as HTMLDivElement | null;
+  const select = document.getElementById('f-speciality') as HTMLSelectElement | null;
+  const btn = document.getElementById('f-submit') as HTMLButtonElement | null;
+  // With JavaScript, use the accessible custom validation; without it, the browser validates natively.
+  if (form) form.noValidate = true;
+
+  // Prefill speciality from an allowlisted URL parameter only (slug values defined in config).
+  if (select) {
+    const requested = new URLSearchParams(location.search).get('speciality');
+    const match = Array.from(select.options).find((o) => o.dataset.slug && o.dataset.slug === requested);
+    if (match) select.value = match.value;
+  }
+
+  const rules: Record<string, (el: HTMLInputElement) => string> = {
+    name: (el) => (el.value.trim() ? '' : 'Enter your name.'),
+    email: (el) => (!el.value.trim() ? 'Enter your email address.' : el.validity.typeMismatch || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()) ? 'Enter an email address in the format name@example.co.za.' : ''),
+    speciality: (el) => (el.value ? '' : 'Select a speciality.'),
+    enquiry_type: (el) => (el.value ? '' : 'Select an enquiry type.'),
+    message: (el) => (el.value.trim() ? '' : 'Enter your message.'),
+  };
+
+  function validate() {
+    const errors: { id: string; msg: string }[] = [];
+    for (const [name, rule] of Object.entries(rules)) {
+      const el = form!.elements.namedItem(name) as HTMLInputElement;
+      const msg = rule(el);
+      const errEl = document.getElementById(`${el.id}-err`);
+      if (errEl) errEl.textContent = msg;
+      el.setAttribute('aria-invalid', msg ? 'true' : 'false');
+      if (msg) errors.push({ id: el.id, msg });
+    }
+    return errors;
+  }
+
+  function showSummary(title: string, items: { id: string; msg: string }[] = [], extra = '') {
+    if (!summary) return;
+    summary.innerHTML = '';
+    const h = document.createElement('h2');
+    h.textContent = title;
+    summary.append(h);
+    if (items.length) {
+      const ul = document.createElement('ul');
+      for (const e of items) {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = `#${e.id}`;
+        a.textContent = e.msg;
+        a.addEventListener('click', (ev) => { ev.preventDefault(); document.getElementById(e.id)?.focus(); });
+        li.append(a);
+        ul.append(li);
+      }
+      summary.append(ul);
+    }
+    if (extra) {
+      const p = document.createElement('p');
+      p.style.margin = '0.5rem 0 0';
+      p.innerHTML = extra;
+      summary.append(p);
+    }
+    summary.hidden = false;
+    summary.focus();
+  }
+
+  form?.addEventListener('input', (e) => {
+    const el = e.target as HTMLInputElement;
+    if (el.getAttribute('aria-invalid') === 'true' && rules[el.name]) {
+      const msg = rules[el.name](el);
+      const errEl = document.getElementById(`${el.id}-err`);
+      if (errEl) errEl.textContent = msg;
+      el.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    }
+  });
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const errors = validate();
+    if (errors.length) {
+      showSummary('Please correct the following', errors);
+      return;
+    }
+    if (summary) summary.hidden = true;
+    btn?.setAttribute('aria-disabled', 'true');
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+
+    const data = new FormData(form);
+    const speciality = String(data.get('speciality') || '');
+    const enquiryType = String(data.get('enquiry_type') || '');
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data as unknown as Record<string, string>).toString(),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      // Only a submission accepted by the form receiver counts as an enquiry.
+      track('enquiry_submitted', { speciality, enquiry_type: enquiryType });
+      window.location.assign('/thank-you/');
+    } catch {
+      showSummary(
+        'Your enquiry could not be sent',
+        [],
+        'Please try again in a moment. If the problem continues, call <a href="tel:+27314631188">031 463 1188</a> or email <a href="mailto:info@neovantis.co.za">info@neovantis.co.za</a>.'
+      );
+      if (btn) { btn.disabled = false; btn.textContent = 'Send enquiry'; btn.removeAttribute('aria-disabled'); }
+    }
+  });
+</script>
