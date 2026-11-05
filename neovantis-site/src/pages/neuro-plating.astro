@@ -1,0 +1,112 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="Neuro Plating Systems | Neovantis"
+  description="Neovantis neuro plating systems are designed for cranial fixation and reconstruction environments where precision, anatomical conformity, and dependable implant performance are important."
+>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('/images/products banner hero.png')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">Solution Area 03</p>
+        <h1>Neuro Plating<br/>Systems</h1>
+        <div class="accent-bar" style="margin-left:auto;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section section--lg">
+    <div class="container">
+      <div class="grid-2" style="align-items:center;gap:4rem;">
+        <div>
+          <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;">Overview</p>
+          <h2 style="margin-bottom:1rem;">Cranial Fixation &<br/>Reconstruction Solutions</h2>
+          <span class="accent-bar"></span>
+          <p style="margin-bottom:1.5rem;">Neovantis neuro plating solutions are designed for cranial fixation and reconstruction environments where precision, anatomical conformity, and dependable implant performance are important to clinical outcomes.</p>
+          <p style="margin-bottom:1.5rem;">Our Neuro Plating Systems support specialist cranial fixation and reconstruction requirements through a focused, high-level portfolio designed around precision, structural reliability, and clinically appropriate design considerations.</p>
+          <p>We supply neurosurgical teams, specialist centres, and hospitals across South Africa with access to quality-focused cranial fixation and reconstruction solution areas, backed by responsive clinical and technical support.</p>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(31,127,182,0.3);">
+          <img src="/images/innovations-in-orthopaedic-technology.png" alt="Neuro plating systems" style="width:100%;height:380px;object-fit:cover;display:block;filter:brightness(0.93) saturate(0.88);" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Areas -->
+  <section class="angled-panel">
+    <div class="geo-overlay"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <div style="max-width:900px;margin:0 auto;">
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;text-align:center;">Solution Scope</p>
+        <h2 style="text-align:center;margin-bottom:1rem;">Neuro Plating Application Areas</h2>
+        <div class="section-divider"></div>
+        <p style="text-align:center;margin-bottom:3rem;color:rgba(255,255,255,0.82);">Our neuro plating portfolio covers the key cranial fixation and reconstruction application areas required by specialist neurosurgical teams.</p>
+      </div>
+
+      <div class="grid-3">
+        {[
+          { icon: '🧠', title: 'Cranial Fixation', desc: 'Cranial fixation solution areas designed to support stable, precise plate and mesh placement in neurosurgical reconstruction settings.' },
+          { icon: '🔬', title: 'Skull & Mesh Systems', desc: 'Anatomical titanium mesh and skull connection solution areas designed for cranial reconstruction with attention to low-profile conformity.' },
+          { icon: '⚙️', title: 'Plate & Screw Families', desc: 'Neuro plate and screw solution families developed for precise cranial fixation with biocompatible and imaging-compatible positioning.' },
+          { icon: '🏥', title: 'Reconstruction Support', desc: 'Supporting solution areas for cranial reconstruction procedures where anatomical conformity, stability, and implant reliability are priorities.' },
+          { icon: '📋', title: 'Specialist Neurosurgical Use', desc: 'Portfolio focused on the requirements of specialist neurosurgical environments — precision, low-profile design, and reliable clinical performance.' },
+          { icon: '✓', title: 'Quality & Compliance', desc: 'Products selected from certified manufacturers with attention to material biocompatibility and applicable international quality standards.' },
+        ].map(item => (
+          <div class="card">
+            <div class="feature-icon">{item.icon}</div>
+            <h4 style="margin-bottom:0.75rem;">{item.title}</h4>
+            <p style="font-size:0.9rem;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Attributes -->
+  <section class="section section--lg" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-heading">
+        <h2>What Defines Our Neuro Portfolio</h2>
+        <div class="section-divider"></div>
+        <p>Our neuro plating solutions are selected and positioned with key clinical attributes in mind.</p>
+      </div>
+
+      <div class="grid-2" style="gap:2rem;">
+        {[
+          { title: 'Precision Design Direction', desc: 'Products in our neuro portfolio are positioned around precision, low-profile design, and anatomical conformity to support demanding neurosurgical applications.' },
+          { title: 'Biocompatibility Focus', desc: 'Material selection within our neuro plating portfolio reflects the importance of biocompatibility and imaging-compatibility considerations in cranial environments.' },
+          { title: 'Cranial Fixation & Reconstruction', desc: 'Our portfolio covers both primary cranial fixation requirements and reconstruction-oriented applications for specialist neurosurgical teams.' },
+          { title: 'Specialist Support', desc: 'Neovantis provides clinical and technical support to neurosurgical teams working with our neuro plating solutions, with responsive service and reliable product access.' },
+        ].map(item => (
+          <div class="card" style="display:flex;gap:1.25rem;">
+            <span style="color:var(--blue-accent);font-size:1.3rem;flex-shrink:0;margin-top:2px;">✓</span>
+            <div>
+              <h4 style="margin-bottom:0.5rem;">{item.title}</h4>
+              <p style="font-size:0.9rem;">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="container" style="position:relative;z-index:1;">
+      <h2>Request Neuro Plating Product Information</h2>
+      <p>Contact our team to request a full product brochure, discuss clinical requirements, or enquire about product availability across our neuro plating portfolio.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-outline">Request Full Product Brochure</a>
+        <a href="/solutions" class="btn btn-primary" style="background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);">View All Solutions</a>
+      </div>
+    </div>
+  </div>
+
+</MainLayout>

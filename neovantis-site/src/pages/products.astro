@@ -1,11 +1,78 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import ProductCard from '../components/ProductCard.astro';
+
+const families = [
+  {
+    num: '01',
+    title: 'Orthopaedic Trauma Solutions',
+    summary: 'Our orthopaedic trauma portfolio is designed to support fixation, structural stability, and dependable surgical performance across a broad range of trauma applications — from plating and fixation systems to supporting instrumentation.',
+    bullets: [
+      'Trauma fixation and support solutions',
+      'Plating and fixation solution categories',
+      'K-wire and supporting fixation system areas',
+      'Complementary surgical instrumentation',
+    ],
+    image: '/images/neovantis-orthopaedic-trauma-plate.png',
+    href: '/orthopaedic-trauma',
+  },
+  {
+    num: '02',
+    title: 'RF Ablation & Pain Management',
+    summary: 'Our RF ablation and pain management portfolio supports clinicians in delivering targeted, minimally invasive treatments in specialist care settings — including generator and procedure-support solution areas developed for precision and workflow efficiency.',
+    bullets: [
+      'RF generator and control unit solutions',
+      'Electrode and cannula solution families',
+      'Procedure accessory and kit categories',
+      'Designed for procedural precision and efficiency',
+    ],
+    image: '/images/neovantis-rf-ablation-technology.png',
+    href: '/rf-ablation-pain-management',
+  },
+  {
+    num: '03',
+    title: 'Neuro Plating Systems',
+    summary: 'Our Neuro Plating Systems support specialist cranial fixation and reconstruction requirements through a focused portfolio designed around precision, structural reliability, and clinically appropriate design considerations.',
+    bullets: [
+      'Cranial fixation and reconstruction focus',
+      'Anatomical and low-profile design direction',
+      'Biocompatibility and imaging-compatible positioning',
+      'Supports specialist neurosurgical applications',
+    ],
+    image: '/images/innovations-in-orthopaedic-technology.png',
+    href: '/neuro-plating',
+  },
+  {
+    num: '04',
+    title: 'Urology Solutions',
+    summary: 'Our urology solutions are developed to support efficient intervention, clinician confidence, and patient-focused care across a wide range of procedural and ward-based requirements.',
+    bullets: [
+      'Access and dilation support solutions',
+      'Drainage and catheter-related solution families',
+      'Stent, guidewire, and retrieval-related categories',
+      'Designed for practical clinical use',
+    ],
+    image: '/images/neovantis-precision-pain-management.png',
+    href: '/urology-solutions',
+  },
+  {
+    num: '05',
+    title: 'Radiation Protection Gloves',
+    summary: 'Our radiation protection glove category supports clinicians and teams working in interventional and imaging-driven environments, combining protective intent with practical comfort and procedure usability.',
+    bullets: [
+      'Protection-oriented clinical positioning',
+      'Comfort and grip-focused usability',
+      'Suitable for specialist high-exposure environments',
+      'Supports interventional and imaging procedure settings',
+    ],
+    image: '/images/neovantis-healthcare-professionals.png',
+    href: '/radiation-protection-gloves',
+  },
+];
 ---
 
 <MainLayout
-  title="Product Catalogue | Orthopaedic & RF Ablation Products | Neovantis"
-  description="Browse the Neovantis product catalogue — trauma plates, bone screws, fixation systems, and RF ablation equipment for surgical and pain management specialists."
+  title="Products | Neovantis"
+  description="Neovantis product families span orthopaedic trauma, RF ablation pain management, neuro plating, urology, and radiation protection. Contact our team for full product information and brochure requests."
 >
 
   <!-- Page Hero -->
@@ -14,7 +81,7 @@ import ProductCard from '../components/ProductCard.astro';
     <div class="page-hero-overlay"></div>
     <div class="container">
       <div class="page-hero-content">
-        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">Clinical Product Range</p>
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">Our Portfolio</p>
         <h1>Products</h1>
         <div class="accent-bar" style="margin-left:auto;"></div>
       </div>
@@ -25,227 +92,62 @@ import ProductCard from '../components/ProductCard.astro';
   <section class="section section--sm">
     <div class="container">
       <div class="section-heading">
-        <h2>Our Product Catalogue</h2>
+        <h2>Our Product Portfolio</h2>
         <div class="section-divider"></div>
-        <p>Neovantis supplies medical-grade orthopaedic trauma hardware and RF ablation equipment to hospitals, surgical centres, and specialist practices across South Africa. All products are sourced from certified manufacturers.</p>
+        <p>Our product portfolio is structured around specialist clinical categories designed to support healthcare professionals with trusted, high-quality medical solutions. For detailed product information and full range documentation, please contact our team or request a brochure.</p>
       </div>
       <!-- Category nav -->
       <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:1rem;">
-        {['Trauma Plates','Bone Screws','Fixation Systems','RF Ablation Equipment'].map(cat => (
-          <a href={`#${cat.toLowerCase().replace(/\s+/g,'-')}`} class="btn btn-ghost" style="font-size:0.8rem;padding:0.6rem 1.25rem;">{cat}</a>
+        {families.map(f => (
+          <a href={`#family-${f.num}`} class="btn btn-ghost" style="font-size:0.8rem;padding:0.6rem 1.25rem;">{f.title}</a>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Trauma Plates -->
-  <section class="section section--lg" id="trauma-plates" style="background:var(--bg-secondary);">
-    <div class="container">
-      <div class="section-heading" style="text-align:left;">
-        <p style="font-family:var(--font-display);font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">Category 01</p>
-        <h2>Trauma Plates</h2>
-        <div class="section-divider section-divider--left"></div>
-        <p style="max-width:650px;">Anatomically contoured locking and compression plates for fracture fixation across a range of anatomical regions and fracture patterns.</p>
+  <!-- Product Family Sections -->
+  {families.map((fam, i) => (
+    <section
+      id={`family-${fam.num}`}
+      class="section section--lg"
+      style={i % 2 !== 0 ? 'background:var(--bg-secondary);' : ''}
+    >
+      <div class="container">
+        <div class="grid-2" style={`align-items:center;gap:4rem;${i % 2 !== 0 ? 'direction:rtl;' : ''}`}>
+          <div style={i % 2 !== 0 ? 'direction:ltr;' : ''}>
+            <p style="font-family:var(--font-display);font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">Product Family {fam.num}</p>
+            <h2 style="margin-bottom:1rem;">{fam.title}</h2>
+            <div class="section-divider" style="margin-left:0;width:60px;"></div>
+            <p style="margin-bottom:1.5rem;">{fam.summary}</p>
+            <ul style="list-style:none;margin-bottom:2rem;">
+              {fam.bullets.map(b => (
+                <li style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.6rem;color:var(--text-muted);font-family:var(--font-prose);">
+                  <span style="color:var(--blue-primary);font-size:1rem;">✓</span> {b}
+                </li>
+              ))}
+            </ul>
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+              <a href="/contact" class="btn btn-primary">Request Full Product Brochure</a>
+              <a href={fam.href} class="btn btn-ghost">Learn More</a>
+            </div>
+          </div>
+          <div style={`border-radius:8px;overflow:hidden;border:1px solid rgba(31,127,182,0.3);${i % 2 !== 0 ? 'direction:ltr;' : ''}`}>
+            <img
+              src={fam.image}
+              alt={fam.title}
+              style="width:100%;height:340px;object-fit:cover;display:block;filter:brightness(0.93) saturate(0.88);"
+            />
+          </div>
+        </div>
       </div>
-      <div class="grid-3">
-        <ProductCard
-          category="Trauma Plates"
-          title="Distal Radius Locking Plate"
-          description="Low-profile titanium locking plate designed for distal radius fractures. Variable angle screw configuration allows optimal fixation in osteoporotic bone."
-          image="/images/neovantis-distal-radius-implant-and-screws.png"
-          specs={[
-            { label: 'Material', value: 'Titanium alloy (Ti-6Al-4V)' },
-            { label: 'Profile', value: '1.5mm low-profile' },
-            { label: 'Screw diameter', value: '2.4mm / 2.7mm' },
-            { label: 'Sizes available', value: 'S, M, L (left/right)' },
-            { label: 'Sterility', value: 'Non-sterile, reprocessable' },
-          ]}
-        />
-        <ProductCard
-          category="Trauma Plates"
-          title="Proximal Humerus Plate"
-          description="Angular stable locking plate system for three- and four-part proximal humerus fractures. Calcar screw option provides medial column support."
-          image="/images/Proximal Humerus Plate.png"
-          specs={[
-            { label: 'Material', value: 'Titanium alloy' },
-            { label: 'Profile', value: '3.5mm standard' },
-            { label: 'Screw diameter', value: '3.5mm locking' },
-            { label: 'Hole configuration', value: '8–14 holes' },
-            { label: 'Coating', value: 'Anodised surface' },
-          ]}
-        />
-        <ProductCard
-          category="Trauma Plates"
-          title="Tibial Plateau Plate"
-          description="Periarticular locking plate for medial and lateral tibial plateau fractures. Raft screw configuration supports articular surface reduction."
-          image="/images/Tibial Plateau Plate.png"
-          specs={[
-            { label: 'Material', value: 'Stainless steel 316L' },
-            { label: 'Plate length', value: '80–200mm' },
-            { label: 'Screw options', value: '4.5mm locking/non-locking' },
-            { label: 'Sides', value: 'Left and right variants' },
-            { label: 'Finish', value: 'Electropolished' },
-          ]}
-        />
-      </div>
-    </div>
-  </section>
+    </section>
+  ))}
 
-  <!-- Bone Screws -->
-  <section class="section section--lg" id="bone-screws">
+  <!-- Brochure Request Note -->
+  <section class="section section--sm" style="background:var(--bg-secondary);">
     <div class="container">
-      <div class="section-heading" style="text-align:left;">
-        <p style="font-family:var(--font-display);font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">Category 02</p>
-        <h2>Bone Screws</h2>
-        <div class="section-divider section-divider--left"></div>
-        <p style="max-width:650px;">Full range of cortical, cancellous, and cannulated bone screws offering reliable fixation strength across all fracture types.</p>
-      </div>
-      <div class="grid-3">
-        <ProductCard
-          category="Bone Screws"
-          title="Cortical Bone Screw Set"
-          description="Standard and self-tapping cortical screws for cortical bone fixation. Full metric diameter and length range for universal compatibility."
-          image="/images/Cortical Bone Screw Set.png"
-          specs={[
-            { label: 'Material', value: 'Titanium / SS 316L' },
-            { label: 'Diameters', value: '2.0, 2.7, 3.5, 4.5mm' },
-            { label: 'Lengths', value: '10–80mm' },
-            { label: 'Drive', value: 'Hex / Torx compatible' },
-            { label: 'Thread type', value: 'Cortical self-tapping' },
-          ]}
-        />
-        <ProductCard
-          category="Bone Screws"
-          title="Cancellous Screw Set"
-          description="Fully and partially threaded cancellous screws designed for metaphyseal and epiphyseal fixation with optimal pullout resistance in cancellous bone."
-          image="/images/Cancellous Screw Set (2).png"
-          specs={[
-            { label: 'Material', value: 'Titanium alloy' },
-            { label: 'Diameters', value: '3.5, 4.0, 6.5, 7.0mm' },
-            { label: 'Thread options', value: 'Full / partial thread' },
-            { label: 'Lengths', value: '20–100mm' },
-            { label: 'Head type', value: 'Countersunk hex' },
-          ]}
-        />
-        <ProductCard
-          category="Bone Screws"
-          title="Cannulated Screw System"
-          description="Hollow-core cannulated screws for guidewire-assisted placement in percutaneous and minimally invasive fracture fixation procedures."
-          image="/images/Cannulated Screw System.png"
-          specs={[
-            { label: 'Material', value: 'Titanium alloy' },
-            { label: 'Diameters', value: '3.0, 4.0, 6.5, 7.3mm' },
-            { label: 'Cannula diameter', value: '1.6mm / 2.4mm' },
-            { label: 'Lengths', value: '25–90mm' },
-            { label: 'Washer option', value: 'Flat / serrated' },
-          ]}
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- Fixation Systems -->
-  <section class="section section--lg" id="fixation-systems" style="background:var(--bg-secondary);">
-    <div class="container">
-      <div class="section-heading" style="text-align:left;">
-        <p style="font-family:var(--font-display);font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">Category 03</p>
-        <h2>Fixation Systems</h2>
-        <div class="section-divider section-divider--left"></div>
-        <p style="max-width:650px;">Complete fixation hardware systems including intramedullary nails, external fixators, and K-wire systems for diverse trauma presentations.</p>
-      </div>
-      <div class="grid-3">
-        <ProductCard
-          category="Fixation Systems"
-          title="Femoral IM Nail System"
-          description="Antegrade and retrograde titanium intramedullary nail system for femoral shaft fractures. Multiple proximal interlocking options for rotational control."
-          image="/images/Femoral IM Nail System.png"
-          specs={[
-            { label: 'Material', value: 'Titanium alloy' },
-            { label: 'Nail diameters', value: '9–16mm' },
-            { label: 'Nail lengths', value: '320–480mm' },
-            { label: 'Interlocking', value: 'Proximal + distal static/dynamic' },
-            { label: 'Entry option', value: 'Antegrade / retrograde' },
-          ]}
-        />
-        <ProductCard
-          category="Fixation Systems"
-          title="External Fixator System"
-          description="Modular external fixation system for temporary and definitive stabilisation of open fractures, periarticular fractures, and limb-lengthening procedures."
-          image="/images/External Fixator System.png"
-          specs={[
-            { label: 'Material', value: 'Aluminium / carbon fibre' },
-            { label: 'Pin diameter', value: '4.0, 5.0, 6.0mm' },
-            { label: 'Clamp types', value: 'Single / double / swivel' },
-            { label: 'Rod diameter', value: '11mm standard' },
-            { label: 'Radiolucency', value: 'Carbon rods available' },
-          ]}
-        />
-        <ProductCard
-          category="Fixation Systems"
-          title="K-Wire & Pin Set"
-          description="Stainless steel and titanium K-wires in multiple diameters for percutaneous pinning, provisional fixation, and paediatric fracture management."
-          image="/images/K-Wire & Pin Set.png"
-          specs={[
-            { label: 'Material', value: 'SS 316L / titanium' },
-            { label: 'Diameters', value: '1.0, 1.2, 1.6, 2.0, 2.5mm' },
-            { label: 'Lengths', value: '100–400mm' },
-            { label: 'Tip options', value: 'Trocar / diamond / olive' },
-            { label: 'Packaging', value: 'Box of 10 / sterile single' },
-          ]}
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- RF Ablation Equipment -->
-  <section class="section section--lg" id="rf-ablation-equipment">
-    <div class="container">
-      <div class="section-heading" style="text-align:left;">
-        <p style="font-family:var(--font-display);font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">Category 04</p>
-        <h2>RF Ablation Equipment</h2>
-        <div class="section-divider section-divider--left"></div>
-        <p style="max-width:650px;">Precision radiofrequency ablation generators, electrodes, and procedure kits for specialist pain management practitioners.</p>
-      </div>
-      <div class="grid-3">
-        <ProductCard
-          category="RF Ablation"
-          title="RF Generator System"
-          description="Temperature-controlled RF generator with multi-programme capability for conventional, pulsed, and cooled RF procedures. Touch-screen interface with procedure logging."
-          image="/images/rf generator system.png"
-          specs={[
-            { label: 'Output frequency', value: '500kHz ±10%' },
-            { label: 'Max output power', value: '50W' },
-            { label: 'Temperature range', value: '30–95°C' },
-            { label: 'Modes', value: 'Conventional / pulsed RF' },
-            { label: 'Certification', value: 'CE marked' },
-          ]}
-        />
-        <ProductCard
-          category="RF Ablation"
-          title="Thermocouple RF Electrodes"
-          description="Single-use thermocouple RF cannula electrodes with integrated active tip temperature sensing. Available in multiple gauges, lengths, and active tip configurations."
-          image="/images/Thermocouple RF Electrodes.png"
-          specs={[
-            { label: 'Gauge options', value: '18G, 20G, 22G' },
-            { label: 'Lengths', value: '50, 100, 150mm' },
-            { label: 'Active tip', value: '5, 10, 15, 20mm' },
-            { label: 'Temperature sensing', value: 'Integrated thermocouple' },
-            { label: 'Sterility', value: 'Single use, EO sterile' },
-          ]}
-        />
-        <ProductCard
-          category="RF Ablation"
-          title="RF Procedure Kit"
-          description="Complete single-use RF ablation procedure kit including cannulae, stylets, grounding pad, extension cable, and prep accessories for streamlined theatre setup."
-          image="/images/RF Procedure Kit.png"
-          specs={[
-            { label: 'Kit contents', value: '12-piece procedure set' },
-            { label: 'Grounding pad', value: 'Single-use adult / paediatric' },
-            { label: 'Cable length', value: '1.5m extension' },
-            { label: 'Packaging', value: 'Sterile blister pack' },
-            { label: 'Compatibility', value: 'Universal RF generator fit' },
-          ]}
-        />
+      <div class="alert" style="max-width:820px;margin:0 auto;text-align:center;font-size:0.95rem;padding:1.5rem 2rem;">
+        For detailed product specifications, full range documentation, SAHPRA registration information, and clinical data sheets, please contact the Neovantis team directly. Our clinical support team will respond to all enquiries within one business day.
       </div>
     </div>
   </section>
@@ -253,10 +155,10 @@ import ProductCard from '../components/ProductCard.astro';
   <!-- CTA -->
   <div class="cta-banner">
     <div class="container" style="position:relative;z-index:1;">
-      <h2>Request Product Information or a Quote</h2>
-      <p>Contact our team for detailed specifications, pricing, availability, and clinical data on any Neovantis product.</p>
+      <h2>Request Clinical Product Information</h2>
+      <p>Contact our team for detailed product documentation, brochure requests, or to discuss a specific clinical or procurement requirement.</p>
       <div class="cta-actions">
-        <a href="/contact" class="btn btn-outline">Request a Quote</a>
+        <a href="/contact" class="btn btn-outline">Request a Brochure</a>
         <a href="/healthcare-professionals" class="btn btn-primary" style="background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);">Healthcare Professionals</a>
       </div>
     </div>

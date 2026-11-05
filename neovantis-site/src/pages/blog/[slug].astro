@@ -32,9 +32,19 @@ const articleSchema = {
     "url": "https://neovantis.co.za"
   }
 };
+
+const allArticles = [
+  { slug: 'understanding-rf-ablation-pain-management', title: 'Understanding RF Ablation in Modern Pain Management' },
+  { slug: 'urology-solutions-modern-clinical-care', title: 'The Growing Role of Urology Solutions in Modern Clinical Care' },
+  { slug: 'clinically-trusted-medical-solutions', title: 'Why Clinically Trusted Medical Solutions Matter' },
+  { slug: 'orthopaedic-trauma-hardware-fracture-treatment', title: 'Orthopaedic Trauma Hardware in Fracture Treatment' },
+  { slug: 'rf-ablation-chronic-pain', title: 'RF Ablation for Chronic Pain Management' },
+  { slug: 'innovations-orthopaedic-implant-technology', title: 'Innovations in Orthopaedic Implant Technology' },
+  { slug: 'minimally-invasive-pain-management', title: 'Minimally Invasive Approaches to Pain Management' },
+];
 ---
 
-<MainLayout title={`${title} | Neovantis Blog`} description={description} image={image} schema={articleSchema}>
+<MainLayout title={`${title} | Neovantis Clinical Insights`} description={description} image={image} schema={articleSchema}>
 
   <!-- Article Hero -->
   <section class="page-hero" style="min-height:55vh;">
@@ -68,12 +78,7 @@ const articleSchema = {
           <div class="card" style="margin-bottom:1.5rem;">
             <h4 style="font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:1.25rem;">More Articles</h4>
             <ul style="list-style:none;display:flex;flex-direction:column;gap:0.75rem;">
-              {[
-                { slug: 'orthopaedic-trauma-hardware-fracture-treatment', title: 'Orthopaedic Trauma Hardware in Fracture Treatment' },
-                { slug: 'rf-ablation-chronic-pain', title: 'RF Ablation for Chronic Pain' },
-                { slug: 'innovations-orthopaedic-implant-technology', title: 'Innovations in Implant Technology' },
-                { slug: 'minimally-invasive-pain-management', title: 'Minimally Invasive Pain Management' },
-              ].filter(p => p.slug !== post.frontmatter.slug).map(p => (
+              {allArticles.filter(p => p.slug !== post.frontmatter.slug).slice(0, 5).map(p => (
                 <li>
                   <a href={`/blog/${p.slug}`} style="font-size:0.9rem;color:var(--text-muted);transition:color 0.3s;line-height:1.4;display:block;" onmouseenter="this.style.color='var(--blue-accent)'" onmouseleave="this.style.color='var(--text-muted)'">{p.title}</a>
                 </li>
@@ -84,7 +89,7 @@ const articleSchema = {
           <div class="card" style="text-align:center;">
             <div style="font-size:2rem;margin-bottom:0.75rem;">🩺</div>
             <h4 style="margin-bottom:0.75rem;font-size:1rem;">Clinical Enquiries</h4>
-            <p style="font-size:0.85rem;margin-bottom:1.25rem;">Contact our clinical team for product information and support.</p>
+            <p style="font-size:0.85rem;margin-bottom:1.25rem;">Contact our team for product information, brochure requests, or clinical support across our specialist solution areas.</p>
             <a href="/contact" class="btn btn-primary" style="width:100%;justify-content:center;font-size:0.85rem;">Contact Us</a>
           </div>
 

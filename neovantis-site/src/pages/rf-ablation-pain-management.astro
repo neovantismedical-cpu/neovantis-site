@@ -1,0 +1,125 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="RF Ablation & Pain Management | Neovantis"
+  description="Neovantis RF ablation and pain management solutions support minimally invasive, precision-focused treatment pathways in specialist clinical settings across South Africa."
+>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('/images/our solutions hero.png')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">Solution Area 02</p>
+        <h1>RF Ablation &<br/>Pain Management</h1>
+        <div class="accent-bar" style="margin-left:auto;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is RF Ablation -->
+  <section class="section section--lg">
+    <div class="container">
+      <div class="grid-2" style="align-items:center;gap:4rem;">
+        <div>
+          <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;">What Is RF Ablation?</p>
+          <h2 style="margin-bottom:1rem;">Targeted, Minimally<br/>Invasive Pain Relief</h2>
+          <span class="accent-bar"></span>
+          <p style="margin-bottom:1.5rem;">Radiofrequency ablation is a minimally invasive treatment approach used in specialist pain management to target pain-transmitting nerves with controlled energy delivery. The procedure is designed to interrupt pain signals at their neural source — offering a targeted approach to chronic pain management.</p>
+          <p style="margin-bottom:1.5rem;">Depending on the clinical approach and the patient's specific presentation, treatment pathways may include conventional or pulsed radiofrequency techniques, each suited to different anatomical targets and clinical requirements.</p>
+          <p>Neovantis supplies precision RF equipment trusted in specialist clinical settings across South Africa, supporting pain management specialists, anaesthesiologists, and interventional practitioners.</p>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(31,127,182,0.3);">
+          <img src="/images/neovantis-rf-ablation-technology.png" alt="RF ablation pain management technology" style="width:100%;height:380px;object-fit:cover;display:block;filter:brightness(0.92) saturate(0.85);" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clinical Applications -->
+  <section class="angled-panel">
+    <div class="geo-overlay"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <div style="max-width:900px;margin:0 auto;">
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;text-align:center;">Clinical Application Areas</p>
+        <h2 style="text-align:center;margin-bottom:1rem;">Where RF Ablation Is Applied</h2>
+        <div class="section-divider"></div>
+        <p style="text-align:center;margin-bottom:3rem;color:rgba(255,255,255,0.82);">RF ablation is used across a range of specialist pain management applications where precision, minimally invasive access, and durable results are clinical priorities.</p>
+      </div>
+
+      <div class="grid-3">
+        {[
+          { icon: '🦴', title: 'Spinal Pain Management', desc: 'Supporting facet joint, medial branch, and spinal-related pain management procedures through targeted RF applications.' },
+          { icon: '⚡', title: 'Joint & Peripheral Nerve', desc: 'Application areas including joint-related denervation and peripheral nerve procedures where precision-focused RF delivery is required.' },
+          { icon: '🔬', title: 'Sympathetic & Specialist', desc: 'Supporting sympathetic chain and specialist RF applications in the hands of trained interventional pain practitioners.' },
+          { icon: '🏥', title: 'Interventional Settings', desc: 'Used in specialist pain clinics, hospital-based interventional suites, and anaesthetic procedure environments.' },
+          { icon: '📋', title: 'Chronic Pain Pathways', desc: 'Positioned as part of a broader chronic pain management pathway, supporting patients where conservative measures have been insufficient.' },
+          { icon: '✓', title: 'Precise Energy Delivery', desc: 'Designed for accurate, controlled radiofrequency energy delivery to support clinician confidence and procedural consistency.' },
+        ].map(item => (
+          <div class="card">
+            <div class="feature-icon">{item.icon}</div>
+            <h4 style="margin-bottom:0.75rem;">{item.title}</h4>
+            <p style="font-size:0.9rem;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Neovantis RF Solution Focus -->
+  <section class="section section--lg" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Neovantis RF Solution Focus</h2>
+        <div class="section-divider"></div>
+        <p>Our RF ablation and pain management portfolio is designed to support clinicians in delivering targeted, minimally invasive treatments in specialist care settings.</p>
+      </div>
+
+      <div class="grid-2" style="align-items:center;gap:4rem;">
+        <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(31,127,182,0.3);">
+          <img src="/images/neovantis-minimally-invasive-pain-management.png" alt="RF ablation clinical application" style="width:100%;height:360px;object-fit:cover;display:block;filter:brightness(0.93);" />
+        </div>
+        <div>
+          <h3 style="margin-bottom:1.25rem;color:var(--blue-accent);">What Our RF Portfolio Covers</h3>
+          <span class="accent-bar"></span>
+          <div style="display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem;">
+            {[
+              { label: 'RF Generator Solutions', desc: 'Precision energy delivery platforms supporting conventional and pulsed RF modes, designed for specialist clinical environments.' },
+              { label: 'Electrode & Cannula Categories', desc: 'A range of electrode and cannula solution families designed for different anatomical approaches and procedural requirements.' },
+              { label: 'Procedure Accessory Support', desc: 'Supporting accessories and procedure-ready kit categories that support efficient, consistent RF procedure workflows.' },
+              { label: 'Clinical Support', desc: 'Responsive technical and clinical support from our team to assist practitioners working with RF ablation technology.' },
+            ].map(item => (
+              <div class="card" style="padding:1rem 1.25rem;display:flex;gap:1rem;">
+                <span style="color:var(--blue-accent);font-size:1rem;margin-top:2px;flex-shrink:0;">⚡</span>
+                <div>
+                  <strong style="font-family:var(--font-display);font-size:0.9rem;letter-spacing:0.05em;">{item.label}</strong>
+                  <p style="font-size:0.85rem;margin-top:0.25rem;">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div style="max-width:800px;margin:2.5rem auto 0;text-align:center;padding:1rem 1.25rem;border-left:4px solid var(--blue-primary);border-radius:var(--radius);background:rgba(31,127,182,0.12);font-size:0.9rem;color:var(--text);">
+        RF ablation procedures should only be performed by appropriately trained and qualified healthcare professionals. Neovantis provides product support — not clinical training services — and all clinical decisions remain the responsibility of the treating practitioner.
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="container" style="position:relative;z-index:1;">
+      <h2>Request Clinical Product Information</h2>
+      <p>Contact our team for detailed product documentation, brochure requests, or to discuss RF ablation equipment requirements for your specialist practice or facility.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-outline">Request Clinical Product Information</a>
+        <a href="/solutions" class="btn btn-primary" style="background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);">View All Solutions</a>
+      </div>
+    </div>
+  </div>
+
+</MainLayout>

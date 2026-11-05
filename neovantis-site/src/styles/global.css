@@ -287,9 +287,13 @@ p { font-family: var(--font-prose); font-weight: 400; color: var(--text-muted); 
   position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
   background: #000;
+  /* top: navbar height (~66px) + comfortable breathing room */
+  padding-top: 10rem;
+  /* bottom: visual gap before the next section */
+  padding-bottom: 7rem;
 }
 .hero-bg {
   position: absolute;
@@ -353,6 +357,7 @@ p { font-family: var(--font-prose); font-weight: 400; color: var(--text-muted); 
   align-items: center;
   overflow: hidden;
   background: #000;
+  padding-top: 4.5rem; /* push content clear of fixed navbar */
 }
 .page-hero-bg {
   position: absolute;
@@ -384,7 +389,7 @@ p { font-family: var(--font-prose); font-weight: 400; color: var(--text-muted); 
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  padding: 1.1rem 0;
+  padding: 0.9rem 0;
   transition: var(--transition);
 }
 .navbar.scrolled {
@@ -392,13 +397,13 @@ p { font-family: var(--font-prose); font-weight: 400; color: var(--text-muted); 
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(31, 127, 182, 0.2);
   box-shadow: 0 2px 24px rgba(0, 0, 0, 0.3);
-  padding: 0.8rem 0;
+  padding: 0.65rem 0;
 }
 .navbar-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
+  gap: 2rem;
   flex-wrap: nowrap;
 }
 .navbar-logo {
@@ -410,16 +415,19 @@ p { font-family: var(--font-prose); font-weight: 400; color: var(--text-muted); 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
+  flex: 1;
+  justify-content: center;
 }
 .nav-links a {
   font-family: var(--font-body);
-  font-size: 0.92rem;
+  font-size: 0.87rem;
   font-weight: 500;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   color: rgba(255, 255, 255, 0.88);
   transition: color var(--transition);
   position: relative;
+  white-space: nowrap;
 }
 .nav-links a::after {
   content: '';
@@ -431,7 +439,7 @@ p { font-family: var(--font-prose); font-weight: 400; color: var(--text-muted); 
 }
 .nav-links a:hover { color: #fff; }
 .nav-links a:hover::after { width: 100%; }
-.nav-cta { margin-left: 1rem; }
+.nav-cta { flex-shrink: 0; }
 
 /* Mobile hamburger — display toggled by Navbar scoped styles */
 .hamburger {
@@ -467,13 +475,13 @@ p { font-family: var(--font-prose); font-weight: 400; color: var(--text-muted); 
   display: none;
   position: fixed;
   left: 0; right: 0;
-  top: 72px; /* CSS fallback — JS overrides with exact navbar height */
+  top: 66px; /* CSS fallback — JS overrides with exact navbar height */
   z-index: 99;
   background: #ffffff;
   border-bottom: 2px solid rgba(31, 127, 182, 0.15);
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.14);
   flex-direction: column;
-  max-height: calc(100vh - 72px);
+  max-height: calc(100vh - 66px);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -786,7 +794,7 @@ p { font-family: var(--font-prose); font-weight: 400; color: var(--text-muted); 
 }
 
 @media (max-width: 768px) {
-  /* Nav visibility handled by Navbar component scoped styles at 900px */
+  /* Nav visibility handled by Navbar component scoped styles at 1024px */
   .grid-2, .grid-3, .grid-4, .grid-auto { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   .form-row { grid-template-columns: 1fr; }

@@ -72,7 +72,7 @@ import Logo from './Logo.astro';
 
   window.addEventListener('resize', () => {
     updateMenuPosition();
-    if (window.innerWidth > 900) {
+    if (window.innerWidth > 1024) {
       closeMobile();
     }
   });
@@ -141,8 +141,8 @@ import Logo from './Logo.astro';
     flex-direction: column;
   }
 
-  /* ── 900px breakpoint: switch to mobile layout ── */
-  @media (max-width: 900px) {
+  /* ── 1024px breakpoint: switch to mobile layout ── */
+  @media (max-width: 1024px) {
     .nav-links,
     .nav-cta {
       display: none;
