@@ -2,7 +2,18 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CtaBand from '../components/CtaBand.astro';
-import { specialities, contactHref } from '../config/site';
+import { specialities, contactHref, SITE_URL } from '../config/site';
+import { faqs, faqPlainText } from '../config/faq';
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  '@id': `${SITE_URL}/support/#faq`,
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: faqPlainText(f) },
+  })),
+};
 
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'Support', href: '/support/' }];
 
@@ -38,12 +49,14 @@ const topics = [
   title="Supply Enquiry Support for Healthcare Buyers"
   description="What clinicians, theatre teams and procurement buyers can ask Neovantis about, and a checklist of details to include in a specialist medical supply enquiry."
   breadcrumbs={crumbs}
+  schema={[faqSchema]}
 >
   <div class="page-hero">
     <div class="container">
       <Breadcrumbs items={crumbs} />
       <h1>Support for professional buyers</h1>
       <p class="lead">Clinicians, theatre teams, procurement and biomedical engineering teams can contact Neovantis about products, compatibility, quantities and timing, and equipment arrangements. This page explains what you can ask about and which details help us answer.</p>
+      <p style="margin:0"><a class="text-link" href="#faq">Jump to frequently asked questions ↓</a></p>
     </div>
   </div>
 
@@ -101,5 +114,38 @@ const topics = [
     </div>
   </section>
 
+  <section class="section section--tint" id="faq" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2 id="faq-heading">Frequently asked questions</h2>
+        <p>Short answers for clinicians, theatre coordinators and hospital buyers. Select a question to expand it.</p>
+      </div>
+      <div class="faq">
+        {faqs.map((f) => (
+          <details id={`faq-${f.id}`}>
+            <summary><span>{f.q}</span></summary>
+            <div class="faq-answer">
+              {f.a.map((p) => <p set:html={p} />)}
+              {f.list && <ul class="checklist">{f.list.map((li) => <li set:html={li} />)}</ul>}
+              {f.after && <p set:html={f.after} />}
+            </div>
+          </details>
+        ))}
+      </div>
+      <p style="margin-top:1.75rem">Still have a question? <a class="text-link" href={contactHref()}>Send it to our team</a>.</p>
+    </div>
+  </section>
+
   <CtaBand />
 </BaseLayout>
+
+<script>
+  // Open a question when it is linked directly (e.g. /support/#faq-rf).
+  function openFromHash() {
+    const el = location.hash ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
+    if (el instanceof HTMLDetailsElement) { el.open = true; el.querySelector('summary')?.focus(); }
+  }
+  openFromHash();
+  window.addEventListener('hashchange', openFromHash);
+</script>

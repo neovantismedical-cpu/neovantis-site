@@ -21,6 +21,11 @@ Search themes below are topic guides, not measured keyword-volume claims.
 | `/insights/` | Professional guidance hub | Insights for Clinical Teams and Buyers \| Neovantis | **noindex until ≥1 article is approved** | Only when ≥1 approved |
 | `/insights/beyond-the-quotation/` | Supplier evaluation beyond price | (article title) | Draft: not built in production | When approved |
 | `/insights/preparing-an-rf-enquiry/` | Preparing RF equipment/consumables enquiries | (article title) | Draft: not built in production | When approved |
+| `/insights/what-clinical-teams-ask-of-suppliers/` | What clinical teams expect from medical device suppliers (SA) | What doctors, surgeons and clinical teams are asking of medical device suppliers \| Neovantis | Draft: not built in production | When approved |
+| `/insights/before-the-case/` | Planning implants, instruments and timing for a case | Before the case: getting the implant, instruments and timing to line up \| Neovantis | Draft: not built in production | When approved |
+| `/insights/making-repeat-orders-easier/` | Repeat ordering of consumables | What makes repeat ordering easier for wards, theatres and cath labs? \| Neovantis | Draft: not built in production | When approved |
+| `/insights/supplier-document-pack/` | Supplier and product documentation; SAHPRA licence | What should be in a medical device supplier's document pack? \| Neovantis | Draft: not built in production | When approved |
+| `/support/#faq` | FAQ for professional buyers (section, not a separate URL) | (Support page title) | As Support | No (fragment) |
 | `/contact/` | Neovantis in Umhlanga, Durban | Contact Neovantis in Umhlanga, Durban | index* | Yes |
 | `/privacy-policy/`, `/terms/`, `/medical-disclaimer/` | Legal | Privacy Policy / Terms of Use / Medical Disclaimer \| Neovantis | index* | Yes |
 | `/thank-you/` | Utility | Enquiry received \| Neovantis | Always noindex | No |

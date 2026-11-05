@@ -25,5 +25,7 @@ export default defineConfig({
   trailingSlash: 'ignore',
   build: { format: 'directory' },
   compressHTML: true,
+  // Hide Astro's developer toolbar in the local preview so pages look as they will live.
+  devToolbar: { enabled: false },
   integrations: [indexingHeaders],
 });

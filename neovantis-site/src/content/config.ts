@@ -17,6 +17,8 @@ const insights = defineCollection({
     published: z.string().optional(),
     updated: z.string().optional(),
     related: z.array(z.string()).default([]),
+    /** Lower numbers are listed first (lead article = 1) */
+    order: z.number().default(100),
   }),
 });
 

@@ -34,3 +34,14 @@ Internal document: do not publish. Facts that still need confirmation, the pages
 - Netcare wording and any ranking or tender claims
 - Product codes, model numbers, NAPPI codes, price lists, sourcing information and private catalogues
 - Unverified glove material mappings and shielding or attenuation comparisons
+
+## Added 5 Nov 2026: FAQ and Insights drafts
+
+| # | Item to confirm | Affected pages | Handling meanwhile |
+|---|---|---|---|
+| 24 | FAQ: "If patient information is sent to us by mistake, let us know and we will not use it." Is this an accurate commitment? (It matches the privacy policy draft, #16) | Support FAQ | Published in the FAQ. Edit if the handling differs |
+| 25 | FAQ: "Our team will send product information on intended use, sizing and materials for the gloves we supply." | Support FAQ | Based on the confirmed speciality copy ("we can provide product information"). Confirm this is routinely available |
+| 26 | FAQ and article 4: "Neovantis holds a SAHPRA medical device establishment licence" (licence category still to confirm, #9) | Support FAQ, document-pack article | Stated without category or number |
+| 27 | Insights drafts: approval of each article, any edits, and the publication date | Four new articles | `status: draft`. Excluded from production and sitemap |
+| 28 | Article sources: the lead article cites public-sector tenders (National Treasury, Western Cape) and CFSA SOPs. Are you comfortable naming these sources publicly? | Articles 1–4 | Cited with links. No competitor names, no Netcare wording, no private catalogue details |
+| 29 | Image permissions for `neovantis-healthcare-professionals.png` (stock-style clinicians) and `clinical insights hero.png` | Articles 1 and 4 | Captioned "Illustrative image" |

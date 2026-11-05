@@ -16,13 +16,18 @@ const jobs = [
   ['Thermocouple RF Electrodes.png', 'rf-electrodes-illustration', [480, 800]],
   ['RF Procedure Kit.png', 'rf-consumables-illustration', [800, 1080]],
   ['distributors and partners hero.png', 'procurement-meeting-illustration', [800, 1200], { aspect: 16 / 9 }],
+  ['neovantis-healthcare-professionals.png', 'clinical-team-illustration', [800, 1200], { aspect: 16 / 9 }],
+  // Left-hand side only (laptop, tablet, notes, stethoscope); excludes the medicines on the right.
+  ['clinical insights hero.png', 'documents-desk-illustration', [800, 1200], { extract: { left: 0, top: 0, width: 1244, height: 700 } }],
 ];
 
 for (const [file, base, widths, opts = {}] of jobs) {
   const input = path.join(SRC, file);
   const meta = await sharp(input).metadata();
   let pipeline = () => sharp(input);
-  if (opts.aspect) {
+  if (opts.extract) {
+    pipeline = () => sharp(input).extract(opts.extract);
+  } else if (opts.aspect) {
     const h = meta.height;
     const w = Math.min(meta.width, Math.round(h * opts.aspect));
     const left = Math.round((meta.width - w) / 2);

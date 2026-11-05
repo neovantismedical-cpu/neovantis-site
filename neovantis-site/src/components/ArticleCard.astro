@@ -1,13 +1,16 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import SpecialityIcon from './SpecialityIcon.astro';
 interface Props { article: CollectionEntry<'insights'>; headingLevel?: 'h2' | 'h3'; }
 const { article, headingLevel = 'h3' } = Astro.props;
 const H = headingLevel;
 const d = article.data;
 ---
 <article class="article-card">
-  {d.image && (
+  {d.image ? (
     <img src={d.image.src} srcset={d.image.srcset} sizes="(min-width: 1100px) 360px, (min-width: 700px) 45vw, 100vw" width={d.image.width} height={d.image.height} alt="" loading="lazy" decoding="async" />
+  ) : (
+    <div class="article-card-mark" aria-hidden="true"><SpecialityIcon slug={d.related[0] ?? 'general'} /></div>
   )}
   <div class="body">
     {d.status === 'draft' && <span class="badge">Draft for review</span>}

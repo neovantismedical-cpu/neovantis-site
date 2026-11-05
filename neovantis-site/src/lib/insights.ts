@@ -6,7 +6,7 @@ export async function getVisibleInsights() {
   const all = await getCollection('insights');
   return all
     .filter((a) => a.data.status === 'approved' || SHOW_DRAFTS)
-    .sort((a, b) => a.data.title.localeCompare(b.data.title));
+    .sort((a, b) => a.data.order - b.data.order || a.data.title.localeCompare(b.data.title));
 }
 
 /** Approved articles only: used for public navigation decisions and the sitemap. */

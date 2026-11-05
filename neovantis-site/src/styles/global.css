@@ -268,11 +268,21 @@ h4 { font-size: 1.1rem; font-weight: 600; }
 .article-card { position: relative; display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; height: 100%; }
 .article-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 .article-card .body { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
-.article-card h3 { margin: 0; }
-.article-card h3 a { color: var(--navy-800); text-decoration: none; }
-.article-card h3 a::after { content: ''; position: absolute; inset: 0; }
+.article-card :is(h2, h3) { margin: 0; font-size: clamp(1.15rem, 1.05rem + 0.45vw, 1.35rem); font-weight: 600; line-height: 1.25; }
+.article-card :is(h2, h3) a { color: var(--navy-800); text-decoration: none; }
+.article-card :is(h2, h3) a:hover { color: var(--blue-700); text-decoration: underline; }
+.article-card :is(h2, h3) a::after { content: ''; position: absolute; inset: 0; }
 .article-card:has(a:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
 .article-card p { margin: 0; color: var(--muted); }
+.article-card-mark { aspect-ratio: 16 / 9; display: grid; place-items: center; background: linear-gradient(150deg, var(--navy-700), var(--navy-950)); color: var(--blue-200); }
+.article-card-mark svg { width: 22%; height: auto; }
+.prose table { display: block; overflow-x: auto; border-collapse: collapse; margin: 1.25rem 0 1.5rem; font-size: 0.97em; max-width: 100%; }
+.prose th, .prose td { border: 1px solid var(--line); padding: 0.6rem 0.75rem; text-align: left; vertical-align: top; min-width: 12ch; }
+.prose th { background: var(--bg-tint); color: var(--navy-800); font-weight: 600; }
+.prose blockquote { margin: 1.5rem 0; padding: 0.9rem 1.1rem; border-left: 4px solid var(--blue-brand); background: var(--bg-tint); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+.prose blockquote p:last-child { margin: 0; }
+.prose .sources, .prose h2#sources + ul { font-size: 0.95em; }
+.prose h2#sources + ul li { overflow-wrap: anywhere; }
 .badge { align-self: flex-start; font: 600 0.8rem var(--font-head); letter-spacing: 0.03em; padding: 0.2rem 0.55rem; border-radius: 999px; background: #fff3d6; color: #6b4a00; }
 .prose { max-width: 70ch; }
 .prose h2 { font-size: clamp(1.35rem, 1.15rem + 0.8vw, 1.8rem); margin-top: 2em; }
@@ -320,9 +330,27 @@ h4 { font-size: 1.1rem; font-weight: 600; }
 @media (min-width: 960px) { .contact-grid { grid-template-columns: 0.8fr 1.2fr; } }
 
 /* FAQ */
-.faq details { border-bottom: 1px solid var(--line); padding: 0.25rem 0; }
-.faq summary { cursor: pointer; font: 600 1.1rem var(--font-head); color: var(--navy-800); padding: 0.85rem 0; min-height: 44px; list-style-position: outside; }
-.faq details p { color: var(--muted); }
+.faq { display: grid; gap: 0.6rem; max-width: 900px; }
+.faq details { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); scroll-margin-top: calc(var(--header-h) + 1rem); }
+.faq details[open] { border-color: var(--blue-brand); }
+.faq summary {
+  cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  min-height: 56px; padding: 0.9rem 1.15rem; font: 600 1.08rem/1.35 var(--font-head); color: var(--navy-800); border-radius: var(--radius);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: ''; flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+  background: var(--bg-tint-2) no-repeat center / 12px 12px
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M6 1v10M1 6h10' stroke='%2317669a' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+.faq details[open] summary::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M1 6h10' stroke='%2317669a' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+.faq summary:hover { color: var(--blue-700); }
+.faq summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.faq-answer { padding: 0 1.15rem 1rem; color: var(--text); }
+.faq-answer p { margin: 0 0 0.8em; }
+.faq-answer .checklist { margin-bottom: 0.8em; }
 
 /* Footer */
 .site-footer { background: var(--navy-950); color: var(--on-dark-muted); padding-block: 3.5rem 1.5rem; margin-top: 0; }

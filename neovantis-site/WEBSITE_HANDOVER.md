@@ -190,5 +190,67 @@ Screenshots: `review-screenshots/` (homepage at 320, 390, 768, 1024 and 1440 px;
 - [ ] Google Business Profile (owner action, not changed by us): make the name, address (Suite F1, 250 Umhlanga Rocks Drive, Umhlanga, 4051) and phone (031 463 1188) match the website exactly; set the website link to `https://neovantis.co.za/`; only add hours once confirmed.
 - [ ] LinkedIn (owner action): confirm the company page URL, align the address, phone and website link, then add it to `src/config/site.ts` and the footer.
 
+**FAQ and Insights**
+- [ ] Review the 10 FAQ answers on `/support/#faq` (see §11) and the items they rely on in CONTENT_CONFIRMATIONS.md (#24–#26).
+- [ ] Review the four new Insights drafts and their sources (§11); approve individually by setting `status: approved` and `published`.
+
 **Analytics (optional)**
 - [ ] If tracking is wanted: create a GTM container, set `PUBLIC_GTM_ID` in Netlify, map the four events to GA4, mark `enquiry_submitted` as the key event, and update the privacy policy and cookie consent first.
+
+## 11. Update (5 Nov 2026): FAQ and four new Insights drafts
+
+### FAQ
+
+- **Where:** a "Frequently asked questions" section on `/support/#faq`. It's linked from the homepage ("Frequently asked questions →" under the planning steps) and from a jump link at the top of the Support page. Content lives in `src/config/faq.ts`.
+- **Ten questions**, covering all eight requested topics plus "Can you guarantee stock or delivery times?" and "Does Neovantis give clinical advice or device settings?"
+- **Built with native `<details>`/`<summary>` elements**, so they open and close with a tap, a click, or Enter and Space, and screen readers announce the expanded state. A direct link such as `/support/#faq-rf` opens that question.
+- **Answers:** where something depends on the product, the answer says what to provide (system name, platform make and model, pack size and so on) instead of only saying "contact us". There are no promises of stock, lead times, training or support. The patient-information answer says plainly not to send names, scans or images.
+- **Structured data:** FAQPage markup added to the Support page.
+- **Speciality-specific questions:** none added. Each speciality page already has a "what to include" panel, and the main FAQ covers every speciality-level question I could identify, so a speciality question would only duplicate it.
+
+### Four new Insights drafts (all `status: draft`)
+
+| # | Title | Local URL | Image (original file) |
+|---|---|---|---|
+| 1 (lead) | What doctors, surgeons and clinical teams are asking of medical device suppliers | `/insights/what-clinical-teams-ask-of-suppliers/` | `neovantis-healthcare-professionals.png` → `optimised/clinical-team-illustration-*.webp` |
+| 2 | Before the case: getting the implant, instruments and timing to line up | `/insights/before-the-case/` | `K-Wire & Pin Set.png` (existing optimised copy) |
+| 3 | What makes repeat ordering easier for wards, theatres and cath labs? | `/insights/making-repeat-orders-easier/` | None suitable; branded placeholder on the card |
+| 4 | What should be in a medical device supplier's document pack? | `/insights/supplier-document-pack/` | `clinical insights hero.png` → left-hand crop `optimised/documents-desk-illustration-*.webp` (excludes the medicines on the right) |
+
+The two earlier drafts are unchanged. A new `order` field lists the lead article first.
+
+**How the new articles avoid repeating the earlier drafts:** "Beyond the quotation" was a general overview. These go deeper into specific situations: role-by-role expectations, planning a case, repeat orders, and the document pack.
+
+**Sources:** every factual claim links to a primary document that I downloaded and read, quoted with clause references where useful. All links were checked and resolve (HTTP 200).
+
+| Source | Used for |
+|---|---|
+| National Treasury RT2-2025 special conditions (medical equipment; listed for 1 Aug 2026–31 Jul 2030) | Training, maintenance, response times, loan devices, manuals, recalls, product registration clause |
+| National Treasury RT252-2025 special conditions (surgical instruments and equipment) | ISO 13485 holder must be the manufacturer; orders and delivery notes; non-conforming deliveries returned |
+| Western Cape WCGHCC0001/2025 (prosthetic and orthotic consumables) | ISO 13485 per manufacturer, SAHPRA licence, manufacturer letter, latex-free confirmation, labelling, CSD |
+| Western Cape WCGHCC0047/2025 (3D printer for the Orthotic and Prosthetic Centre) | Clinical engineering expectations: manuals, preventive maintenance and calibration procedures, spares, training, named technicians |
+| CSSD Forums of South Africa SOPs v3 (2024), SOP 7 and SOP 28 | Loan sets: notice at least a day before, minimum 4 hours before use, tray lists and photos, risks of delay |
+| SAHPRA SAHPGL-MD-07 v4 (May 2025), MD08 2025 communication, Medical devices web page | Licence types, device listing, "not yet called up … for product registration", ISO 13485 timing, licence database |
+
+**Research limits:**
+- The Limpopo and Eastern Cape implant tenders, which describe consignment stock, could not be opened: the servers refused connections. Because I couldn't verify their wording, consignment terms are **not** cited. The lead article instead shows the questions teams can reasonably ask.
+- No equipment findings were found in the OHSC's published 2023/24 highlights, so no hospital-report claims are made.
+- The lead article states these limits itself: the examples come from specific documents, are mostly public-sector, and are not national rules.
+- No interviews, quotes or survey findings were invented. Questions are labelled "reasonable questions", separate from documented requirements.
+
+### What was tested (5 Nov 2026, local)
+
+- **Builds:** production build passes (17 pages, no articles); review build passes (23 pages, six drafts). Type check: 0 errors.
+- **FAQ and Insights:** 58 headless Chrome checks, all passing (results in `review-screenshots/faq-insights-results.json`):
+  - the FAQ has 10 questions, collapsed initially, covering all eight topics
+  - Enter, Space, Tab and focus outline work; a tap opens a question on mobile; touch targets are 75px tall
+  - deep links open the right question; the homepage link lands on the FAQ
+  - no horizontal overflow on Support (all questions open), Insights and all six articles at 320, 390, 768 and 1440px
+  - Insights lists six drafts with the lead first, each with a draft badge; all card images load
+  - each new article has one H1, a draft banner, noindex, 6–10 subheadings, internal links that return 200, linked sources and a unique title
+  - axe-core finds 0 violations on Support, Insights, the four new articles and the homepage at 390 and 1440px
+  - production check: all six drafts return 404, the sitemap has no Insights URLs, there are no Insights links, the FAQ is present and FAQPage structured data is present
+- **Regression:** the earlier 44 HTTP checks, the output audit and 58 browser checks all still pass.
+- **Fixed during this round:**
+  - Insights list card titles rendered at page-heading size, a bug from the first round.
+  - Astro's dev toolbar is now disabled in the preview.
