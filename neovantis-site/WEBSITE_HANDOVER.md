@@ -41,7 +41,7 @@ The earlier draft speciality pages (`/orthopaedic-trauma`, `/neuro-plating`, and
 - Deep navy header and footer, which let us use the approved white-text logo (`public/images/neovantis-logo.png`, verified: 461×154, transparent) **unaltered**.
 - Medical blue `#1f7fb6` kept for accents. Text and button blue is the darker `#17669a` (6.2:1 on white) because `#1f7fb6` is only 4.4:1 and fails AA for body text.
 - Barlow (headings, mixed case) and Source Sans 3 (body), self-hosted. This removes the duplicate Google Fonts loading and the third-party font request.
-- Editorial homepage: headline, tagline and two buttons on the left; image composition on the right on desktop. No sliders, counters or animation; `prefers-reduced-motion` respected.
+- Homepage banner (updated 6 Nov 2026): full-width photo directly under the header, with the headline, short description and one button over the dark left side on desktop. Below 900px the photo is cropped to the surgeon and the text sits in a solid navy block underneath. No sliders, counters or animation; `prefers-reduced-motion` respected.
 - No floating or sticky enquiry button on mobile, so content is never obscured.
 
 ### Analytics
@@ -65,8 +65,9 @@ Your original image files are **all kept unchanged** in `public/images/` (and `.
 | Original file | New file(s) | Used on | Notes |
 |---|---|---|---|
 | `neovantis-logo.png` | used as-is | Header, footer, structured data | Approved logo, verified |
-| `K-Wire & Pin Set.png` | `k-wire-tray-illustration-{640,960,1280}.webp` | Homepage hero, Orthopaedics page | Captioned "Illustrative image" |
-| `Thermocouple RF Electrodes.png` | `rf-electrodes-illustration-{480,800}.webp` | Homepage hero, Pain Management page | Captioned "Illustrative image" |
+| `Neovantis home page banner.png` | `home-banner-{800,1280,1942}.webp` | Homepage banner | Added 6 Nov 2026. Permission to confirm (CONTENT_CONFIRMATIONS.md #30) |
+| `K-Wire & Pin Set.png` | `k-wire-tray-illustration-{640,960,1280}.webp` | Orthopaedics page, draft article 2 | Captioned "Illustrative image". Removed from the homepage banner; files kept |
+| `Thermocouple RF Electrodes.png` | `rf-electrodes-illustration-{480,800}.webp` | Pain Management page | Captioned "Illustrative image". Removed from the homepage banner; files kept |
 | `RF Procedure Kit.png` | `rf-consumables-illustration-{800,1080}.webp` | Draft article 2 | Draft only |
 | `distributors and partners hero.png` | `procurement-meeting-illustration-{800,1200}.webp` (centre crop 16:9) | Draft article 1 | Draft only |
 | `neovantis-logo.png` (derived) | `og-neovantis.png` (share image), `icon-32/180/512.png` (favicon) | Site-wide | **Derived from the logo; needs brand approval** |
@@ -254,3 +255,20 @@ The two earlier drafts are unchanged. A new `order` field lists the lead article
 - **Fixed during this round:**
   - Insights list card titles rendered at page-heading size, a bug from the first round.
   - Astro's dev toolbar is now disabled in the preview.
+
+## 12. Update (6 Nov 2026): homepage banner
+
+- **Change:** the section below the header is now the full-width `Neovantis home page banner.png`, with the supplied headline, description and one button (`Explore our specialities`, linking to `#specialities` directly below). The collage and portfolio card are gone from this section; their image files are kept and still used elsewhere. The header, logo, navigation and top-right button are unchanged.
+- **Desktop (900px and wider):** the text sits over the dark left side. A soft navy gradient adds contrast. The banner height is capped at the lower of 41.6% of the screen width, the space under the header, or 640px, though the text can make it slightly taller on narrow desktop widths.
+- **Mobile (under 900px):** the photo is cropped to the surgeon, with the text in a solid navy block below.
+- **Tested locally (43 banner checks, all passing):**
+  - Exact copy and one button; the button jumps to the specialities section, clear of the sticky header.
+  - Headline, description and button above the fold at 1280x600, 1366x650, 1440x780, 1536x730, 1920x950, 1024x650 and 900x600.
+  - Text clear of the face; white text on the brightest pixel behind it measures 10.8:1 or better (4.5:1 needed).
+  - Face fully inside the crop at 320, 375, 390 and 768px; no sideways scroll; axe finds 0 violations at 390 and 1440px.
+- **Load speed (local lab, production build, median of 5):** this computer ran about twice as slowly on 6 Nov as on 5 Nov, so these figures are not comparable with §7.
+  - Slowed phone profile: homepage 2.95s, Orthopaedics 2.88s, text-only Contact 2.92s.
+  - Unthrottled desktop: homepage 1.84s, Orthopaedics 1.63s, Contact 1.61s.
+  - The banner adds no measurable delay on the phone profile once `decoding="async"` was removed from it.
+  - All three pages were above the 2.5s target on the slowed profile that day, so re-measure on a deploy preview and in field data before relying on the target. CLS was 0.004 or lower.
+- **Still to confirm:** banner permission and the tagline's reduced prominence (CONTENT_CONFIRMATIONS.md #30, #31).

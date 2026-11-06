@@ -4,7 +4,6 @@ import SpecialityCards from '../components/SpecialityCards.astro';
 import Credentials from '../components/Credentials.astro';
 import CtaBand from '../components/CtaBand.astro';
 import ArticleCard from '../components/ArticleCard.astro';
-import { business, contactHref } from '../config/site';
 import { getVisibleInsights } from '../lib/insights';
 
 const previews = (await getVisibleInsights()).slice(0, 2);
@@ -14,47 +13,25 @@ const previews = (await getVisibleInsights()).slice(0, 2);
   description="Specialist medical device supplier based in Umhlanga, Durban, supplying surgical implants, instruments and equipment to healthcare professionals and institutions."
 >
   <section class="hero" aria-labelledby="hero-heading">
-    <div class="container hero-grid">
-      <div>
-        <span class="eyebrow">Specialist medical supply | South Africa</span>
-        <h1 id="hero-heading">Specialist medical and surgical solutions.</h1>
-        <p class="tagline">{business.tagline}</p>
-        <p class="lead">Based in Umhlanga, Durban, Neovantis supplies specialist medical devices, surgical implants, instruments and equipment to healthcare professionals and institutions. Explore our six portfolio areas or contact our team about your requirements.</p>
-        <div class="btn-row" style="margin-top:1.75rem">
-          <a class="btn btn-light" href="/specialities/">Explore our specialities</a>
-          <a class="btn btn-ghost-light" href={contactHref()}>Speak to our team</a>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <figure class="hv-main">
-          <img
-            src="/images/optimised/k-wire-tray-illustration-960.webp"
-            srcset="/images/optimised/k-wire-tray-illustration-640.webp 640w, /images/optimised/k-wire-tray-illustration-960.webp 960w, /images/optimised/k-wire-tray-illustration-1280.webp 1280w"
-            sizes="(min-width: 1200px) 560px, (min-width: 960px) 46vw, 92vw"
-            width="960" height="640"
-            alt="Illustration of wires and pins arranged in an instrument tray"
-            fetchpriority="high" decoding="async"
-          />
-        </figure>
-        <figure class="hv-small">
-          <img
-            src="/images/optimised/rf-electrodes-illustration-480.webp"
-            width="480" height="480"
-            alt="Illustration of radiofrequency electrodes on a sterile drape"
-            decoding="async"
-          />
-        </figure>
-        <div class="hv-tile">
-          <strong>Six specialist portfolio areas</strong>
-          <span>From orthopaedics to radiation protection</span>
-        </div>
-        <p class="figure-note">Illustrative images, not photographs of specific Neovantis products.</p>
+    <img
+      class="hero-image"
+      src="/images/optimised/home-banner-1280.webp"
+      srcset="/images/optimised/home-banner-800.webp 800w, /images/optimised/home-banner-1280.webp 1280w, /images/optimised/home-banner-1942.webp 1942w"
+      sizes="(max-width: 899px) 180vw, 100vw"
+      width="1942" height="809"
+      alt="A surgeon in a theatre cap and navy scrubs in an operating theatre"
+      fetchpriority="high"
+    />
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1 id="hero-heading">Specialist medical devices and surgical supplies</h1>
+        <p class="lead">Based in Umhlanga, Durban, Neovantis supplies specialist devices, implants and instruments to healthcare professionals and institutions.</p>
+        <a class="btn btn-light" href="#specialities">Explore our specialities</a>
       </div>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="specialities-heading">
+  <section class="section" id="specialities" aria-labelledby="specialities-heading">
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Our specialities</span>

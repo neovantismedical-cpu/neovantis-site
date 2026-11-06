@@ -12,6 +12,7 @@ const NAVY = '#0a2540';
 
 /** [source file, output base name, widths, optional crop {width,height} aspect] */
 const jobs = [
+  ['Neovantis home page banner.png', 'home-banner', [800, 1280, 1942], { quality: 80 }],
   ['K-Wire & Pin Set.png', 'k-wire-tray-illustration', [640, 960, 1280]],
   ['Thermocouple RF Electrodes.png', 'rf-electrodes-illustration', [480, 800]],
   ['RF Procedure Kit.png', 'rf-consumables-illustration', [800, 1080]],
@@ -35,7 +36,7 @@ for (const [file, base, widths, opts = {}] of jobs) {
   }
   for (const w of widths) {
     const out = path.join(OUT, `${base}-${w}.webp`);
-    const info = await pipeline().resize({ width: w, withoutEnlargement: true }).webp({ quality: 74 }).toFile(out);
+    const info = await pipeline().resize({ width: w, withoutEnlargement: true }).webp({ quality: opts.quality ?? 74 }).toFile(out);
     console.log(out, `${info.width}x${info.height}`, `${Math.round(info.size / 1024)}KB`);
   }
 }

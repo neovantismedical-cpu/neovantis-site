@@ -45,3 +45,10 @@ Internal document: do not publish. Facts that still need confirmation, the pages
 | 27 | Insights drafts: approval of each article, any edits, and the publication date | Four new articles | `status: draft`. Excluded from production and sitemap |
 | 28 | Article sources: the lead article cites public-sector tenders (National Treasury, Western Cape) and CFSA SOPs. Are you comfortable naming these sources publicly? | Articles 1–4 | Cited with links. No competitor names, no Netcare wording, no private catalogue details |
 | 29 | Image permissions for `neovantis-healthcare-professionals.png` (stock-style clinicians) and `clinical insights hero.png` | Articles 1 and 4 | Captioned "Illustrative image" |
+
+## Added 6 Nov 2026: homepage banner
+
+| # | Item to confirm | Affected pages | Handling meanwhile |
+|---|---|---|---|
+| 30 | **`Neovantis home page banner.png`:** source, licence or permission, and whether the people shown are real. If it is a real person, is there a model release? It should not read as a Neovantis employee or suggest that Neovantis provides clinical care, unless that is accurate | Homepage banner | Used as supplied, with no caption. Alt text describes the scene without naming anyone or linking them to Neovantis |
+| 31 | **"Improving Lives Together"** now appears on the homepage only in the header logo and the footer line, because the banner uses the new copy | Homepage | Follows the new banner instruction. Tell us if you want it added back as text |
