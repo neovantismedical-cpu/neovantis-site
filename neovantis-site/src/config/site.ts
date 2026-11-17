@@ -185,7 +185,7 @@ export const specialities: Speciality[] = [
   {
     slug: 'spinal-surgery',
     name: 'Spinal Surgery',
-    card: 'Screw and rod systems and cervical fixation components.',
+    card: 'Screw and rod systems, cervical fixation components and spinal cages.',
     // Implant families only: model numbers, dimensions, product codes, pricing and compatibility details stay off the site.
     rangeHeading: 'Spinal implant and fixation range',
     range: [
@@ -227,7 +227,7 @@ export const specialities: Speciality[] = [
         heading: 'What to include when planning a case',
         items: [
           'The system you’re looking for, if you have one in mind',
-          'Whether you need screw and rod components, cervical fixation components or both',
+          'Whether you need screw and rod components, cervical fixation components, spinal cages or a combination',
           'The instruments you need alongside the implants',
           'Your planned procedure date',
           'Your facility or organisation name',
@@ -293,7 +293,7 @@ export const specialities: Speciality[] = [
   {
     slug: 'urology',
     name: 'Urology',
-    card: 'Urinary drainage catheters, access sheaths, dilators and retrieval baskets.',
+    card: 'Urinary drainage catheters, ureteral stents, access sheaths, dilators and retrieval baskets.',
     // Product families only: exact sizes, pack quantities, model numbers, product codes, pricing and catalogue PDFs stay off the site.
     rangeHeading: 'Urology and endourology product range',
     range: [
@@ -366,7 +366,7 @@ export const specialities: Speciality[] = [
       'If you’re evaluating a generator or ordering consumables, tell us which platform you use or are considering. Contact us to check compatibility, request product information or enquire about technical support.',
     ],
     button: 'Discuss RF equipment and accessories',
-    secondaryLink: { label: 'Ask about RF product training', href: '/contact/?speciality=pain-management#enquiry-form' },
+    secondaryLink: { label: 'Ask about RF product training', href: '/contact/?speciality=pain-management&type=rf-training#enquiry-form' },
     explainer: {
       heading: 'Radiofrequency in interventional pain management',
       text: [
@@ -493,13 +493,22 @@ export const formSpecialities = [
 // Option values are submitted as-is; keep existing values unchanged so reports and handling stay consistent.
 export const enquiryTypes = [
   'Plan a case',
+  'Request a meeting',
   'Product information',
   'Supply or quotation',
   'Reorder products',
   'Technical documentation',
   'Equipment or support question',
+  'RF product training',
   'Other',
 ];
+
+/** Allowlisted ?type= values that preselect an enquiry type on the Contact form. */
+export const enquiryTypeParams: Record<string, string> = {
+  'plan-a-case': 'Plan a case',
+  meeting: 'Request a meeting',
+  'rf-training': 'RF product training',
+};
 
 export const regions = [
   'Eastern Cape',
@@ -523,4 +532,7 @@ export const nav = [
   { label: 'Contact', href: '/contact/' },
 ];
 
-export const contactHref = (slug?: string) => (slug ? `/contact/?speciality=${slug}#enquiry-form` : '/contact/#enquiry-form');
+export const contactHref = (slug?: string, type?: keyof typeof enquiryTypeParams) => {
+  const q = [slug && `speciality=${slug}`, type && `type=${type}`].filter(Boolean).join('&');
+  return `/contact/${q ? `?${q}` : ''}#enquiry-form`;
+};

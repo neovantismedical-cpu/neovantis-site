@@ -1,5 +1,6 @@
 ---
-import { formSpecialities, enquiryTypes, regions, business } from '../config/site';
+import { formSpecialities, enquiryTypes, enquiryTypeParams, regions, business } from '../config/site';
+const typeParam = (t: string) => Object.keys(enquiryTypeParams).find((k) => enquiryTypeParams[k] === t);
 ---
 <form
   id="enquiry-form"
@@ -49,7 +50,7 @@ import { formSpecialities, enquiryTypes, regions, business } from '../config/sit
       <label for="f-type">Enquiry type <span class="req" aria-hidden="true">*</span></label>
       <select id="f-type" name="enquiry_type" required aria-describedby="f-type-err">
         <option value="">Select an enquiry type</option>
-        {enquiryTypes.map((t) => <option value={t}>{t}</option>)}
+        {enquiryTypes.map((t) => <option value={t} data-param={typeParam(t)}>{t}</option>)}
       </select>
       <p class="error" id="f-type-err"></p>
     </div>
@@ -115,6 +116,13 @@ import { formSpecialities, enquiryTypes, regions, business } from '../config/sit
     const requested = new URLSearchParams(location.search).get('speciality');
     const match = Array.from(select.options).find((o) => o.dataset.slug && o.dataset.slug === requested);
     if (match) select.value = match.value;
+  }
+  // Prefill enquiry type the same way, from an allowlisted ?type= value. Both stay editable.
+  const typeSelect = document.getElementById('f-type') as HTMLSelectElement | null;
+  if (typeSelect) {
+    const requested = new URLSearchParams(location.search).get('type');
+    const match = Array.from(typeSelect.options).find((o) => o.dataset.param && o.dataset.param === requested);
+    if (match) typeSelect.value = match.value;
   }
 
   const rules: Record<string, (el: HTMLInputElement) => string> = {
