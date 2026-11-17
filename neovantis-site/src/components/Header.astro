@@ -10,7 +10,8 @@ const isCurrent = (href: string) => (href === '/' ? path === '/' : path.startsWi
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/">
-      <img src={business.logo} width="461" height="154" alt="Neovantis home" />
+      <img src={business.logoMark} width="461" height="154" alt="Neovantis home" />
+      <span class="brand-tagline">{business.tagline}</span>
     </a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">

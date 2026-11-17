@@ -2,13 +2,14 @@
 title: "Preparing an RF equipment and consumables enquiry"
 description: "What interventional pain management teams and buyers can include when asking about RF ablation generators, electrodes and cannulae, so compatibility and supply can be checked quickly."
 summary: "Compatibility depends on the platform. Here is what to include when you ask about RF generators, electrodes or cannulae."
-status: draft
+status: approved
 image:
   src: "/images/optimised/rf-consumables-illustration-1080.webp"
   srcset: "/images/optimised/rf-consumables-illustration-800.webp 800w, /images/optimised/rf-consumables-illustration-1080.webp 1080w"
   width: 1080
   height: 1080
-  alt: "Illustration of procedural consumables and cables laid out on a blue drape"
+  alt: "Radiofrequency electrodes with connecting cables, adhesive pads, syringes and folded drapes laid out on a blue sterile drape"
+  caption: "Radiofrequency electrodes, cables and procedure consumables"
 related: ["pain-management"]
 ---
 

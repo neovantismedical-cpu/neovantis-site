@@ -52,7 +52,7 @@ const related = d.related.map((r) => specialityBySlug(r)).filter(Boolean);
       {d.image && (
         <figure class="article-figure">
           <img src={d.image.src} srcset={d.image.srcset} sizes="(min-width: 960px) 900px, 92vw" width={d.image.width} height={d.image.height} alt={d.image.alt} decoding="async" />
-          <figcaption>Illustrative image.</figcaption>
+          {d.image.caption && <figcaption>{d.image.caption}</figcaption>}
         </figure>
       )}
       <div class="prose"><Content /></div>

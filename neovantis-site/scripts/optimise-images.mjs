@@ -13,6 +13,9 @@ const NAVY = '#0a2540';
 /** [source file, output base name, widths, optional crop {width,height} aspect] */
 const jobs = [
   ['Neovantis home page banner.png', 'home-banner', [800, 1280, 1942], { quality: 80 }],
+  ['Neovantis home page banner theatre supply.png', 'home-theatre-banner', [800, 1280, 1920], { quality: 80 }],
+  ['Neovantis About banner.png', 'about-banner', [800, 1280, 1942], { quality: 80 }],
+  ['neovantis-offices.png', 'neovantis-offices', [640, 960, 1280], { quality: 78 }],
   ['K-Wire & Pin Set.png', 'k-wire-tray-illustration', [640, 960, 1280]],
   ['Thermocouple RF Electrodes.png', 'rf-electrodes-illustration', [480, 800]],
   ['RF Procedure Kit.png', 'rf-consumables-illustration', [800, 1080]],

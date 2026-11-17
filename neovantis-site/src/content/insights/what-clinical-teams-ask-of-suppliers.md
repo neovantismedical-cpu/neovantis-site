@@ -2,14 +2,15 @@
 title: "What doctors, surgeons and clinical teams are asking of medical device suppliers"
 description: "What surgeons, theatre coordinators, buyers and clinical engineers ask of medical device suppliers, drawing on South African tenders, CSSD standards and SAHPRA."
 summary: "A surgeon, a theatre coordinator, a buyer and a clinical engineer will each ask a supplier something different. We look at what South African public documents actually require, and what that means in practice."
-status: draft
+status: approved
 order: 1
 image:
   src: "/images/optimised/clinical-team-illustration-1200.webp"
   srcset: "/images/optimised/clinical-team-illustration-800.webp 800w, /images/optimised/clinical-team-illustration-1200.webp 1200w"
   width: 1200
   height: 800
-  alt: "Illustration of a clinician holding a tablet with a clinical team in the background"
+  alt: "A clinician in a white coat writing on a tablet, with doctors and nurses in scrubs standing behind"
+  caption: "Clinician reviewing information on a tablet with the clinical team"
 related: ["spinal-surgery", "neurosurgery", "pain-management"]
 ---
 

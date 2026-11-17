@@ -11,7 +11,7 @@ const insights = defineCollection({
     status: z.enum(['draft', 'approved']),
     summary: z.string(),
     image: z
-      .object({ src: z.string(), srcset: z.string().optional(), width: z.number(), height: z.number(), alt: z.string() })
+      .object({ src: z.string(), srcset: z.string().optional(), width: z.number(), height: z.number(), alt: z.string(), caption: z.string().optional() })
       .optional(),
     /** ISO date, set only when the article is actually published */
     published: z.string().optional(),

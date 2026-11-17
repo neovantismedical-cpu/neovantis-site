@@ -2,13 +2,14 @@
 title: "Beyond the quotation: what matters in medical and surgical supply?"
 description: "Price matters, but it is only one part of a sound supply decision. A practical guide for clinical teams and procurement on what else to check before you order."
 summary: "Price is one line on the quotation. This guide covers the other questions clinical teams and buyers can ask before they commit to a supplier."
-status: draft
+status: approved
 image:
   src: "/images/optimised/procurement-meeting-illustration-1200.webp"
   srcset: "/images/optimised/procurement-meeting-illustration-800.webp 800w, /images/optimised/procurement-meeting-illustration-1200.webp 1200w"
   width: 1200
   height: 675
-  alt: "Illustration of business and clinical professionals shaking hands"
+  alt: "Business and clinical professionals shaking hands, with a busy conference hall in the background"
+  caption: "Healthcare and business professionals meeting"
 related: ["orthopaedics", "spinal-surgery", "neurosurgery"]
 ---
 

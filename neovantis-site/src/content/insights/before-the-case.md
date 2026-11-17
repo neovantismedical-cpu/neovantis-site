@@ -2,14 +2,15 @@
 title: "Before the case: getting the implant, instruments and timing to line up"
 description: "Why an available implant does not always mean the matching instruments are ready on the same date, with a worked example of planning a case with a supplier."
 summary: "The implant is in stock, but is the instrument set free on the same day? A worked example of planning a case from first enquiry to confirmed requirements."
-status: draft
+status: approved
 order: 2
 image:
   src: "/images/optimised/k-wire-tray-illustration-1280.webp"
   srcset: "/images/optimised/k-wire-tray-illustration-640.webp 640w, /images/optimised/k-wire-tray-illustration-960.webp 960w, /images/optimised/k-wire-tray-illustration-1280.webp 1280w"
   width: 1280
   height: 853
-  alt: "Illustration of wires and pins arranged in an instrument tray"
+  alt: "Kirschner wires of different diameters in a perforated instrument tray, with loose wires and two hand instruments on a blue drape"
+  caption: "Kirschner wires in an instrument tray"
 related: ["spinal-surgery", "neurosurgery", "orthopaedics"]
 ---
 

@@ -272,3 +272,27 @@ The two earlier drafts are unchanged. A new `order` field lists the lead article
   - The banner adds no measurable delay on the phone profile once `decoding="async"` was removed from it.
   - All three pages were above the 2.5s target on the slowed profile that day, so re-measure on a deploy preview and in field data before relying on the target. CLS was 0.004 or lower.
 - **Still to confirm:** banner permission and the tagline's reduced prominence (CONTENT_CONFIRMATIONS.md #30, #31).
+
+## 13. Update (6 Nov 2026): About page
+
+- **Change:** `/about/` rebuilt from the supplied copy: intro, Our story, three practical examples, six speciality cards, standards, Neovantis offices and one closing button (`Explore our specialities`, linking to `/specialities/`).
+- **About only:** the card descriptions, standards list and styles live in `src/pages/about.astro`. Other pages keep the shorter card text from `site.ts`, and the homepage still shows the shared credentials block, including ISO.
+- **Removed from About:** the "not a manufacturer" paragraph, "Who we supply", "How we work with buyers", and the telephone number in the page body (it remains in the footer).
+- **Images:** `Neovantis-office.png` is kept, with a byte-identical copy at `neovantis-offices.png`. Resized copies: `neovantis-offices-{640,960,1280}.webp`. No SAMED, SAHPRA or B-BBEE logos are used, because none are approved.
+- **Still to confirm:** CONTENT_CONFIRMATIONS.md #32 to #34.
+
+## 14. Update (6 Nov 2026): product discovery
+
+- **Homepage:** new "See what's available in your speciality" section directly below the banner, with a button to the speciality cards. Later sections swap their background tints so the page still alternates.
+- **Card text:** `card` in `src/config/site.ts` now holds the specific descriptions. It also feeds `/specialities/`, the 404 page and "Other specialities".
+- **About:** "The team behind the supply" replaces the practical examples. Card text now comes from `site.ts`. The office image alt text is `Neovantis offices, Suite F1, 250 Umhlanga Rocks Drive, Umhlanga, 4051.`
+- **Speciality pages:** `range` and `guide` in `site.ts` drive two new sections below the opening copy. The agreed opening copy, enquiry buttons and enquiry panels are unchanged. Keep `range` to agreed categories, with no codes, sizes, model lists or compatibility tables.
+- **Private draft:** `NEOVANTIS_GLOVE_CASE_STORY_DRAFT.md` sits in the project root, outside `public/`, `src/` and the `dist` publish folder. It has not been committed. Do not publish it until the bracketed details are completed.
+- **Not added:** "What's new" and "Product spotlight" features, because no genuine new addition is recorded.
+- **Still to confirm:** CONTENT_CONFIRMATIONS.md #32, #34 to #38.
+
+## 15. Update (6 Nov 2026): About banner
+
+- **Change:** `Neovantis About banner.png` is the full-width banner at the top of `/about/`, directly below the navigation and above the heading. It has no text or buttons over it, and it scales at its natural proportions (`height: auto`), so nothing is cropped at any width.
+- **Files:** the original is unchanged. Resized copies: `about-banner-{800,1280,1942}.webp`. Styles are scoped to `src/pages/about.astro`; no other page changed.
+- **Still to confirm:** CONTENT_CONFIRMATIONS.md #39.

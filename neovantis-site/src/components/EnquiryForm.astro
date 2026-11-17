@@ -23,11 +23,6 @@ import { formSpecialities, enquiryTypes, regions, business } from '../config/sit
 
   <div class="form-status form-status--error" id="form-errors" tabindex="-1" role="alert" hidden></div>
 
-  <div class="patient-warning" id="patient-warning">
-    <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path fill="currentColor" d="M12 2 1 21h22L12 2Zm0 6 .01 0L13 15h-2l1-7Zm-1 9h2v2h-2v-2Z"/></svg>
-    <p><strong>Please do not include patient names, scans or other patient information.</strong></p>
-  </div>
-
   <div class="form-row">
     <div class="field">
       <label for="f-name">Name <span class="req" aria-hidden="true">*</span></label>
@@ -38,6 +33,25 @@ import { formSpecialities, enquiryTypes, regions, business } from '../config/sit
       <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
       <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-err" />
       <p class="error" id="f-email-err"></p>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="field">
+      <label for="f-speciality">Speciality <span class="req" aria-hidden="true">*</span></label>
+      <select id="f-speciality" name="speciality" required aria-describedby="f-speciality-err">
+        <option value="">Select a speciality</option>
+        {formSpecialities.map((s) => <option value={s.value} data-slug={s.slug}>{s.value}</option>)}
+      </select>
+      <p class="error" id="f-speciality-err"></p>
+    </div>
+    <div class="field">
+      <label for="f-type">Enquiry type <span class="req" aria-hidden="true">*</span></label>
+      <select id="f-type" name="enquiry_type" required aria-describedby="f-type-err">
+        <option value="">Select an enquiry type</option>
+        {enquiryTypes.map((t) => <option value={t}>{t}</option>)}
+      </select>
+      <p class="error" id="f-type-err"></p>
     </div>
   </div>
 
@@ -67,28 +81,13 @@ import { formSpecialities, enquiryTypes, regions, business } from '../config/sit
     </div>
   </div>
 
-  <div class="form-row">
-    <div class="field">
-      <label for="f-speciality">Speciality <span class="req" aria-hidden="true">*</span></label>
-      <select id="f-speciality" name="speciality" required aria-describedby="f-speciality-err">
-        <option value="">Select a speciality</option>
-        {formSpecialities.map((s) => <option value={s.value} data-slug={s.slug}>{s.value}</option>)}
-      </select>
-      <p class="error" id="f-speciality-err"></p>
-    </div>
-    <div class="field">
-      <label for="f-type">Enquiry type <span class="req" aria-hidden="true">*</span></label>
-      <select id="f-type" name="enquiry_type" required aria-describedby="f-type-err">
-        <option value="">Select an enquiry type</option>
-        {enquiryTypes.map((t) => <option value={t}>{t}</option>)}
-      </select>
-      <p class="error" id="f-type-err"></p>
-    </div>
-  </div>
-
   <div class="field">
     <label for="f-message">Message <span class="req" aria-hidden="true">*</span></label>
-    <textarea id="f-message" name="message" required rows="7" maxlength="4000" aria-describedby="f-message-hint f-message-err"></textarea>
+    <div class="patient-warning" id="patient-warning">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path fill="currentColor" d="M12 2 1 21h22L12 2Zm0 6 .01 0L13 15h-2l1-7Zm-1 9h2v2h-2v-2Z"/></svg>
+      <p><strong>Please do not include patient names, scans or other patient information.</strong></p>
+    </div>
+    <textarea id="f-message" name="message" required rows="5" maxlength="4000" aria-describedby="patient-warning f-message-hint f-message-err"></textarea>
     <p class="hint" id="f-message-hint">Include the product, specification or system, quantity and the date you are working towards.</p>
     <p class="error" id="f-message-err"></p>
   </div>

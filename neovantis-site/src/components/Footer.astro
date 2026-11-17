@@ -8,7 +8,10 @@ const a = business.address;
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src={business.logo} width="461" height="154" alt="Neovantis" loading="lazy" decoding="async" />
+        <div class="brand-lockup">
+          <img src={business.logoMark} width="461" height="154" alt="Neovantis" loading="lazy" decoding="async" />
+          <span class="brand-tagline">{business.tagline}</span>
+        </div>
         <p>Specialist medical devices, surgical implants, instruments and equipment for healthcare professionals and institutions.</p>
         <p class="footer-note">This website is for professional supply enquiries. It does not provide patient consultations or medical advice.</p>
       </div>

@@ -2,8 +2,15 @@
 title: "What makes repeat ordering easier for wards, theatres and cath labs?"
 description: "Why repeat orders for consumables still go wrong, with urology and radiation protection glove examples, a reorder checklist and what to confirm when items change."
 summary: "A repeat order should be the easy one. Here is why it sometimes isn't, with examples from urology consumables and radiation protection gloves, and a checklist to get it right."
-status: draft
+status: approved
 order: 3
+image:
+  src: "/images/optimised/packaged-consumables-720.webp"
+  srcset: "/images/optimised/packaged-consumables-480.webp 480w, /images/optimised/packaged-consumables-720.webp 720w"
+  width: 720
+  height: 405
+  alt: "Sterile gauze packs, folded blue drapes, a packaged pad and coiled tubing on a blue drape"
+  caption: "Packaged sterile consumables"
 related: ["urology", "radiation-protection"]
 ---
 

@@ -2,14 +2,15 @@
 title: "What should be in a medical device supplier's document pack?"
 description: "Supplier licensing and quality documents versus product information and IFUs: what each hospital team needs, what a SAHPRA licence shows, and how to ask once."
 summary: "Procurement, theatre, CSSD and clinical engineering often ask for different documents. How to tell supplier documents from product documents, and how to ask for the right ones first time."
-status: draft
+status: approved
 order: 4
 image:
   src: "/images/optimised/documents-desk-illustration-1200.webp"
   srcset: "/images/optimised/documents-desk-illustration-800.webp 800w, /images/optimised/documents-desk-illustration-1200.webp 1200w"
   width: 1200
   height: 675
-  alt: "Illustration of a laptop, tablet, stethoscope and paperwork on a desk"
+  alt: "A laptop showing brain scan images, a tablet showing charts, a stethoscope, safety glasses and paperwork on a desk"
+  caption: "Laptop, tablet, stethoscope and paperwork on a desk"
 related: ["pain-management", "urology", "radiation-protection"]
 ---
 

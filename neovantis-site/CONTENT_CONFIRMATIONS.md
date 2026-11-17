@@ -11,7 +11,7 @@ Internal document: do not publish. Facts that still need confirmation, the pages
 | 5 | **Wider trauma scope** (plates, screws, nails, external fixation, joint replacement) | Orthopaedics | Public scope limited to K-wires as briefed. Trauma-plate images not used |
 | 6 | **Patient-specific cranial mesh** service | Neurosurgery | Not mentioned. Page says not to send scans or patient information |
 | 7 | **Glove materials**, model-to-material mapping, documentation available | Radiation Protection | Materials referred to only as a topic to ask about. No mappings, shielding or attenuation claims. No Netcare wording |
-| 8 | **ISO certification**: standard (e.g. ISO 13485 or ISO 9001), scope, certifying body, validity | Credentials (Home, About) | Shown as "ISO certified … Ask our team for the certificate and its scope." No standard number or badge |
+| 8 | **ISO certification**: standard (e.g. ISO 13485 or ISO 9001), scope, certifying body, validity | Credentials (Home). Left off About since 6 Nov 2026 until these details are available | Home shows "ISO certified … Ask our team for the certificate and its scope." No standard number or badge |
 | 9 | **SAHPRA licence**: category (e.g. distributor or wholesaler) and licence number | Credentials, Medical disclaimer | "Holds a medical device establishment licence from SAHPRA … not an approval of individual products" |
 | 10 | **B-BBEE**: certificate or affidavit and its validity date | Credentials | "Level 1 B-BBEE status". No logo |
 | 11 | **SAMED**: membership category; permission to use the SAMED logo | Credentials | Text only ("member of SAMED"). No logo |
@@ -52,3 +52,20 @@ Internal document: do not publish. Facts that still need confirmation, the pages
 |---|---|---|---|
 | 30 | **`Neovantis home page banner.png`:** source, licence or permission, and whether the people shown are real. If it is a real person, is there a model release? It should not read as a Neovantis employee or suggest that Neovantis provides clinical care, unless that is accurate | Homepage banner | Used as supplied, with no caption. Alt text describes the scene without naming anyone or linking them to Neovantis |
 | 31 | **"Improving Lives Together"** now appears on the homepage only in the header logo and the footer line, because the banner uses the new copy | Homepage | Follows the new banner instruction. Tell us if you want it added back as text |
+
+## Added 6 Nov 2026: About page
+
+| # | Item to confirm | Affected pages | Handling meanwhile |
+|---|---|---|---|
+| 32 | **`neovantis-offices.png`:** is this a real photograph of the building at 250 Umhlanga Rocks Drive, and is there permission to use it? It looks as if it may be a computer-generated image, and the page presents it as the Neovantis offices | About | Used as supplied, with no caption |
+| 34 | **Established in 2019** and the original focus areas in "Our story" | About | Published as supplied |
+
+## Added 6 Nov 2026: product discovery update
+
+| # | Item to confirm | Affected pages | Handling meanwhile |
+|---|---|---|---|
+| 35 | **New explanatory copy on the six speciality pages** ("What Neovantis supplies" descriptions and the guidance section below it) was written for this update from general product knowledge, not from Neovantis product documents. Someone with product knowledge should review what each item does and each statement about what to check | All six speciality pages | Published locally as a draft. No sizes, codes, models or protection claims |
+| 36 | **Real team details** for "The team behind the supply": verified names, roles and permission (see also #14) | About | Supplied copy only. No names, titles, photos or qualifications |
+| 37 | **"What's new and why it matters":** is there a genuine new addition that can be discussed publicly? | Speciality pages | Not added, because none is recorded in the project |
+| 39 | **`Neovantis About banner.png`:** a composite of devices and a building. Are the devices representative of the Neovantis range, and is the building the real office (see #32)? Specialities pages caption similar images "Illustrative image"; this banner has no caption, as instructed. Alt text was written for this update, as none was supplied | About | Used as supplied, uncropped, with no text over it |
+| 38 | **"See what's available"** means part of the range, not in stock today. The homepage says further down that availability is confirmed for each enquiry. Is that enough, or should the section say so itself? | Homepage | Supplied copy unchanged |
