@@ -20,6 +20,7 @@ export function organizationSchema() {
       postalCode: business.address.postalCode,
       addressCountry: business.address.countryCode,
     },
+    sameAs: business.social.map((s) => s.href),
   };
 }
 

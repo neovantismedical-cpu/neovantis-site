@@ -37,6 +37,12 @@ export const business = {
   logo: '/images/neovantis-logo.png',
   // Same artwork with the baked-in tagline removed; the tagline is rendered as live text beside it.
   logoMark: '/images/neovantis-logo-mark.png',
+  // Official company profiles, confirmed by Neovantis. Used in the footer and in Organization sameAs.
+  social: [
+    { name: 'LinkedIn', icon: 'linkedin', href: 'https://za.linkedin.com/company/neovantis' },
+    { name: 'YouTube', icon: 'youtube', href: 'https://www.youtube.com/@Neovantis' },
+    { name: 'Instagram', icon: 'instagram', href: 'https://www.instagram.com/neovantis/' },
+  ],
 } as const;
 
 /** Image or icon shown at the top of a credential card */
