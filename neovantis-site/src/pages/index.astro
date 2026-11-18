@@ -161,4 +161,18 @@ const previews = featuredSlugs.map((slug) => visible.find((a) => a.slug === slug
   .theatre-support h2 { font-size: clamp(1.35rem, 1.15rem + 0.8vw, 1.75rem); margin: 0 0 0.6rem; }
   .theatre-support p { max-width: 68ch; margin: 0 0 0.75rem; }
   .theatre-support p:last-of-type { margin-bottom: 1.25rem; }
+
+  /* Portfolio group introductions: subtle brand panels so the headings stand out. */
+  #portfolio .portfolio-group-head {
+    max-width: none;
+    background: var(--bg-tint-2);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--blue-brand);
+    border-radius: var(--radius-sm);
+    padding: 1.1rem 1.35rem;
+    margin-bottom: 1.5rem;
+  }
+  #portfolio .portfolio-group-head h3 { font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.6rem); color: var(--charcoal); margin-bottom: 0.4rem; }
+  #portfolio .portfolio-group-head p { max-width: 70ch; color: var(--text); }
+  #portfolio .portfolio-group + .portfolio-group .portfolio-group-head { background: var(--bg-tint); border-left-color: var(--blue-accent); }
 </style>
