@@ -169,7 +169,7 @@ export const specialities: Speciality[] = [
     ],
     h1: 'Kirschner wires for orthopaedics and trauma',
     intro: [
-      'Preparing for a theatre list or replenishing stock? Contact us to discuss your K-wire requirements, check availability or request a quote.',
+      'Orthopaedic and trauma teams need to specify the fixation items required for each theatre list. Neovantis supplies Kirschner wires (K-wires) in a range of diameters and lengths, including individual sterile wires on request. Teams can enquire by size, quantity and packaging requirement for a planned case or stock replenishment.',
     ],
     button: 'Enquire about K-wires',
     metaTitle: 'Kirschner Wires (K-Wires) South Africa | Neovantis',
@@ -211,7 +211,7 @@ export const specialities: Speciality[] = [
     },
     h1: 'Spinal fixation systems',
     intro: [
-      'Based in Umhlanga, Durban, Neovantis supplies spinal implants and fixation components to spinal surgeons, theatre teams and hospital purchasing teams. Discuss the implants and associated instruments you need for a planned procedure.',
+      'Neovantis’ spinal portfolio brings together screw and rod systems, cervical fixation components, spinal cages and associated instruments. When planning a procedure, teams can discuss the implant families and instrumentation needed together, so the relevant product information and availability can be checked for their theatre date.',
     ],
     button: 'Discuss spinal fixation requirements',
     image: {
@@ -266,7 +266,7 @@ export const specialities: Speciality[] = [
     },
     h1: 'Cranial fixation plates, screws and titanium mesh',
     intro: [
-      'Based in Umhlanga, Durban, Neovantis supplies cranial fixation plates, screws, titanium mesh and associated instruments for neurosurgical teams. Contact us to discuss the components and instruments you need for a planned case.',
+      'The cranial range covers fixation plates, screws, titanium mesh and associated instruments. Neurosurgical teams can enquire about these components together when preparing a case, including the instruments or tray required alongside the selected plates or mesh.',
     ],
     button: 'Enquire about cranial fixation',
     image: {
@@ -323,7 +323,7 @@ export const specialities: Speciality[] = [
     },
     h1: 'Urology supplies for drainage and endourology',
     intro: [
-      'Based in Umhlanga, Durban, Neovantis supplies urinary catheters, ureteral stents and endourology devices to urology, theatre and hospital purchasing teams.',
+      'Neovantis supplies products for urinary drainage and endourology, from catheters and ureteral stents to access, dilation and stone retrieval devices. Urology and purchasing teams can enquire by product family for a planned theatre list or routine stock replenishment.',
     ],
     button: 'Enquire about urology products',
     image: {
@@ -369,7 +369,7 @@ export const specialities: Speciality[] = [
     },
     h1: 'Radiofrequency equipment and accessories',
     intro: [
-      'We supply radiofrequency (RF) generators and accessories for interventional pain management, including electrodes, cannulae and grounding pads.',
+      'Selecting radiofrequency equipment also means considering the electrodes and cannulae used with the generator. Neovantis supplies RF ablation equipment and accessories for interventional pain teams. Teams can share their existing platform or planned equipment requirements to request product information and check accessory compatibility.',
       'If you’re evaluating a generator or ordering consumables, tell us which platform you use or are considering. Contact us to check compatibility, request product information or enquire about technical support.',
     ],
     button: 'Discuss RF equipment and accessories',
@@ -456,7 +456,7 @@ export const specialities: Speciality[] = [
     },
     h1: 'Radiation protection gloves',
     intro: [
-      'Based in Umhlanga, Durban, Neovantis supplies radiation protection gloves for cath labs, interventional radiology and other teams working with fluoroscopy. Ask our team for the product information and test data for the glove you’re evaluating.',
+      'For teams working with fluoroscopy, glove selection involves fit, material and the attenuation data for the specific product. Neovantis supplies sterile, single-use radiation-attenuating gloves, including latex and latex-free options. Clinical and purchasing teams can request the product documentation needed to evaluate the available options.',
     ],
     button: 'Request glove information',
     image: {

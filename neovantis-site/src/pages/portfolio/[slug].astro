@@ -211,8 +211,9 @@ const relatedIn = !s.related?.length ? null : s.enquiry ? 'enquiry' : s.sections
   /* Divider keeps the enquiry section distinct from the white range section above. */
   .enquiry { border-top: 1px solid var(--line); }
   .enquiry-note { margin-top: 1.25rem; }
-  .options-block { margin-top: clamp(1.75rem, 1.25rem + 1.5vw, 2.5rem); }
-  .options-block h2 { font-size: clamp(1.3rem, 1.15rem + 0.6vw, 1.6rem); }
+  /* Practical ordering blocks (Orthopaedics): brand panels so they stand out below the introduction. */
+  .options-block { margin-top: clamp(1.25rem, 1rem + 1vw, 1.75rem); max-width: 78ch; padding: 1.15rem 1.35rem; background: var(--bg-tint-2); border: 1px solid var(--line); border-left: 4px solid var(--blue-brand); border-radius: var(--radius-sm); }
+  .options-block h2 { font-size: clamp(1.3rem, 1.15rem + 0.6vw, 1.6rem); margin-bottom: 0.5rem; }
 
   .guide-points { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); list-style: none; padding: 0; margin: 1.25rem 0 0; }
   .guide-point { padding: 1.1rem 1.25rem; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); }
