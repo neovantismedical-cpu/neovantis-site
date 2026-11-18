@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="284" height="112" viewBox="0 0 284 112">
+  <!-- ISO 13485:2016 credential badge in the Neovantis palette. Same canvas as the SAHPRA logo (284x112).
+       Deliberately not the ISO logo, which certified organisations may not use.
+       Rendered to public/images/optimised/iso-13485-badge.webp (568x224). -->
+  <rect x="2" y="2" width="280" height="108" rx="14" fill="#ffffff" stroke="#1e5faa" stroke-width="4"/>
+  <circle cx="54" cy="56" r="34" fill="#1e5faa"/>
+  <circle cx="54" cy="56" r="26" fill="none" stroke="#68bbe3" stroke-width="3"/>
+  <path d="M41 57 l9 9 l18 -20" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="100" y="52" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-weight="700" font-size="22" fill="#312e2d">ISO 13485:2016</text>
+  <text x="100" y="81" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-weight="700" font-size="18" letter-spacing="1" fill="#1e5faa">CERTIFIED</text>
+</svg>

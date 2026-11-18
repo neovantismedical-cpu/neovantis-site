@@ -278,6 +278,8 @@ h4 { font-size: 1.1rem; font-weight: 600; }
 /* Equal-height image row so all four headings line up. */
 .cred-media { height: 56px; display: flex; align-items: center; margin-bottom: 0.75rem; }
 .cred-media img { height: 48px; width: auto; max-width: 100%; object-fit: contain; }
+.cred-link { display: flex; height: 48px; border-radius: 6px; }
+.cred-link:hover img { opacity: 0.85; }
 .cred-media img.cred-media--bordered { height: 40px; border: 1px solid var(--line); border-radius: 3px; }
 .cred-icon { width: 48px; height: 48px; border-radius: 10px; display: grid; place-items: center; background: var(--bg-tint-2); color: var(--blue-brand); }
 .cred-icon svg { width: 28px; height: 28px; }

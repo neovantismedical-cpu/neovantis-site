@@ -46,7 +46,7 @@ export const business = {
 
 /** Image or icon shown at the top of a credential card */
 export type CredentialMedia =
-  | { kind: 'image'; src: string; width: number; height: number; alt: string; bordered?: boolean }
+  | { kind: 'image'; src: string; width: number; height: number; alt: string; bordered?: boolean; href?: string }
   | { kind: 'icon'; name: 'document-check' | 'certificate' };
 
 export const credentials: readonly { title: string; text: string; media?: CredentialMedia }[] = [
@@ -68,7 +68,15 @@ export const credentials: readonly { title: string; text: string; media?: Creden
   {
     title: 'ISO certified',
     text: 'Neovantis holds ISO certification. Ask our team for the certificate and its scope.',
-    media: { kind: 'icon', name: 'certificate' },
+    // Badge links to the certificate scope note on the About page.
+    media: {
+      kind: 'image',
+      src: '/images/optimised/iso-13485-badge.webp',
+      width: 284,
+      height: 112,
+      alt: 'ISO 13485:2016 certified: read the certification scope',
+      href: '/about/#iso-13485',
+    },
   },
 ];
 

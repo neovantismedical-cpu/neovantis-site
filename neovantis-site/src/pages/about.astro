@@ -140,6 +140,10 @@ const areas = specialities.map((s) => ({ slug: s.slug, name: s.name[0] + s.name.
     <div class="container">
       <h2 id="standards-heading" class="about-heading">Quality and professional standards</h2>
       <p class="measure" style="margin:0">Neovantis holds a SAHPRA medical device establishment licence and ISO certification. It is a member of SAMED and has Level 1 B-BBEE status.</p>
+      <div class="notice measure iso-note" id="iso-13485">
+        <p>Neovantis’ medical devices quality management system is certified to ISO 13485:2016 for the importing and distribution of medical devices related to orthopaedic, including implants, spine implants, fixation devices and surgical instruments.</p>
+        <p class="iso-cert">Certificate of Registration issued by TNV Certification Ltd. Certificate number S5WGZTCU20250913ZAFMD1C6, valid until 12 September 2028.</p>
+      </div>
     </div>
   </section>
 
@@ -221,6 +225,10 @@ const areas = specialities.map((s) => ({ slug: s.slug, name: s.name[0] + s.name.
   .offices address { font-style: normal; font-size: 1.1em; line-height: 1.6; }
   .offices strong { font-family: var(--font-head); font-size: 1.15em; color: var(--charcoal); }
   @media (min-width: 900px) { .offices { grid-template-columns: minmax(0, 700px) 1fr; } }
+
+  .iso-note { margin-top: 1.25rem; background: #fff; scroll-margin-top: calc(var(--header-h) + 1rem); }
+  .iso-note p { margin: 0; }
+  .iso-note .iso-cert { margin-top: 0.5rem; font-size: 0.92em; color: var(--muted); }
 
   .about-close { margin: clamp(1.5rem, 1rem + 2vw, 2.5rem) 0 0; }
   @media (max-width: 479px) { .about-close .btn { width: 100%; } }
