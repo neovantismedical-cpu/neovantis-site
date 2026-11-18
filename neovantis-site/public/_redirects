@@ -1,0 +1,47 @@
+# Legacy URL redirects (Netlify). Specific rules first. Both slash variants are listed for clarity.
+# Full map and rationale: SEO_ROUTE_MAP.md. Inventory live-domain URLs before launch.
+
+# Speciality pages moved to Portfolio (site restructure, Nov 2026)
+/specialities                       /portfolio/                           301
+/specialities/*                     /portfolio/:splat                     301
+
+# Retired section pages
+/products                           /portfolio/                        301
+/products/                          /portfolio/                        301
+/solutions                          /portfolio/                        301
+/solutions/                         /portfolio/                        301
+/healthcare-professionals           /support/                             301
+/healthcare-professionals/          /support/                             301
+/distributors                       /contact/                             301
+/distributors/                      /contact/                             301
+
+# Former speciality pages
+/orthopaedic-trauma                 /portfolio/orthopaedics/           301
+/orthopaedic-trauma/                /portfolio/orthopaedics/           301
+/neuro-plating                      /portfolio/neurosurgery/           301
+/neuro-plating/                     /portfolio/neurosurgery/           301
+/urology-solutions                  /portfolio/urology/                301
+/urology-solutions/                 /portfolio/urology/                301
+/rf-ablation-pain-management        /portfolio/pain-management/        301
+/rf-ablation-pain-management/       /portfolio/pain-management/        301
+/radiation-protection-gloves        /portfolio/radiation-protection/   301
+/radiation-protection-gloves/       /portfolio/radiation-protection/   301
+
+# Former blog articles with a useful equivalent
+/blog/understanding-rf-ablation-pain-management     /portfolio/pain-management/   301
+/blog/understanding-rf-ablation-pain-management/    /portfolio/pain-management/   301
+/blog/rf-ablation-chronic-pain                      /portfolio/pain-management/   301
+/blog/rf-ablation-chronic-pain/                     /portfolio/pain-management/   301
+/blog/minimally-invasive-pain-management            /portfolio/pain-management/   301
+/blog/minimally-invasive-pain-management/           /portfolio/pain-management/   301
+/blog/urology-solutions-modern-clinical-care        /portfolio/urology/           301
+/blog/urology-solutions-modern-clinical-care/       /portfolio/urology/           301
+/blog/orthopaedic-trauma-hardware-fracture-treatment  /portfolio/orthopaedics/    301
+/blog/orthopaedic-trauma-hardware-fracture-treatment/ /portfolio/orthopaedics/    301
+# Deliberately not redirected (no equivalent; return the genuine 404 page):
+#   /blog/clinically-trusted-medical-solutions
+#   /blog/innovations-orthopaedic-implant-technology
+
+# Blog index
+/blog                               /insights/                            301
+/blog/                              /insights/                            301

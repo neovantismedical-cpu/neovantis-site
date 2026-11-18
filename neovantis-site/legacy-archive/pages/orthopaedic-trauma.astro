@@ -1,0 +1,116 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="Orthopaedic Trauma Solutions | Neovantis"
+  description="Neovantis orthopaedic trauma solutions are designed to support fixation, structural stability, and dependable surgical performance across a broad range of trauma and reconstructive applications."
+>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('/images/hero-orthopaedic-surgery.png')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">Solution Area 01</p>
+        <h1>Orthopaedic Trauma<br/>Solutions</h1>
+        <div class="accent-bar" style="margin-left:auto;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section section--lg">
+    <div class="container">
+      <div class="grid-2" style="align-items:center;gap:4rem;">
+        <div>
+          <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;">Overview</p>
+          <h2 style="margin-bottom:1rem;">Precision Fixation for<br/>Dependable Outcomes</h2>
+          <span class="accent-bar"></span>
+          <p style="margin-bottom:1.5rem;">Neovantis provides orthopaedic trauma solutions designed to support fixation, structural stability, and dependable surgical performance across a broad range of trauma applications.</p>
+          <p style="margin-bottom:1.5rem;">Our orthopaedic portfolio supports orthopaedic surgeons, trauma specialists, and surgical teams with solutions that are selected for clinical reliability, quality, and performance in demanding surgical environments.</p>
+          <p>We work with hospitals, private surgical centres, and specialist practices across South Africa and neighbouring African markets, providing responsive support and dependable product access to orthopaedic teams.</p>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(31,127,182,0.3);">
+          <img src="/images/neovantis-orthopaedic-trauma-plate.png" alt="Orthopaedic trauma solutions" style="width:100%;height:380px;object-fit:cover;display:block;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clinical Focus -->
+  <section class="angled-panel">
+    <div class="geo-overlay"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <div style="max-width:900px;margin:0 auto;">
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;text-align:center;">Clinical Focus</p>
+        <h2 style="text-align:center;margin-bottom:1rem;">What Our Orthopaedic Solutions Support</h2>
+        <div class="section-divider"></div>
+        <p style="text-align:center;margin-bottom:3rem;color:rgba(255,255,255,0.82);">Our orthopaedic trauma portfolio is designed around the key fixation, stability, and precision requirements of modern trauma and reconstructive surgery.</p>
+      </div>
+
+      <div class="grid-3" style="margin-bottom:2rem;">
+        {[
+          { icon: '🔩', title: 'Fixation & Plating', desc: 'Broad plating and fixation solution categories designed to support stability and surgical performance across trauma applications.' },
+          { icon: '🪛', title: 'Bone Screw Solutions', desc: 'A range of bone screw solution areas supporting different fixation requirements and anatomical considerations in trauma surgery.' },
+          { icon: '🔧', title: 'Intramedullary Solutions', desc: 'Intramedullary fixation solution areas designed to support alignment, stability, and load management in long bone trauma.' },
+          { icon: '⚙️', title: 'Wire & Pin Systems', desc: 'K-wire, Steinmann pin, and supporting fixation system areas for percutaneous, provisional, and definitive fixation applications.' },
+          { icon: '🏥', title: 'Surgical Instrumentation', desc: 'Complementary instrumentation support designed to work alongside implant systems for consistent intraoperative workflow.' },
+          { icon: '📋', title: 'External Fixation', desc: 'External fixation solution areas designed for stabilisation, temporary management, and supporting complex trauma presentations.' },
+        ].map(item => (
+          <div class="card">
+            <div class="feature-icon">{item.icon}</div>
+            <h4 style="margin-bottom:0.75rem;">{item.title}</h4>
+            <p style="font-size:0.9rem;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Family Summary -->
+  <section class="section section--lg" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Product Family Highlights</h2>
+        <div class="section-divider"></div>
+        <p>Our orthopaedic trauma portfolio is organised around broad solution families. For full range documentation, please request our product brochure.</p>
+      </div>
+
+      <div class="grid-2" style="gap:2rem;">
+        {[
+          { title: 'Trauma Fixation & Plating', desc: 'Plating solutions across a range of anatomical applications and fracture management requirements, designed for dependable fixation and clinical performance.' },
+          { title: 'Bone Screw Families', desc: 'A broad bone screw solution range supporting different thread profiles, diameters, and fixation requirements across cortical, cancellous, and specialist applications.' },
+          { title: 'K-Wire & Wire Fixation', desc: 'Wire-based fixation system areas including K-wires, pins, and supporting hardware for percutaneous and provisional fixation requirements.' },
+          { title: 'IM Nail & Long Bone Systems', desc: 'Intramedullary fixation system areas designed to support long bone fracture management with attention to alignment and rotational stability.' },
+        ].map(item => (
+          <div class="card" style="display:flex;gap:1.25rem;">
+            <span style="color:var(--blue-accent);font-size:1.3rem;flex-shrink:0;margin-top:2px;">✓</span>
+            <div>
+              <h4 style="margin-bottom:0.5rem;">{item.title}</h4>
+              <p style="font-size:0.9rem;">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="alert" style="max-width:800px;margin:2.5rem auto 0;text-align:center;">
+        All Neovantis orthopaedic products are sourced from certified manufacturers and meet applicable international quality management standards. For full product documentation, please contact our team.
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="container" style="position:relative;z-index:1;">
+      <h2>Request Orthopaedic Product Information</h2>
+      <p>Contact our clinical team to request a full product brochure, discuss clinical requirements, or enquire about product availability across our orthopaedic trauma portfolio.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-outline">Request Full Product Brochure</a>
+        <a href="/solutions" class="btn btn-primary" style="background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);">View All Solutions</a>
+      </div>
+    </div>
+  </div>
+
+</MainLayout>

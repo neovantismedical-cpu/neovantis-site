@@ -1,0 +1,117 @@
+---
+import { nav, specialities, leadPortfolio, widerPortfolio, contactHref, business } from '../config/site';
+import { insightsLinksVisible } from '../lib/insights';
+
+const path = Astro.url.pathname.replace(/\/?$/, '/');
+const showInsights = await insightsLinksVisible();
+const items = nav.filter((n) => !n.insights || showInsights);
+const isCurrent = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+// Portfolio menu: the lead surgical areas first, then the wider portfolio.
+const groups = [
+  { id: 'nav-portfolio-lead', label: 'Surgical portfolio', slugs: leadPortfolio },
+  { id: 'nav-portfolio-wider', label: 'Wider portfolio', slugs: widerPortfolio },
+].map((g) => ({ ...g, items: g.slugs.map((slug) => specialities.find((s) => s.slug === slug)!) }));
+---
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Neovantis home">
+      <img {...business.logoOnDark} alt="Neovantis — Improving Lives Together" />
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-icon" aria-hidden="true"><span></span></span>
+      Menu
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul class="nav-list">
+        {items.map((item) =>
+          item.children ? (
+            <li class="has-submenu">
+              <button
+                class:list={['submenu-toggle', { 'is-current': isCurrent(item.href) }]}
+                type="button"
+                aria-expanded="false"
+                aria-controls="portfolio-menu"
+              >
+                {item.label}<span class="chevron" aria-hidden="true"></span>
+              </button>
+              <ul class="submenu" id="portfolio-menu" hidden>
+                <li class="submenu-overview">
+                  <a href={item.href} aria-current={path === item.href ? 'page' : undefined}>Portfolio overview</a>
+                </li>
+                {groups.map((g) => (
+                  <li class="submenu-group">
+                    <span class="submenu-label" id={g.id}>{g.label}</span>
+                    <ul aria-labelledby={g.id}>
+                      {g.items.map((s) => (
+                        <li>
+                          <a href={`/portfolio/${s.slug}/`} aria-current={path === `/portfolio/${s.slug}/` ? 'page' : undefined}>{s.name}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ) : (
+            <li>
+              <a class="nav-link" href={item.href} aria-current={isCurrent(item.href) && path === item.href ? 'page' : undefined}>
+                {item.label}
+              </a>
+            </li>
+          )
+        )}
+      </ul>
+      <div class="nav-cta"><a class="btn btn-primary" href={contactHref()}>Speak to our team</a></div>
+    </nav>
+
+    <a class="btn btn-light header-cta" href={contactHref()}>Speak to our team</a>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
+  const navEl = document.getElementById('site-nav');
+  const subToggle = document.querySelector<HTMLButtonElement>('.submenu-toggle');
+  const submenu = document.getElementById('portfolio-menu');
+  const desktop = window.matchMedia('(min-width: 1100px)');
+
+  function setMenu(open: boolean) {
+    toggle?.setAttribute('aria-expanded', String(open));
+    navEl?.classList.toggle('is-open', open);
+    if (!open) setSub(false);
+  }
+  function setSub(open: boolean) {
+    subToggle?.setAttribute('aria-expanded', String(open));
+    if (submenu) submenu.hidden = !open;
+  }
+
+  toggle?.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
+  subToggle?.addEventListener('click', () => setSub(subToggle.getAttribute('aria-expanded') !== 'true'));
+
+  // Escape closes the innermost open menu and returns focus to its control.
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    if (subToggle?.getAttribute('aria-expanded') === 'true') {
+      setSub(false);
+      subToggle.focus();
+    } else if (toggle?.getAttribute('aria-expanded') === 'true') {
+      setMenu(false);
+      toggle.focus();
+    }
+  });
+
+  // Close the desktop dropdown when focus or a click leaves it.
+  const subItem = subToggle?.closest('li');
+  subItem?.addEventListener('focusout', (e) => {
+    if (desktop.matches && !subItem.contains(e.relatedTarget as Node)) setSub(false);
+  });
+  document.addEventListener('click', (e) => {
+    const t = e.target as Node;
+    if (subItem && !subItem.contains(t) && desktop.matches) setSub(false);
+    if (navEl && toggle && !desktop.matches && !navEl.contains(t) && !toggle.contains(t)) setMenu(false);
+  });
+
+  desktop.addEventListener('change', () => setMenu(false));
+</script>

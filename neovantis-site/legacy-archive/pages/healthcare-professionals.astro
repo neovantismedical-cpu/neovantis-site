@@ -1,0 +1,175 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="For Healthcare Professionals | Neovantis"
+  description="Clinical information, product documentation, and professional support for orthopaedic surgeons, pain specialists, neurosurgeons, urologists, and hospital procurement teams."
+>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('/images/professional webpage hero.png')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">Surgeons & Specialists</p>
+        <h1>Healthcare<br/>Professionals</h1>
+        <div class="accent-bar" style="margin-left:auto;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Why Professionals Choose Neovantis</h2>
+        <div class="section-divider"></div>
+        <p>Neovantis is dedicated to providing healthcare professionals with specialist medical solutions, dependable product access, and the clinical support infrastructure that enables confident practice across orthopaedics, pain management, neurosurgery, urology, and related specialist disciplines.</p>
+      </div>
+      <div class="grid-4">
+        {[
+          { icon: '📋', label: 'Specialist Solution Portfolio' },
+          { icon: '📁', label: 'Product Documentation' },
+          { icon: '🛠️', label: 'Technical Support' },
+          { icon: '🤝', label: 'Professional Partnership' },
+        ].map(item => (
+          <div class="card text-center">
+            <div style="font-size:2rem;margin-bottom:0.75rem;">{item.icon}</div>
+            <h4>{item.label}</h4>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Clinical Solutions -->
+  <section class="angled-panel">
+    <div class="geo-overlay"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <div class="grid-2" style="align-items:center;gap:4rem;">
+        <div>
+          <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;">Our Clinical Scope</p>
+          <h2 style="margin-bottom:1rem;">Solutions Across<br/>Specialist Disciplines</h2>
+          <span class="accent-bar"></span>
+          <p style="margin-bottom:1.5rem;">Neovantis provides specialist medical solutions across key clinical disciplines — each selected for clinical quality, dependable performance, and practical value in demanding healthcare environments.</p>
+          <ul style="list-style:none;margin-bottom:2rem;">
+            {[
+              'Orthopaedic Trauma Solutions',
+              'RF Ablation & Pain Management',
+              'Neuro Plating Systems',
+              'Urology Solutions',
+              'Radiation Protection Gloves',
+            ].map(item => (
+              <li style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.7rem;color:rgba(255,255,255,0.8);font-family:var(--font-prose);">
+                <span style="color:var(--blue-accent);">✓</span> {item}
+              </li>
+            ))}
+          </ul>
+          <div style="margin-top:2rem;">
+            <a href="/solutions" class="btn btn-outline">Explore All Solutions</a>
+          </div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(31,127,182,0.3);">
+          <img src="/images/neovantis-clinton-visagie.png" alt="Clinical team reviewing data" style="width:100%;height:360px;object-fit:cover;object-position:center 20%;filter:brightness(0.75) saturate(0.6);" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Documentation -->
+  <section class="section section--lg">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Product Documentation</h2>
+        <div class="section-divider"></div>
+        <p>Comprehensive technical documentation is available for all Neovantis product families — accessible on request from our clinical support team.</p>
+      </div>
+      <div class="grid-3">
+        {[
+          { icon: '📐', title: 'Product Brochures', desc: 'High-level product brochures covering our specialist solution families — available on request for qualified healthcare professionals and procurement stakeholders.' },
+          { icon: '📊', title: 'Clinical Information', desc: 'Clinical background and application information supporting the informed use of Neovantis product categories in relevant specialist settings.' },
+          { icon: '🔬', title: 'Instructions for Use', desc: 'Instructions for Use (IFU) documents meeting applicable regulatory requirements — available on request for all marketed medical device categories.' },
+          { icon: '📸', title: 'Technical Support Material', desc: 'Technical support material and product-specific guidance available through direct engagement with our clinical and technical support team.' },
+          { icon: '⚠️', title: 'Safety Information', desc: 'Safety, contraindication, and compliance-related information available through the Neovantis team for all applicable product categories.' },
+          { icon: '🔄', title: 'Instrument Guides', desc: 'Instrument reprocessing and handling guidance available for reusable product categories through our technical support team.' },
+        ].map(item => (
+          <div class="card">
+            <div class="feature-icon">{item.icon}</div>
+            <h4 style="margin-bottom:0.75rem;">{item.title}</h4>
+            <p style="font-size:0.9rem;margin-bottom:1rem;">{item.desc}</p>
+            <button onclick="window.location.href='/contact'" class="btn btn-ghost" style="font-size:0.75rem;padding:0.5rem 1rem;">Request Information</button>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Support -->
+  <section class="section" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Technical & Clinical Support</h2>
+        <div class="section-divider"></div>
+        <p>Our team is available to assist with product queries, clinical information requests, and professional support across our specialist portfolio.</p>
+      </div>
+      <div class="grid-2" style="gap:2rem;">
+        {[
+          { title: 'Pre-Procedure Product Support', desc: 'Consult with our team on product selection, clinical information, and documentation requirements prior to procedure planning.' },
+          { title: 'Intraoperative & Procedure Support', desc: 'On-call technical assistance available via phone for product-related queries during procedures, upon request for qualified practitioners.' },
+          { title: 'Product & Technical Queries', desc: 'Immediate technical guidance for product compatibility, specification queries, and equipment-related questions from clinical teams.' },
+          { title: 'Post-Procedure Follow-Up', desc: 'Clinical liaison support for post-procedure product queries, feedback reporting, and ongoing professional relationship management.' },
+        ].map(item => (
+          <div class="card" style="display:flex;gap:1.25rem;">
+            <div style="color:var(--blue-accent);font-size:1.5rem;flex-shrink:0;margin-top:2px;">⚙️</div>
+            <div>
+              <h4 style="margin-bottom:0.5rem;">{item.title}</h4>
+              <p style="font-size:0.9rem;">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Training -->
+  <section class="section section--lg">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Professional Support</h2>
+        <div class="section-divider"></div>
+        <p>Neovantis invests in the professional support of the healthcare professionals and teams we work with across our solution portfolio.</p>
+      </div>
+      <div class="grid-3">
+        {[
+          { icon: '🎓', title: 'Clinical Workshops', desc: 'Hands-on and educational workshop support for healthcare professionals engaging with Neovantis product solution areas across specialist disciplines.' },
+          { icon: '💻', title: 'Product Training', desc: 'Product training and clinical education support available to healthcare professionals and clinical teams working with our portfolio.' },
+          { icon: '🏥', title: 'In-Facility Support', desc: 'Experienced clinical and technical support available for in-facility engagement with healthcare professionals adopting new solution areas.' },
+          { icon: '📹', title: 'Clinical Reference Material', desc: 'Clinical reference material and educational content available through direct engagement with our specialist clinical support team.' },
+          { icon: '📚', title: 'Ongoing Education Support', desc: 'Support for continuing professional education initiatives and relevant clinical education events aligned with our specialist solution areas.' },
+          { icon: '🤝', title: 'Specialist Collaboration', desc: 'We welcome collaboration with specialist clinicians, key opinion leaders, and healthcare organisations committed to clinical excellence and patient outcomes.' },
+        ].map(item => (
+          <div class="card">
+            <div class="feature-icon">{item.icon}</div>
+            <h4 style="margin-bottom:0.75rem;">{item.title}</h4>
+            <p style="font-size:0.9rem;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="container" style="position:relative;z-index:1;">
+      <h2>Request Professional Product Information</h2>
+      <p>Contact our clinical team to request product documentation, arrange a discussion, or raise a clinical product enquiry across any of our specialist solution areas.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-outline">Request Clinical Product Information</a>
+        <a href="https://wa.me/27745630777" class="btn btn-primary" style="background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);">WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+
+</MainLayout>

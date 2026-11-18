@@ -1,11 +1,19 @@
-[[redirects]]
-  from = "/*"
-  to = "/404"
-  status = 404
+# Netlify configuration for the Astro app in this folder.
+# The Git repository root is the parent folder, so the Netlify site must use
+# Base directory = neovantis-site (check in Site configuration > Build & deploy).
+#
+# Indexing: pages are noindex unless SITE_INDEXING=true. Set it ONLY for the production
+# context once the approved custom domain (https://neovantis.co.za) is live. See WEBSITE_HANDOVER.md.
+#
+# Redirects live in public/_redirects. The former blanket "/* -> /404" rule was removed:
+# Netlify serves dist/404.html with a genuine 404 status for unknown paths.
 
 [build]
   command = "npm run build"
   publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
 
 [[headers]]
   for = "/*"
@@ -13,6 +21,4 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-
-[build.environment]
-  NODE_VERSION = "20"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"

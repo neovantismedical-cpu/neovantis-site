@@ -1,0 +1,116 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="Radiation Protection Gloves | Neovantis"
+  description="Neovantis radiation protection glove solutions are positioned for demanding clinical environments where protection, comfort, grip, and usability must work together."
+>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('/images/distributors and partners hero.png')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">Solution Area 05</p>
+        <h1>Radiation Protection<br/>Gloves</h1>
+        <div class="accent-bar" style="margin-left:auto;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section section--lg">
+    <div class="container">
+      <div class="grid-2" style="align-items:center;gap:4rem;">
+        <div>
+          <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;">Overview</p>
+          <h2 style="margin-bottom:1rem;">Protection, Comfort &<br/>Clinical Usability</h2>
+          <span class="accent-bar"></span>
+          <p style="margin-bottom:1.5rem;">Our radiation protection glove category supports clinicians and teams working in interventional and imaging-driven environments, combining protective intent with practical comfort and procedure usability.</p>
+          <p style="margin-bottom:1.5rem;">In high-exposure clinical environments, the demands on protective gloves go beyond basic shielding. Clinicians require solutions that balance radiation protection with tactile sensitivity, dexterity, and practical usability across demanding procedures.</p>
+          <p>Neovantis provides radiation protection glove solutions designed to meet these combined requirements across the specialist procedure environments where they are needed most.</p>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(31,127,182,0.3);">
+          <img src="/images/neovantis-healthcare-professionals.png" alt="Radiation protection in specialist clinical environments" style="width:100%;height:380px;object-fit:cover;display:block;filter:brightness(0.92) saturate(0.88);" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Environments -->
+  <section class="angled-panel">
+    <div class="geo-overlay"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <div style="max-width:900px;margin:0 auto;">
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;text-align:center;">Where They Are Used</p>
+        <h2 style="text-align:center;margin-bottom:1rem;">Clinical Environments & Applications</h2>
+        <div class="section-divider"></div>
+        <p style="text-align:center;margin-bottom:3rem;color:rgba(255,255,255,0.82);">Our radiation protection gloves are positioned for use across the specialist high-exposure clinical environments where protection and usability matter most.</p>
+      </div>
+
+      <div class="grid-3">
+        {[
+          { icon: '🏥', title: 'Radiology & Imaging', desc: 'Suitable for use in radiology and imaging environments where routine exposure management is part of standard clinical practice.' },
+          { icon: '❤️', title: 'Cath Lab & Interventional', desc: 'Designed with the demands of cath lab and interventional settings in mind — where extended procedure times require practical comfort and grip.' },
+          { icon: '🦴', title: 'Orthopaedic Procedures', desc: 'Supporting orthopaedic procedure environments where fluoroscopy guidance and radiation exposure management are part of surgical workflow.' },
+          { icon: '🔬', title: 'Urology & Specialist', desc: 'Applicable across urology and related specialist procedures where fluoroscopic guidance is used and radiation protection is a clinical priority.' },
+          { icon: '🧠', title: 'Neurosurgical Settings', desc: 'Used in neurosurgical environments where imaging and radiation exposure form part of the procedural or intraoperative workflow.' },
+          { icon: '✓', title: 'Specialist Procedure Environments', desc: 'Broadly applicable across any specialist clinical environment where radiation protection, comfort, and procedural usability must be balanced.' },
+        ].map(item => (
+          <div class="card">
+            <div class="feature-icon">{item.icon}</div>
+            <h4 style="margin-bottom:0.75rem;">{item.title}</h4>
+            <p style="font-size:0.9rem;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Product Attributes -->
+  <section class="section section--lg" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-heading">
+        <h2>What Our Glove Solutions Offer</h2>
+        <div class="section-divider"></div>
+        <p>Our radiation protection gloves are selected with the combined clinical demands of protection, usability, and procedure comfort in mind.</p>
+      </div>
+
+      <div class="grid-2" style="gap:2rem;">
+        {[
+          { title: 'Radiation Protection Positioning', desc: 'Radiation protection gloves designed for high-exposure clinical environments where protection from scatter and direct radiation is a priority.' },
+          { title: 'Comfort & Dexterity', desc: 'Comfort and grip-focused design positioning to support clinician usability across demanding and extended procedure environments.' },
+          { title: 'Sterile & Procedure-Ready Options', desc: 'Sterile and procedure-ready positioning where appropriate, supporting use across both interventional and imaging-adjacent clinical settings.' },
+          { title: 'Broad Application Suitability', desc: 'Suitable across radiology, cath lab, orthopaedic, urology, and neurosurgical environments — wherever radiation protection and practical usability are required together.' },
+        ].map(item => (
+          <div class="card" style="display:flex;gap:1.25rem;">
+            <span style="color:var(--blue-accent);font-size:1.3rem;flex-shrink:0;margin-top:2px;">✓</span>
+            <div>
+              <h4 style="margin-bottom:0.5rem;">{item.title}</h4>
+              <p style="font-size:0.9rem;">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="alert" style="max-width:800px;margin:2.5rem auto 0;text-align:center;">
+        For full product specifications, attenuation data, sizing options, and range documentation, please contact the Neovantis team directly. Our team will respond to all product enquiries within one business day.
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="container" style="position:relative;z-index:1;">
+      <h2>Request Product Information</h2>
+      <p>Contact our team to request full product documentation, discuss your specific clinical or procurement requirements, or enquire about product availability.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-outline">Enquire About Product Availability</a>
+        <a href="/solutions" class="btn btn-primary" style="background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);">View All Solutions</a>
+      </div>
+    </div>
+  </div>
+
+</MainLayout>

@@ -1,0 +1,210 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const solutions = [
+  {
+    id: 'orthopaedic-trauma',
+    num: '01',
+    icon: '🦴',
+    title: 'Orthopaedic Trauma Solutions',
+    summary: 'Orthopaedic trauma solutions designed to support fixation, stability, and surgical precision across a range of trauma and reconstructive applications.',
+    bullets: [
+      'Broad trauma fixation support',
+      'Plating, fixation, and wire-based solution areas',
+      'Designed for dependable clinical performance',
+      'Suitable for modern orthopaedic environments',
+    ],
+    image: '/images/neovantis-orthopaedic-trauma-plate.png',
+    href: '/orthopaedic-trauma',
+  },
+  {
+    id: 'rf-ablation',
+    num: '02',
+    icon: '⚡',
+    title: 'RF Ablation & Pain Management',
+    summary: 'Precision-focused RF solutions supporting minimally invasive pain management in specialist clinical settings.',
+    bullets: [
+      'Supports targeted pain management procedures',
+      'Conventional and pulsed RF treatment pathways',
+      'Designed for procedural precision and control',
+      'Supports modern interventional pain practice',
+    ],
+    image: '/images/neovantis-rf-ablation-technology.png',
+    href: '/rf-ablation-pain-management',
+  },
+  {
+    id: 'neuro-plating',
+    num: '03',
+    icon: '🧠',
+    title: 'Neuro Plating Systems',
+    summary: 'Cranial fixation and reconstruction solutions designed for precision, anatomical conformity, and reliable neurosurgical support.',
+    bullets: [
+      'Cranial fixation and reconstruction focus',
+      'Low-profile and clinically considered design direction',
+      'Supports specialist neurosurgical applications',
+      'Precision and reliability-oriented positioning',
+    ],
+    image: '/images/innovations-in-orthopaedic-technology.png',
+    href: '/neuro-plating',
+  },
+  {
+    id: 'urology',
+    num: '04',
+    icon: '🔬',
+    title: 'Urology Solutions',
+    summary: 'A broad urology portfolio supporting access, dilation, drainage, retrieval, and minimally invasive intervention.',
+    bullets: [
+      'Access and dilation support',
+      'Drainage and catheter-based solution families',
+      'Retrieval and guidewire-related solution areas',
+      'Designed for efficient clinical use',
+    ],
+    image: '/images/neovantis-precision-pain-management.png',
+    href: '/urology-solutions',
+  },
+  {
+    id: 'radiation-gloves',
+    num: '05',
+    icon: '🧤',
+    title: 'Radiation Protection Gloves',
+    summary: 'Protective glove solutions developed for demanding interventional and imaging environments where protection, comfort, and grip matter.',
+    bullets: [
+      'Suitable for high-exposure clinical settings',
+      'Designed for protection and practical usability',
+      'Comfort and grip-focused positioning',
+      'Supports specialist procedure environments',
+    ],
+    image: '/images/neovantis-healthcare-professionals.png',
+    href: '/radiation-protection-gloves',
+  },
+];
+---
+
+<MainLayout
+  title="Our Solutions | Neovantis"
+  description="Neovantis provides specialist medical solutions across orthopaedic trauma, RF ablation pain management, neuro plating, urology, and radiation protection — serving South Africa and neighbouring African markets."
+>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('/images/our solutions hero.png')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">What We Offer</p>
+        <h1>Our Solutions</h1>
+        <div class="accent-bar" style="margin-left:auto;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Our Clinical Focus Areas</h2>
+        <div class="section-divider"></div>
+        <p>Neovantis provides specialised medical solutions across key clinical disciplines. Our portfolio is designed to support precision, safety, and dependable performance in demanding healthcare environments throughout South Africa and neighbouring African markets.</p>
+      </div>
+
+      <!-- Quick-nav cards -->
+      <div class="grid-3" style="gap:1.25rem;margin-bottom:1rem;">
+        {solutions.slice(0, 3).map(s => (
+          <a href={`#${s.id}`} class="card" style="text-decoration:none;display:flex;gap:1rem;align-items:flex-start;padding:1.25rem;">
+            <div style="font-size:1.5rem;flex-shrink:0;">{s.icon}</div>
+            <div>
+              <h4 style="margin-bottom:0.25rem;font-size:1rem;">{s.title}</h4>
+              <p style="font-size:0.85rem;">Scroll to explore</p>
+            </div>
+          </a>
+        ))}
+      </div>
+      <div class="grid-2" style="gap:1.25rem;max-width:800px;margin:0 auto;">
+        {solutions.slice(3).map(s => (
+          <a href={`#${s.id}`} class="card" style="text-decoration:none;display:flex;gap:1rem;align-items:flex-start;padding:1.25rem;">
+            <div style="font-size:1.5rem;flex-shrink:0;">{s.icon}</div>
+            <div>
+              <h4 style="margin-bottom:0.25rem;font-size:1rem;">{s.title}</h4>
+              <p style="font-size:0.85rem;">Scroll to explore</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Sections -->
+  {solutions.map((sol, i) => (
+    i % 2 === 0 ? (
+      <!-- Dark angled panel for odd solutions -->
+      <section class="angled-panel" id={sol.id}>
+        <div class="geo-overlay"></div>
+        <div class="container" style="position:relative;z-index:2;">
+          <div class="grid-2" style="align-items:center;gap:4rem;">
+            <div>
+              <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;">Solution {sol.num}</p>
+              <h2 style="margin-bottom:1rem;">{sol.title}</h2>
+              <span class="accent-bar"></span>
+              <p style="margin-bottom:1.5rem;color:rgba(255,255,255,0.82);">{sol.summary}</p>
+              <ul style="list-style:none;margin-bottom:2rem;">
+                {sol.bullets.map(b => (
+                  <li style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.6rem;color:rgba(255,255,255,0.8);font-family:var(--font-prose);">
+                    <span style="color:var(--blue-accent);">✓</span> {b}
+                  </li>
+                ))}
+              </ul>
+              <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+                <a href={sol.href} class="btn btn-outline">Learn More</a>
+                <a href="/contact" class="btn btn-primary" style="background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);">Request Brochure</a>
+              </div>
+            </div>
+            <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(31,127,182,0.3);">
+              <img src={sol.image} alt={sol.title} style="width:100%;height:360px;object-fit:cover;display:block;" />
+            </div>
+          </div>
+        </div>
+      </section>
+    ) : (
+      <!-- Light section for even solutions -->
+      <section class="section section--lg" id={sol.id} style={i === 3 ? 'background:var(--bg-secondary);' : ''}>
+        <div class="container">
+          <div class="grid-2" style="align-items:center;gap:4rem;">
+            <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(31,127,182,0.3);">
+              <img src={sol.image} alt={sol.title} style="width:100%;height:360px;object-fit:cover;display:block;filter:brightness(0.92) saturate(0.88);" />
+            </div>
+            <div>
+              <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;">Solution {sol.num}</p>
+              <h2 style="margin-bottom:1rem;">{sol.title}</h2>
+              <span class="accent-bar"></span>
+              <p style="margin-bottom:1.5rem;">{sol.summary}</p>
+              <ul style="list-style:none;margin-bottom:2rem;">
+                {sol.bullets.map(b => (
+                  <li style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.6rem;color:var(--text-muted);font-family:var(--font-prose);">
+                    <span style="color:var(--blue-primary);">✓</span> {b}
+                  </li>
+                ))}
+              </ul>
+              <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+                <a href={sol.href} class="btn btn-primary">Learn More</a>
+                <a href="/contact" class="btn btn-ghost">Request Brochure</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  ))}
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="container" style="position:relative;z-index:1;">
+      <h2>Speak With Our Clinical Team</h2>
+      <p>Our team is available to provide detailed product information, clinical references, and brochure documentation across all solution categories.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-outline">Contact Us</a>
+        <a href="/healthcare-professionals" class="btn btn-primary" style="background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);">For Healthcare Professionals</a>
+      </div>
+    </div>
+  </div>
+
+</MainLayout>

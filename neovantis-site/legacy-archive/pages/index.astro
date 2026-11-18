@@ -1,0 +1,193 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import BlogCard from '../components/BlogCard.astro';
+
+const solutionAreas = [
+  {
+    icon: '🦴',
+    title: 'Orthopaedic Trauma Solutions',
+    desc: 'Comprehensive trauma and fixation solutions designed to support surgical precision, stability, and dependable clinical performance across a range of orthopaedic applications.',
+    href: '/orthopaedic-trauma',
+  },
+  {
+    icon: '⚡',
+    title: 'RF Ablation & Pain Management',
+    desc: 'Specialist radiofrequency solutions for minimally invasive pain management, supporting precise treatment pathways for chronic and procedure-led clinical care.',
+    href: '/rf-ablation-pain-management',
+  },
+  {
+    icon: '🧠',
+    title: 'Neuro Plating Systems',
+    desc: 'Advanced cranial fixation and reconstruction solutions designed for accuracy, anatomical conformity, and reliable performance in neurosurgical settings.',
+    href: '/neuro-plating',
+  },
+  {
+    icon: '🔬',
+    title: 'Urology Solutions',
+    desc: 'A broad portfolio of urology solutions supporting access, dilation, drainage, retrieval, and minimally invasive intervention across modern clinical environments.',
+    href: '/urology-solutions',
+  },
+  {
+    icon: '🧤',
+    title: 'Radiation Protection Gloves',
+    desc: 'Protective glove solutions developed for demanding interventional and imaging environments, balancing protection, comfort, grip, and clinical usability.',
+    href: '/radiation-protection-gloves',
+  },
+];
+
+const whyNeovantis = [
+  { icon: '✓', title: 'Clinically Trusted Innovation', desc: 'Solutions selected for dependable clinical performance and alignment with modern healthcare standards.' },
+  { icon: '✓', title: 'Specialist Medical Focus', desc: 'Dedicated to specialist disciplines — orthopaedics, pain management, neuro plating, urology, and more.' },
+  { icon: '✓', title: 'South African-Led, Regional Reach', desc: 'Proudly South African, serving healthcare providers across South Africa and neighbouring African markets.' },
+  { icon: '✓', title: 'Professional Support & Service', desc: 'Responsive teams providing clinical guidance, technical support, and reliable product access.' },
+];
+
+const latestPosts = [
+  {
+    slug: 'understanding-rf-ablation-pain-management',
+    title: 'Understanding RF Ablation in Modern Pain Management',
+    excerpt: 'A high-level overview of radiofrequency ablation — what it is, how it works, and why precision matters in minimally invasive pain management.',
+    date: '2026-04-05',
+    tag: 'Pain Management',
+    image: '/images/neovantis-rf-ablation-technology.png',
+  },
+  {
+    slug: 'urology-solutions-modern-clinical-care',
+    title: 'The Growing Role of Urology Solutions in Modern Clinical Care',
+    excerpt: 'Dependable urology solutions support clinicians across access, drainage, retrieval, and minimally invasive intervention in busy healthcare environments.',
+    date: '2026-03-20',
+    tag: 'Urology',
+    image: '/images/neovantis-precision-pain-management.png',
+  },
+  {
+    slug: 'clinically-trusted-medical-solutions',
+    title: 'Why Clinically Trusted Medical Solutions Matter in High-Performance Healthcare',
+    excerpt: 'Precision, reliability, and specialist support — why healthcare providers increasingly value well-supported medical solution partners.',
+    date: '2026-03-05',
+    tag: 'Innovation',
+    image: '/images/neovantis-advanced-implant-design.png',
+  },
+];
+---
+
+<MainLayout
+  title="Neovantis | Advanced Medical Solutions for Precision, Performance & Better Outcomes"
+  description="Neovantis is a South African-led medical company providing clinically trusted solutions across orthopaedics, pain management, urology, neuro plating, and specialist healthcare throughout South Africa and neighbouring African markets."
+>
+  <Hero
+    eyebrow="Medical Solutions — South Africa"
+    headline="Advanced Medical Solutions for"
+    highlight="Precision & Better Outcomes"
+    subheadline="Clinically trusted solutions across orthopaedics, pain management, neuro plating, urology, and radiation protection — serving South Africa and neighbouring African markets."
+    primaryCta={{ label: 'Explore Solutions', href: '/solutions' }}
+    secondaryCta={{ label: 'Contact Our Team', href: '/contact' }}
+  />
+
+  <!-- About Neovantis -->
+  <Section
+    title="About Neovantis"
+    subtitle="A South African-led medical company dedicated to improving lives through clinically trusted innovation, serving healthcare providers across South Africa and neighbouring African countries."
+    bg="default"
+    size="lg"
+  >
+    <div class="grid-2" style="align-items:center; gap:4rem;">
+      <div>
+        <span class="accent-bar"></span>
+        <p style="margin-bottom:1.5rem;">
+          Founded on the principles of honesty, integrity, passion, and innovation, Neovantis partners with orthopaedic surgeons, hospitals, pain management specialists, and surgical centres to deliver high-quality medical solutions that meet the demands of modern clinical practice.
+        </p>
+        <p>
+          Our focus spans specialist disciplines — from orthopaedic trauma fixation and RF ablation pain management to neuro plating, urology, and radiation protection — supporting physician precision, patient outcomes, and dependable clinical performance.
+        </p>
+        <div style="margin-top:2rem;">
+          <a href="/about" class="btn btn-primary">Our Story</a>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+        {whyNeovantis.map(item => (
+          <div class="card">
+            <span style="color:var(--blue-accent);font-size:1.2rem;font-weight:700;">{item.icon}</span>
+            <h4 style="margin:0.5rem 0 0.5rem;font-size:1rem;">{item.title}</h4>
+            <p style="font-size:0.85rem;color:var(--text);">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <!-- Clinical Focus Areas -->
+  <section class="angled-panel">
+    <div class="geo-overlay"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <div style="text-align:center;max-width:720px;margin:0 auto 3rem;">
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;">What We Do</p>
+        <h2 style="color:#fff;margin-bottom:1rem;">Our Clinical Focus Areas</h2>
+        <div class="section-divider"></div>
+        <p style="color:rgba(255,255,255,0.82);">Neovantis provides specialised medical solutions across key clinical disciplines, designed to support precision, safety, and dependable performance in demanding healthcare environments.</p>
+      </div>
+
+      <div class="grid-3" style="gap:1.5rem;">
+        {solutionAreas.slice(0, 3).map(area => (
+          <a href={area.href} class="card" style="text-decoration:none;display:flex;flex-direction:column;gap:0.75rem;">
+            <div class="feature-icon" style="font-size:1.75rem;">{area.icon}</div>
+            <h4 style="margin-bottom:0.25rem;">{area.title}</h4>
+            <p style="font-size:0.9rem;flex:1;color:var(--text);">{area.desc}</p>
+            <span style="color:var(--blue-accent);font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;margin-top:0.5rem;">Learn More →</span>
+          </a>
+        ))}
+      </div>
+
+      <div class="grid-2" style="gap:1.5rem;margin-top:1.5rem;max-width:800px;margin-left:auto;margin-right:auto;">
+        {solutionAreas.slice(3).map(area => (
+          <a href={area.href} class="card" style="text-decoration:none;display:flex;flex-direction:column;gap:0.75rem;">
+            <div class="feature-icon" style="font-size:1.75rem;">{area.icon}</div>
+            <h4 style="margin-bottom:0.25rem;">{area.title}</h4>
+            <p style="font-size:0.9rem;flex:1;color:var(--text);">{area.desc}</p>
+            <span style="color:var(--blue-accent);font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;margin-top:0.5rem;">Learn More →</span>
+          </a>
+        ))}
+      </div>
+
+      <div style="text-align:center;margin-top:2.5rem;">
+        <a href="/solutions" class="btn btn-outline">View All Solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clinical Insights -->
+  <Section
+    title="Clinical Insights"
+    subtitle="Educational articles and perspectives on medical technology, clinical practice, and specialist healthcare solutions from the Neovantis team."
+    bg="secondary"
+  >
+    <div class="grid-3" style="margin-bottom:2.5rem;">
+      {latestPosts.map(post => (
+        <BlogCard {...post} />
+      ))}
+    </div>
+
+    <div class="text-center">
+      <a href="/blog" class="btn btn-ghost">View All Articles</a>
+    </div>
+  </Section>
+
+  <div class="cta-banner">
+    <div class="container" style="position:relative;z-index:1;">
+      <h2>Ready to Partner With Neovantis?</h2>
+      <p>Whether you are a surgeon, hospital procurement team, or medical distributor, we are ready to support your clinical requirements across our specialist solution portfolio.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-outline">Contact Our Team</a>
+        <a
+          href="/products"
+          class="btn btn-primary"
+          style="background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);"
+        >
+          Request Product Information
+        </a>
+      </div>
+    </div>
+  </div>
+</MainLayout>

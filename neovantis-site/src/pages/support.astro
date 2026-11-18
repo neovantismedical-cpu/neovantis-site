@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { specialities, contactHref, SITE_URL } from '../config/site';
+import { faqs, faqPlainText } from '../config/faq';
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  '@id': `${SITE_URL}/support/#faq`,
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: faqPlainText(f) },
+  })),
+};
+
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Support', href: '/support/' }];
+
+const supportRoutes = [
+  {
+    id: 'representative',
+    h: 'Request a meeting',
+    p: 'Evaluating a device, implant or instrument? Get in touch to arrange a product introduction for your speciality.',
+    link: 'Arrange a product introduction',
+    href: contactHref(undefined, 'meeting'),
+  },
+  {
+    id: 'upcoming-case',
+    h: 'Discuss an upcoming case',
+    p: 'Tell us what you need for the procedure and your planned date. If you already have a product or system in mind, include it in your enquiry. We’ll explain what Neovantis offers for your requirements. For selected cases, we can also provide technical product support in theatre if required.',
+    link: 'Discuss your product requirements',
+    href: contactHref(undefined, 'plan-a-case'),
+  },
+  {
+    id: 'rf-training',
+    h: 'Ask about RF product training',
+    p: 'Tell us which RF system your team is using or evaluating and what you’d like the training to cover.',
+    link: 'Ask about RF training',
+    href: contactHref('pain-management', 'rf-training'),
+  },
+  {
+    id: 'orders',
+    h: 'Orders and quotes',
+    p: 'For delivery queries, order discrepancies or returns, contact us with your order or invoice reference. For a new quote, tell us the product, quantity, required date and any documents you need.',
+    link: 'Enquire about an order or quote',
+    href: contactHref(),
+  },
+];
+
+const enquiryDetails = [
+  { lead: 'Product details', text: 'The product type, size or specification you’re looking for.' },
+  { lead: 'Your current system', text: 'The make and model, along with any instruments, trays or accessories you need.' },
+  { lead: 'Quantities and timing', text: 'How many you need, when you need them and, for regular stock, how often you reorder.' },
+  { lead: 'Equipment and support questions', text: 'For equipment such as RF generators, the equipment involved and any technical support or training question you’d like to raise.' },
+  { lead: 'Documentation', text: 'Any product information or technical documents your facility needs for evaluation or procurement.' },
+];
+---
+<BaseLayout
+  title="Product and Theatre Support for Clinical Teams"
+  description="Arrange a product introduction, discuss theatre support for an upcoming case, ask about RF product training or get help with an order from Neovantis."
+  breadcrumbs={crumbs}
+  schema={[faqSchema]}
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={crumbs} />
+      <h1>Product and theatre support</h1>
+      <p class="lead">Whether you’re exploring products for your speciality or preparing for an upcoming case, tell us what your team needs. We can walk you through the Neovantis range and answer questions about product options, compatible instruments, availability and supply.</p>
+      <p style="margin:0"><a class="text-link" href="#faq">Common support questions ↓</a></p>
+    </div>
+  </div>
+
+  <div class="section" style="padding-bottom:0">
+    <div class="container">
+      <ul class="support-routes">
+        {supportRoutes.map((r) => (
+          <li>
+            <section class="panel support-route" id={r.id} aria-labelledby={`${r.id}-heading`}>
+              <h2 id={`${r.id}-heading`}>{r.h}</h2>
+              <p>{r.p}</p>
+              <a class="text-link" href={r.href}>{r.link} →</a>
+            </section>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <section class="section" aria-labelledby="enquiry-details-heading">
+    <div class="container"><div class="measure">
+      <h2 id="enquiry-details-heading">What to include in your enquiry</h2>
+      <p>Start with your speciality and tell us what you need for the procedure or your facility. If you’re unsure which product to ask for, we can talk you through the options Neovantis supplies.</p>
+      <h3 class="enquiry-details-sub">Helpful details, if you have them</h3>
+      <ul class="enquiry-details">
+        {enquiryDetails.map((d) => <li><strong>{d.lead}</strong> — {d.text}</li>)}
+      </ul>
+      <p style="margin:1.5rem 0 0"><a class="btn btn-primary" href={contactHref()}>Send an enquiry</a></p>
+    </div></div>
+  </section>
+
+  <section class="section section--tint" aria-labelledby="checklist-heading">
+    <div class="container two-col">
+      <div>
+        <h2 id="checklist-heading">Enquiry checklist</h2>
+        <p>Including these details helps our team respond to the right product first time.</p>
+        <ol class="checklist" style="list-style:none">
+          <li>The speciality</li>
+          <li>The product, specification, size or system</li>
+          <li>The quantity</li>
+          <li>The date you are working towards, such as a planned case or replenishment</li>
+          <li>Any instruments, trays or accessories you also need</li>
+          <li>Any documentation your facility requires</li>
+          <li>Your organisation, and the best way to contact you</li>
+        </ol>
+        <div class="notice"><p><strong>Please do not include patient names, scans or other patient information.</strong> Supply enquiries can be answered without them.</p></div>
+      </div>
+      <div class="panel">
+        <h3>Speciality-specific guidance</h3>
+        <p>Each portfolio page lists the details that matter for that product area.</p>
+        <ul class="checklist">
+          {specialities.map((s) => <li><a href={`/portfolio/${s.slug}/`}>{s.name}</a></li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="scope-heading">
+    <div class="container"><div class="measure">
+      <h2 id="scope-heading">Product and supply enquiries</h2>
+      <p>Neovantis helps healthcare professionals and procurement teams with product information, quotes and supply arrangements. Contact our team to discuss your requirements and confirm product availability. For personal medical advice, please consult your healthcare professional.</p>
+      <p style="margin:0"><a class="btn btn-primary" href={contactHref()}>Send an enquiry</a></p>
+    </div></div>
+  </section>
+  <section class="section section--tint" id="faq" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2 id="faq-heading">Frequently asked questions</h2>
+        <p>Short answers for clinicians, theatre coordinators and hospital buyers. Select a question to expand it.</p>
+      </div>
+      <div class="faq">
+        {faqs.map((f) => (
+          <details id={`faq-${f.id}`}>
+            <summary><span>{f.q}</span></summary>
+            <div class="faq-answer">
+              {f.a.map((p) => <p set:html={p} />)}
+              {f.list && <ul class="checklist">{f.list.map((li) => <li set:html={li} />)}</ul>}
+              {f.after && <p set:html={f.after} />}
+            </div>
+          </details>
+        ))}
+      </div>
+      <p style="margin-top:1.75rem">Still have a question? <a class="text-link" href={contactHref()}>Send it to our team</a>.</p>
+    </div>
+  </section>
+
+  <CtaBand />
+</BaseLayout>
+
+<style>
+  .support-routes { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); list-style: none; padding: 0; margin: 0; }
+  .support-route { height: 100%; display: flex; flex-direction: column; border-top: 3px solid var(--blue-brand); border-radius: 0 0 var(--radius) var(--radius); scroll-margin-top: calc(var(--header-h) + 1rem); }
+  .support-route h2 { font-size: 1.25rem; margin: 0 0 0.5rem; }
+  .support-route p { margin: 0 0 1rem; }
+  .support-route .text-link { margin-top: auto; }
+  .enquiry-details-sub { font-size: 1.15rem; margin: 1.25rem 0 0.6rem; }
+  .enquiry-details { margin: 0; padding-left: 1.2rem; display: grid; gap: 0.5rem; }
+  .enquiry-details strong { color: var(--charcoal); }
+</style>
+
+<script>
+  // Open a question when it is linked directly (e.g. /support/#faq-rf).
+  function openFromHash() {
+    const el = location.hash ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
+    if (el instanceof HTMLDetailsElement) { el.open = true; el.querySelector('summary')?.focus(); }
+  }
+  openFromHash();
+  window.addEventListener('hashchange', openFromHash);
+</script>

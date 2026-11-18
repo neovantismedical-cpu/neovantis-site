@@ -25,3 +25,9 @@ npm-debug.log*
 .vscode/
 .idea/
 *.swp
+
+# Review build with drafts (never deploy)
+dist-review/
+
+# Local review screenshots
+review-screenshots/

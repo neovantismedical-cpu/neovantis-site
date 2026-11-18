@@ -1,0 +1,28 @@
+---
+import { specialities, type SpecialitySlug } from '../config/site';
+import SpecialityIcon from './SpecialityIcon.astro';
+interface Props {
+  headingLevel?: 'h2' | 'h3' | 'h4';
+  exclude?: string;
+  /** Show only these areas, in this order */
+  slugs?: SpecialitySlug[];
+  /** Smaller cards for the wider portfolio */
+  compact?: boolean;
+}
+const { headingLevel = 'h3', exclude, slugs, compact = false } = Astro.props;
+const H = headingLevel;
+const base = slugs ? slugs.map((slug) => specialities.find((s) => s.slug === slug)!) : specialities;
+const list = base.filter((s) => s.slug !== exclude);
+---
+<ul class:list={['card-grid', { 'card-grid--compact': compact }]}>
+  {list.map((s) => (
+    <li>
+      <article class:list={['spec-card', { 'spec-card--compact': compact }]}>
+        <span class="icon"><SpecialityIcon slug={s.slug} /></span>
+        <H><a href={`/portfolio/${s.slug}/`}>{s.name}</a></H>
+        <p>{s.card}</p>
+        <span class="more" aria-hidden="true">View {s.name} →</span>
+      </article>
+    </li>
+  ))}
+</ul>

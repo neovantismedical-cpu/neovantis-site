@@ -1,0 +1,112 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="Urology Solutions | Neovantis"
+  description="Neovantis provides a broad urology portfolio supporting access, dilation, drainage, retrieval, and minimally invasive intervention across modern clinical environments."
+>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('/images/professional webpage hero.png')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.5rem;">Solution Area 04</p>
+        <h1>Urology<br/>Solutions</h1>
+        <div class="accent-bar" style="margin-left:auto;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section section--lg">
+    <div class="container">
+      <div class="grid-2" style="align-items:center;gap:4rem;">
+        <div>
+          <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;">Overview</p>
+          <h2 style="margin-bottom:1rem;">Broad Urology Support for<br/>Modern Clinical Practice</h2>
+          <span class="accent-bar"></span>
+          <p style="margin-bottom:1.5rem;">Neovantis provides a broad urology portfolio designed to support access, dilation, drainage, retrieval, and minimally invasive intervention across clinical practice.</p>
+          <p style="margin-bottom:1.5rem;">Our urology solutions are developed to support efficient intervention, clinician confidence, and patient-focused care across a wide range of procedural and ward-based requirements.</p>
+          <p>We work with urologists, specialist hospitals, and surgical centres across South Africa and neighbouring markets, providing reliable product access and responsive professional support.</p>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(31,127,182,0.3);">
+          <img src="/images/neovantis-precision-pain-management.png" alt="Urology solutions" style="width:100%;height:380px;object-fit:cover;display:block;filter:brightness(0.92) saturate(0.88);" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Categories -->
+  <section class="angled-panel">
+    <div class="geo-overlay"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <div style="max-width:900px;margin:0 auto;">
+        <p style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.75rem;text-align:center;">Solution Categories</p>
+        <h2 style="text-align:center;margin-bottom:1rem;">Our Urology Portfolio Areas</h2>
+        <div class="section-divider"></div>
+        <p style="text-align:center;margin-bottom:3rem;color:rgba(255,255,255,0.82);">Our urology portfolio spans the key procedural and ward-based support areas required across modern urology practice.</p>
+      </div>
+
+      <div class="grid-3">
+        {[
+          { icon: '🔬', title: 'Access & Dilation', desc: 'Access and dilation solution areas designed to support efficient, controlled procedural entry in urological interventions.' },
+          { icon: '💧', title: 'Drainage Solutions', desc: 'Drainage and catheter-based solution families developed to support patient management across procedural and post-procedural care settings.' },
+          { icon: '⚙️', title: 'Catheter Solutions', desc: 'Catheter-related solution areas covering different procedural requirements and patient care settings within urology practice.' },
+          { icon: '🔩', title: 'Stent & Guidewire Support', desc: 'Stent, guidewire, and retrieval-related solution categories designed for minimally invasive urological intervention and tract management.' },
+          { icon: '🏥', title: 'Retrieval Solutions', desc: 'Retrieval and extraction solution areas supporting efficient stone, foreign body, and specimen management in urological procedures.' },
+          { icon: '📋', title: 'Minimally Invasive Focus', desc: 'Our urology portfolio supports the clinical movement towards minimally invasive approaches — prioritising patient comfort and procedural efficiency.' },
+        ].map(item => (
+          <div class="card">
+            <div class="feature-icon">{item.icon}</div>
+            <h4 style="margin-bottom:0.75rem;">{item.title}</h4>
+            <p style="font-size:0.9rem;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Neovantis Urology -->
+  <section class="section section--lg" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Why Our Urology Solutions</h2>
+        <div class="section-divider"></div>
+        <p>Our urology portfolio is selected with the demands of busy clinical environments in mind.</p>
+      </div>
+
+      <div class="grid-2" style="gap:2rem;">
+        {[
+          { title: 'Broad Portfolio Coverage', desc: 'Covering access, dilation, drainage, catheter, stent, guidewire, and retrieval solution areas — supporting diverse procedural requirements within urology practice.' },
+          { title: 'Clinician Confidence', desc: 'Products selected for dependable quality, consistent performance, and compatibility with modern urological workflows and procedural standards.' },
+          { title: 'Patient-Focused Design', desc: 'Our urology solutions are positioned around patient comfort, procedural efficiency, and the practical demands of delivering excellent urological care.' },
+          { title: 'Reliable Product Access', desc: 'Backed by reliable supply and responsive Neovantis support, ensuring urological teams have dependable product access when they need it.' },
+        ].map(item => (
+          <div class="card" style="display:flex;gap:1.25rem;">
+            <span style="color:var(--blue-accent);font-size:1.3rem;flex-shrink:0;margin-top:2px;">✓</span>
+            <div>
+              <h4 style="margin-bottom:0.5rem;">{item.title}</h4>
+              <p style="font-size:0.9rem;">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="container" style="position:relative;z-index:1;">
+      <h2>Request Urology Product Information</h2>
+      <p>Contact our team to request a full product brochure, discuss clinical requirements, or enquire about product availability across our urology portfolio.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-outline">Request Full Product Brochure</a>
+        <a href="/solutions" class="btn btn-primary" style="background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);">View All Solutions</a>
+      </div>
+    </div>
+  </div>
+
+</MainLayout>
