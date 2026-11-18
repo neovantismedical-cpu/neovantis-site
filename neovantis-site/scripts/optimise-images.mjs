@@ -25,6 +25,11 @@ const jobs = [
   ['Neovantis_Nurses_Day_Portrait.jpg', 'nurses-day-portrait', [480, 800], { quality: 78 }],
   ['Neovantis_Nurses_Day.jpg', 'nurses-day-celebration', [640, 960, 1152], { quality: 78 }],
   ['Neovantis_Display_Portfolios.png', 'portfolio-display', [640, 960, 1280], { quality: 78 }],
+  // Interventional Pain Management artwork, taken unaltered from the Neovantis brand guide.
+  ['brand-pack/brand-spine-sketch.jpg', 'brand-spine-sketch', [900, 1600], { quality: 70, grey: true }],
+  ['brand-pack/brand-theatre-team.jpg', 'circle-theatre-team', [320, 560], { quality: 76, extract: { left: 0, top: 260, width: 1815, height: 1815 } }],
+  ['brand-pack/brand-clinician-spine-model.jpg', 'circle-clinician-spine-model', [320, 560], { quality: 76, extract: { left: 560, top: 0, width: 1640, height: 1640 } }],
+  ['brand-pack/brand-back-anatomy-sketch.png', 'circle-back-anatomy-sketch', [320, 460], { quality: 78, extract: { left: 173, top: 0, width: 461, height: 461 } }],
 ];
 // Pass file names as arguments to optimise only those sources, e.g. node scripts/optimise-images.mjs "Neovantis_Nurses_Day.jpg"
 const only = process.argv.slice(2);
@@ -34,7 +39,10 @@ for (const [file, base, widths, opts = {}] of jobs) {
   const input = path.join(SRC, file);
   const meta = await sharp(input).metadata();
   let pipeline = () => sharp(input);
-  if (opts.extract) {
+  if (opts.grey) {
+    // Neutral grey version of the brand guide's sepia spine sketch.
+    pipeline = () => sharp(input).grayscale();
+  } else if (opts.extract) {
     pipeline = () => sharp(input).extract(opts.extract);
   } else if (opts.aspect) {
     const h = meta.height;

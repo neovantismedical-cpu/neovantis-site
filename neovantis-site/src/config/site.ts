@@ -96,6 +96,11 @@ export interface Speciality {
     text: string[];
     /** H3 sub-sections; a paragraph may open with a bold lead-in */
     subsections?: { heading: string; paras: { lead?: string; text: string }[] }[];
+    /** Optional brand-guide artwork: a faint background sketch and overlapping circular images */
+    art?: {
+      background: { src: string; srcset: string };
+      circles: { src: string; srcset: string; alt: string }[];
+    };
   };
   /** Optional second hero link, shown beside the main button */
   secondaryLink?: { label: string; href: string };
@@ -402,6 +407,30 @@ export const specialities: Speciality[] = [
           ],
         },
       ],
+      // Artwork from the Neovantis brand guide, arranged like the overlapping circles on its final graphics slide.
+      art: {
+        background: {
+          src: '/images/optimised/brand-spine-sketch-1600.webp',
+          srcset: '/images/optimised/brand-spine-sketch-900.webp 900w, /images/optimised/brand-spine-sketch-1600.webp 1600w',
+        },
+        circles: [
+          {
+            src: '/images/optimised/circle-theatre-team-560.webp',
+            srcset: '/images/optimised/circle-theatre-team-320.webp 320w, /images/optimised/circle-theatre-team-560.webp 560w',
+            alt: 'A surgical team at work in an operating theatre',
+          },
+          {
+            src: '/images/optimised/circle-clinician-spine-model-560.webp',
+            srcset: '/images/optimised/circle-clinician-spine-model-320.webp 320w, /images/optimised/circle-clinician-spine-model-560.webp 560w',
+            alt: 'A clinician pointing to an anatomical model of the spine',
+          },
+          {
+            src: '/images/optimised/circle-back-anatomy-sketch-460.webp',
+            srcset: '/images/optimised/circle-back-anatomy-sketch-320.webp 320w, /images/optimised/circle-back-anatomy-sketch-460.webp 460w',
+            alt: 'An anatomical drawing of the back muscles and spine',
+          },
+        ],
+      },
     },
     metaTitle: 'RF Generator, Electrodes & Cannulae South Africa | Neovantis',
     metaDescription:
