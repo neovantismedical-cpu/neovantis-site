@@ -214,8 +214,9 @@ const relatedIn = !s.related?.length ? null : s.enquiry ? 'enquiry' : s.sections
   .explainer.has-art { position: relative; overflow: hidden; isolation: isolate; }
   .explainer-bg {
     position: absolute; z-index: -1; pointer-events: none;
-    right: -4%; top: 50%; transform: translateY(-50%);
-    width: min(1000px, 64%); height: auto; opacity: 0.18;
+    /* Desktop: sits behind the circle column only, starting where the text column ends. */
+    left: calc(50% + min(600px, 50%) - 330px); top: 50%; transform: translateY(-50%);
+    width: 640px; height: auto; opacity: 0.18;
     /* Oval fade on every side, so the artwork's own vignette edges never show as a box. */
     -webkit-mask-image: radial-gradient(ellipse 50% 50% at 45% 50%, #000 35%, transparent 100%);
     mask-image: radial-gradient(ellipse 50% 50% at 45% 50%, #000 35%, transparent 100%);
@@ -231,7 +232,8 @@ const relatedIn = !s.related?.length ? null : s.enquiry ? 'enquiry' : s.sections
   @media (max-width: 899px) {
     /* Phones and tablets: circles in a row above the text; sketch sits low and very faint. */
     .circle-stack { order: -1; }
-    .explainer-bg { top: auto; bottom: 0; transform: none; right: -20%; width: 130%; opacity: 0.14; -webkit-mask-image: radial-gradient(ellipse 50% 50% at 40% 55%, #000 35%, transparent 100%); mask-image: radial-gradient(ellipse 50% 50% at 40% 55%, #000 35%, transparent 100%); }
+    /* Behind the row of circles at the top, fading out before the heading and paragraphs. */
+    .explainer-bg { top: 0; left: 50%; transform: translateX(-50%); width: min(560px, 120%); opacity: 0.14; -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 25%, transparent 55%); mask-image: linear-gradient(to bottom, #000 0%, #000 25%, transparent 55%); }
   }
   @media (min-width: 900px) {
     .explainer-grid { grid-template-columns: minmax(0, 1fr) 300px; }
