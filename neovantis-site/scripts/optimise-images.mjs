@@ -21,7 +21,14 @@ const jobs = [
   ['neovantis-healthcare-professionals.png', 'clinical-team-illustration', [800, 1200], { aspect: 16 / 9 }],
   // Left-hand side only (laptop, tablet, notes, stethoscope); excludes the medicines on the right.
   ['clinical insights hero.png', 'documents-desk-illustration', [800, 1200], { extract: { left: 0, top: 0, width: 1244, height: 700 } }],
+  // About page photographs (approved for use).
+  ['Neovantis_Nurses_Day_Portrait.jpg', 'nurses-day-portrait', [480, 800], { quality: 78 }],
+  ['Neovantis_Nurses_Day.jpg', 'nurses-day-celebration', [640, 960, 1152], { quality: 78 }],
+  ['Neovantis_Display_Portfolios.png', 'portfolio-display', [640, 960, 1280], { quality: 78 }],
 ];
+// Pass file names as arguments to optimise only those sources, e.g. node scripts/optimise-images.mjs "Neovantis_Nurses_Day.jpg"
+const only = process.argv.slice(2);
+if (only.length) jobs.splice(0, jobs.length, ...jobs.filter(([file]) => only.includes(file)));
 
 for (const [file, base, widths, opts = {}] of jobs) {
   const input = path.join(SRC, file);
@@ -41,6 +48,8 @@ for (const [file, base, widths, opts = {}] of jobs) {
     console.log(out, `${info.width}x${info.height}`, `${Math.round(info.size / 1024)}KB`);
   }
 }
+
+if (only.length) process.exit(0);
 
 // Default Open Graph image using the corporate logo and palette.
 const logo = path.join(SRC, 'neovantis-logo-white-tm.png');

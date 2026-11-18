@@ -66,6 +66,58 @@ const areas = specialities.map((s) => ({ slug: s.slug, name: s.name[0] + s.name.
     </div>
   </section>
 
+  <section class="section about-section" aria-labelledby="people-heading">
+    <div class="container">
+      <div class="story">
+        <h2 id="people-heading">The people behind Neovantis</h2>
+        <p>Behind every specialist product are people working together to support patient care. At Neovantis, we value the relationships we build with healthcare professionals and the attention given to the practical details of their work. These photographs offer a glimpse of the people and moments behind our business.</p>
+      </div>
+      <div class="people-photos">
+        <figure class="photo">
+          <img
+            src="/images/optimised/nurses-day-portrait-800.webp"
+            srcset="/images/optimised/nurses-day-portrait-480.webp 480w, /images/optimised/nurses-day-portrait-800.webp 800w"
+            sizes="(min-width: 900px) 420px, 100vw"
+            width="1152" height="1440"
+            alt="Two theatre staff in scrubs pose with an International Nurses Day photo frame bearing the Neovantis logo, beside a Nurses Day cake."
+            loading="lazy"
+          />
+        </figure>
+        <figure class="photo">
+          <img
+            src="/images/optimised/nurses-day-celebration-960.webp"
+            srcset="/images/optimised/nurses-day-celebration-640.webp 640w, /images/optimised/nurses-day-celebration-960.webp 960w, /images/optimised/nurses-day-celebration-1152.webp 1152w"
+            sizes="(min-width: 900px) 700px, 100vw"
+            width="1152" height="864"
+            alt="A group of theatre staff in gowns, scrubs and caps gather around a table with a celebration cake and refreshments."
+            loading="lazy"
+          />
+          <figcaption>Celebrating the dedication of nurses and their contribution to patient care.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint about-section" aria-labelledby="work-heading">
+    <div class="container work">
+      <div class="work-copy">
+        <h2 id="work-heading">Our work and portfolio</h2>
+        <p>Neovantis supplies specialist medical devices, surgical implants, instruments and equipment across a range of clinical specialties. Explore our specialty pages to learn more about the areas we serve.</p>
+        <a class="btn btn-primary" href="/portfolio/">Explore our specialties</a>
+      </div>
+      <figure class="photo">
+        <img
+          src="/images/optimised/portfolio-display-960.webp"
+          srcset="/images/optimised/portfolio-display-640.webp 640w, /images/optimised/portfolio-display-960.webp 960w, /images/optimised/portfolio-display-1280.webp 1280w"
+          sizes="(min-width: 900px) 640px, 100vw"
+          width="1448" height="1086"
+          alt="A Neovantis display table with a branded banner, product samples, brochures and Neovantis bags."
+          loading="lazy"
+        />
+      </figure>
+    </div>
+  </section>
+
   <section class="section about-section" aria-labelledby="areas-heading">
     <div class="container">
       <h2 id="areas-heading" class="about-heading">Our portfolio</h2>
@@ -141,6 +193,21 @@ const areas = specialities.map((s) => ({ slug: s.slug, name: s.name[0] + s.name.
   .team-copy { max-width: 68ch; }
   .team-copy p { margin: 0 0 1em; }
   .team-copy p:last-child { margin-bottom: 0; }
+
+  /* Photographs: rounded corners and a quiet border, as with the offices image. */
+  .photo { margin: 0; }
+  .photo img { width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--line); }
+  .photo figcaption { margin-top: 0.6rem; font-size: 0.92em; color: var(--muted); }
+
+  /* Portrait and landscape photos sized so they share one height on desktop. */
+  .people-photos { display: grid; gap: 1.25rem; margin-top: clamp(1.5rem, 1rem + 1.5vw, 2.25rem); align-items: start; }
+  @media (min-width: 760px) { .people-photos { grid-template-columns: 0.8fr 1.333fr; } }
+
+  .work { display: grid; gap: 1.5rem 3rem; align-items: center; }
+  .work-copy h2 { margin: 0 0 0.75rem; }
+  .work-copy p { max-width: 60ch; margin: 0 0 1.5rem; }
+  @media (min-width: 900px) { .work { grid-template-columns: 1fr 1.25fr; } }
+  @media (max-width: 479px) { .work-copy .btn { width: 100%; } }
 
   /* Phones: icon beside the text, so six stacked cards stay quick to scan. */
   @media (max-width: 639px) {
