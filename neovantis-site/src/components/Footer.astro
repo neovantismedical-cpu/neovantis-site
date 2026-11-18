@@ -16,9 +16,9 @@ const a = business.address;
       </div>
 
       <div>
-        <h2>Specialities</h2>
+        <h2>Portfolio</h2>
         <ul>
-          {specialities.map((s) => <li><a href={`/specialities/${s.slug}/`}>{s.name}</a></li>)}
+          {specialities.map((s) => <li><a href={`/portfolio/${s.slug}/`}>{s.name}</a></li>)}
         </ul>
       </div>
 
@@ -26,7 +26,7 @@ const a = business.address;
         <h2>Company</h2>
         <ul>
           <li><a href="/about/">About</a></li>
-          <li><a href="/specialities/">All specialities</a></li>
+          <li><a href="/portfolio/">Portfolio overview</a></li>
           <li><a href="/support/">Support</a></li>
           {showInsights && <li><a href="/insights/">Insights</a></li>}
           <li><a href={contactHref()}>Contact</a></li>

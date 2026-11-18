@@ -1,19 +1,27 @@
 ---
-import { specialities } from '../config/site';
+import { specialities, type SpecialitySlug } from '../config/site';
 import SpecialityIcon from './SpecialityIcon.astro';
-interface Props { headingLevel?: 'h2' | 'h3'; exclude?: string; }
-const { headingLevel = 'h3', exclude } = Astro.props;
+interface Props {
+  headingLevel?: 'h2' | 'h3' | 'h4';
+  exclude?: string;
+  /** Show only these areas, in this order */
+  slugs?: SpecialitySlug[];
+  /** Smaller cards for the wider portfolio */
+  compact?: boolean;
+}
+const { headingLevel = 'h3', exclude, slugs, compact = false } = Astro.props;
 const H = headingLevel;
-const list = specialities.filter((s) => s.slug !== exclude);
+const base = slugs ? slugs.map((slug) => specialities.find((s) => s.slug === slug)!) : specialities;
+const list = base.filter((s) => s.slug !== exclude);
 ---
-<ul class="card-grid">
+<ul class:list={['card-grid', { 'card-grid--compact': compact }]}>
   {list.map((s) => (
     <li>
-      <article class="spec-card">
+      <article class:list={['spec-card', { 'spec-card--compact': compact }]}>
         <span class="icon"><SpecialityIcon slug={s.slug} /></span>
-        <H><a href={`/specialities/${s.slug}/`}>{s.name}</a></H>
+        <H><a href={`/portfolio/${s.slug}/`}>{s.name}</a></H>
         <p>{s.card}</p>
-        <span class="more" aria-hidden="true">View speciality →</span>
+        <span class="more" aria-hidden="true">View {s.name} →</span>
       </article>
     </li>
   ))}

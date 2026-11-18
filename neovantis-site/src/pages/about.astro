@@ -68,15 +68,15 @@ const areas = specialities.map((s) => ({ slug: s.slug, name: s.name[0] + s.name.
 
   <section class="section about-section" aria-labelledby="areas-heading">
     <div class="container">
-      <h2 id="areas-heading" class="about-heading">Our six speciality areas</h2>
+      <h2 id="areas-heading" class="about-heading">Our portfolio</h2>
       <ul class="card-grid about-cards">
         {areas.map((a) => (
           <li>
             <article class="spec-card">
               <span class="icon"><SpecialityIcon slug={a.slug} /></span>
-              <h3><a href={`/specialities/${a.slug}/`}>{a.name}</a></h3>
+              <h3><a href={`/portfolio/${a.slug}/`}>{a.name}</a></h3>
               <p>{a.text}</p>
-              <span class="more" aria-hidden="true">View speciality →</span>
+              <span class="more" aria-hidden="true">View portfolio area →</span>
             </article>
           </li>
         ))}
@@ -109,7 +109,7 @@ const areas = specialities.map((s) => ({ slug: s.slug, name: s.name[0] + s.name.
           Umhlanga, 4051
         </address>
       </div>
-      <p class="about-close"><a class="btn btn-primary" href="/specialities/">Explore our specialities</a></p>
+      <p class="about-close"><a class="btn btn-primary" href="/portfolio/">Explore our portfolio</a></p>
     </div>
   </section>
 </BaseLayout>

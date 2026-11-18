@@ -1,11 +1,16 @@
 ---
-import { nav, specialities, contactHref, business } from '../config/site';
+import { nav, specialities, leadPortfolio, widerPortfolio, contactHref, business } from '../config/site';
 import { insightsLinksVisible } from '../lib/insights';
 
 const path = Astro.url.pathname.replace(/\/?$/, '/');
 const showInsights = await insightsLinksVisible();
 const items = nav.filter((n) => !n.insights || showInsights);
 const isCurrent = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+// Portfolio menu: the lead surgical areas first, then the wider portfolio.
+const groups = [
+  { id: 'nav-portfolio-lead', label: 'Surgical portfolio', slugs: leadPortfolio },
+  { id: 'nav-portfolio-wider', label: 'Wider portfolio', slugs: widerPortfolio },
+].map((g) => ({ ...g, items: g.slugs.map((slug) => specialities.find((s) => s.slug === slug)!) }));
 ---
 <header class="site-header">
   <div class="container header-inner">
@@ -27,17 +32,24 @@ const isCurrent = (href: string) => (href === '/' ? path === '/' : path.startsWi
                 class:list={['submenu-toggle', { 'is-current': isCurrent(item.href) }]}
                 type="button"
                 aria-expanded="false"
-                aria-controls="specialities-menu"
+                aria-controls="portfolio-menu"
               >
                 {item.label}<span class="chevron" aria-hidden="true"></span>
               </button>
-              <ul class="submenu" id="specialities-menu" hidden>
+              <ul class="submenu" id="portfolio-menu" hidden>
                 <li class="submenu-overview">
-                  <a href={item.href} aria-current={path === item.href ? 'page' : undefined}>All specialities</a>
+                  <a href={item.href} aria-current={path === item.href ? 'page' : undefined}>Portfolio overview</a>
                 </li>
-                {specialities.map((s) => (
-                  <li>
-                    <a href={`/specialities/${s.slug}/`} aria-current={path === `/specialities/${s.slug}/` ? 'page' : undefined}>{s.name}</a>
+                {groups.map((g) => (
+                  <li class="submenu-group">
+                    <span class="submenu-label" id={g.id}>{g.label}</span>
+                    <ul aria-labelledby={g.id}>
+                      {g.items.map((s) => (
+                        <li>
+                          <a href={`/portfolio/${s.slug}/`} aria-current={path === `/portfolio/${s.slug}/` ? 'page' : undefined}>{s.name}</a>
+                        </li>
+                      ))}
+                    </ul>
                   </li>
                 ))}
               </ul>
@@ -62,7 +74,7 @@ const isCurrent = (href: string) => (href === '/' ? path === '/' : path.startsWi
   const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
   const navEl = document.getElementById('site-nav');
   const subToggle = document.querySelector<HTMLButtonElement>('.submenu-toggle');
-  const submenu = document.getElementById('specialities-menu');
+  const submenu = document.getElementById('portfolio-menu');
   const desktop = window.matchMedia('(min-width: 1100px)');
 
   function setMenu(open: boolean) {

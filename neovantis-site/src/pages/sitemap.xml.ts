@@ -8,8 +8,8 @@ export const GET: APIRoute = async () => {
   const paths = [
     '/',
     '/about/',
-    '/specialities/',
-    ...specialities.map((s) => `/specialities/${s.slug}/`),
+    '/portfolio/',
+    ...specialities.map((s) => `/portfolio/${s.slug}/`),
     '/support/',
     ...(approved.length ? ['/insights/', ...approved.map((a) => `/insights/${a.slug}/`)] : []),
     '/contact/',

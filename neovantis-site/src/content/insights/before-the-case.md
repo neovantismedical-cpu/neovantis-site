@@ -93,7 +93,7 @@ And three questions worth asking back:
 
 ## Plan your next case with us
 
-Neovantis supplies screw and rod systems and cervical fixation components, cranial plates, screws, mesh and associated instruments, and K-wires. See the [spinal surgery](/specialities/spinal-surgery/), [neurosurgery](/specialities/neurosurgery/) and [orthopaedics](/specialities/orthopaedics/) pages, or [send us your case requirements](/contact/#enquiry-form) and our team will discuss what is available for your date.
+Neovantis supplies K-wires; spinal fixation screws and rods, cervical and occipital components, laminar plates, iliac screws and spinal cages; and cranial plates, screws, titanium mesh and associated instruments and trays. See the [spinal surgery](/portfolio/spinal-surgery/), [neurosurgery](/portfolio/neurosurgery/) and [orthopaedics](/portfolio/orthopaedics/) pages, or [send us your case requirements](/contact/#enquiry-form) and our team will discuss what is available for your date.
 
 ## Sources
 

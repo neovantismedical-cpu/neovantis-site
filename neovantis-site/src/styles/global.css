@@ -165,6 +165,8 @@ h4 { font-size: 1.1rem; font-weight: 600; }
 .submenu a { display: block; padding: 0.6rem 0.5rem; min-height: 44px; color: var(--on-dark-muted); text-decoration: none; border-radius: 4px; }
 .submenu a:hover, .submenu a[aria-current="page"] { color: #fff; background: rgba(255,255,255,0.06); }
 .submenu .submenu-overview a { color: #fff; font-weight: 600; }
+.submenu-group ul { list-style: none; margin: 0; padding: 0; }
+.submenu-label { display: block; padding: 0.75rem 0.5rem 0.2rem; font: 600 0.78rem/1.3 var(--font-head); letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue-accent); }
 .nav-cta { margin-top: 1rem; }
 .nav-cta .btn { width: 100%; }
 .header-cta { display: none; }
@@ -184,6 +186,7 @@ h4 { font-size: 1.1rem; font-weight: 600; }
   .submenu a { color: var(--text); padding: 0.6rem 0.85rem; }
   .submenu a:hover, .submenu a[aria-current="page"] { background: var(--bg-tint); color: var(--blue-brand); }
   .submenu .submenu-overview a { color: var(--charcoal); border-bottom: 1px solid var(--line); border-radius: 0; margin-bottom: 0.25rem; }
+  .submenu-label { padding: 0.65rem 0.85rem 0.15rem; color: var(--blue-brand); }
   .nav-cta { display: none; }
   .header-cta { display: inline-flex; }
 }
@@ -236,13 +239,22 @@ h4 { font-size: 1.1rem; font-weight: 600; }
 .spec-card:hover { border-color: var(--blue-brand); }
 .spec-card .icon { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--bg-tint-2); color: var(--blue-brand); margin-bottom: 0.4rem; }
 .spec-card .icon svg { width: 26px; height: 26px; }
-.spec-card h3 { margin: 0; font-size: 1.25rem; }
-.spec-card h3 a { color: var(--charcoal); text-decoration: none; }
-.spec-card h3 a::after { content: ''; position: absolute; inset: 0; border-radius: var(--radius); }
-.spec-card h3 a:focus-visible { outline: none; }
+.spec-card :is(h2, h3, h4) { margin: 0; font-size: 1.25rem; }
+.spec-card :is(h2, h3, h4) a { color: var(--charcoal); text-decoration: none; }
+.spec-card :is(h2, h3, h4) a::after { content: ''; position: absolute; inset: 0; border-radius: var(--radius); }
+.spec-card :is(h2, h3, h4) a:focus-visible { outline: none; }
 .spec-card:has(a:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
 .spec-card p { margin: 0; color: var(--muted); }
 .spec-card .more { margin-top: auto; padding-top: 0.6rem; font-family: var(--font-head); font-weight: 600; color: var(--blue-brand); }
+/* Wider portfolio: lighter cards so the lead areas keep visual priority. */
+.spec-card--compact { padding: 1.1rem 1.2rem 1rem; box-shadow: none; background: var(--bg-tint); }
+.spec-card--compact .icon { width: 38px; height: 38px; }
+.spec-card--compact .icon svg { width: 22px; height: 22px; }
+.spec-card--compact :is(h2, h3, h4) { font-size: 1.12rem; }
+.portfolio-group + .portfolio-group { margin-top: clamp(2.5rem, 2rem + 2vw, 3.5rem); }
+.portfolio-group-head { max-width: 70ch; margin-bottom: 1.25rem; }
+.portfolio-group-head :is(h2, h3) { margin-bottom: 0.4rem; }
+.portfolio-group-head p { color: var(--muted); margin: 0; }
 
 /* Steps */
 .steps { display: grid; gap: 1rem; counter-reset: step; list-style: none; padding: 0; margin: 0; }

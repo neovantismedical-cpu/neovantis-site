@@ -22,7 +22,7 @@ This article looks at why repeat orders go wrong and how wards, theatres and cat
 
 ### 1. The description is not specific enough
 
-"Urinary catheter" or "lead gloves, medium" might be clear to the person who wrote it, but not to the person filling the order. For urinary drainage catheters, a usable description normally includes the product type and the specification your ward uses, as listed on the product label or your previous order. For radiation protection gloves, it includes the product, the size and whether it is the same sterile, single-use product you ordered before.
+"Urinary catheter" or "lead gloves, medium" might be clear to the person who wrote it, but not to the person filling the order. For urinary drainage catheters, a usable description normally includes the product type and the specification your ward uses, as listed on the product label or your previous order. For radiation protection gloves, it includes the product, the size and whether it is the same product you ordered before.
 
 Public buyers deal with this by matching every delivery to a written order. The national surgical instruments contract [RT252-2025][rt252], for example, requires each delivery to carry a delivery note with the official order number, and says deliveries that do not comply with the purchase order will be returned at the supplier's expense. The principle applies to any facility: the order is the reference, so it needs to be precise.
 
@@ -74,7 +74,7 @@ Where you can, send routine replenishment and procedure-specific requests separa
 
 ## Order with clear details
 
-Neovantis supplies urinary drainage catheters and procedural items including access sheaths, dilators and retrieval baskets, and sterile, single-use radiation protection gloves. See the [urology](/specialities/urology/) and [radiation protection](/specialities/radiation-protection/) pages, or [send us your order details](/contact/#enquiry-form).
+Neovantis supplies urinary catheters, ureteral stents and procedural items including guidewires, access sheaths, dilators and retrieval baskets, and radiation protection gloves. See the [urology](/portfolio/urology/) and [radiation protection](/portfolio/radiation-protection/) pages, or [send us your order details](/contact/#enquiry-form).
 
 ## Sources
 

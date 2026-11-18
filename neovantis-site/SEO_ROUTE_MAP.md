@@ -10,13 +10,13 @@ Search themes below are topic guides, not measured keyword-volume claims.
 |---|---|---|---|---|
 | `/` | Specialist medical device supplier in Durban | Specialist Medical Device Supplier in Durban \| Neovantis | index* | Yes |
 | `/about/` | Who Neovantis is, Umhlanga base | About Neovantis \| Specialist Medical Supplier in Umhlanga | index* | Yes |
-| `/specialities/` | Overview of portfolio areas | Medical and Surgical Specialities We Supply \| Neovantis | index* | Yes |
-| `/specialities/orthopaedics/` | K-wire supply | K-Wire Supply for Orthopaedic and Trauma Teams \| Neovantis | index* | Yes |
-| `/specialities/spinal-surgery/` | Spinal fixation supply | Spinal Fixation Supply: Screw and Rod Systems \| Neovantis | index* | Yes |
-| `/specialities/neurosurgery/` | Cranial fixation and mesh | Cranial Fixation Plates, Screws and Titanium Mesh \| Neovantis | index* | Yes |
-| `/specialities/urology/` | Urology devices and consumables | Urology Devices and Consumables \| Neovantis | index* | Yes |
-| `/specialities/pain-management/` | RF ablation equipment and accessories | RF Ablation Equipment and Accessories \| Neovantis | index* | Yes |
-| `/specialities/radiation-protection/` | Radiation protection gloves | Radiation Protection Gloves \| Neovantis | index* | Yes |
+| `/portfolio/` | Overview of portfolio areas | Medical and Surgical Specialities We Supply \| Neovantis | index* | Yes |
+| `/portfolio/orthopaedics/` | K-wire supply | K-Wire Supply for Orthopaedic and Trauma Teams \| Neovantis | index* | Yes |
+| `/portfolio/spinal-surgery/` | Spinal fixation supply | Spinal Fixation Supply: Screw and Rod Systems \| Neovantis | index* | Yes |
+| `/portfolio/neurosurgery/` | Cranial fixation and mesh | Cranial Fixation Plates, Screws and Titanium Mesh \| Neovantis | index* | Yes |
+| `/portfolio/urology/` | Urology devices and consumables | Urology Devices and Consumables \| Neovantis | index* | Yes |
+| `/portfolio/pain-management/` | RF ablation equipment and accessories | RF Ablation Equipment and Accessories \| Neovantis | index* | Yes |
+| `/portfolio/radiation-protection/` | Radiation protection gloves | Radiation Protection Gloves \| Neovantis | index* | Yes |
 | `/support/` | What buyers can ask; enquiry checklist | Supply Enquiry Support for Healthcare Buyers \| Neovantis | index* | Yes |
 | `/insights/` | Professional guidance hub | Insights for Clinical Teams and Buyers \| Neovantis | **noindex until ≥1 article is approved** | Only when ≥1 approved |
 | `/insights/beyond-the-quotation/` | Supplier evaluation beyond price | (article title) | Draft: not built in production | When approved |
@@ -46,21 +46,21 @@ All are single-hop 301s to a live 200 page (tested). Both slash variants are lis
 
 | Old URL | New URL | Reason |
 |---|---|---|
-| `/products` | `/specialities/` | Public catalogue retired |
-| `/solutions` | `/specialities/` | Replaced by specialities |
+| `/products` | `/portfolio/` | Public catalogue retired |
+| `/solutions` | `/portfolio/` | Replaced by specialities |
 | `/healthcare-professionals` | `/support/` | Professional guidance now in Support |
 | `/distributors` (incl. `#partner-form` anchor; the fragment is kept by the browser and ignored) | `/contact/` | Distributor programme not offered publicly |
 | `/blog` | `/insights/` | Section renamed |
-| `/orthopaedic-trauma` | `/specialities/orthopaedics/` | Draft speciality page replaced |
-| `/neuro-plating` | `/specialities/neurosurgery/` | Draft speciality page replaced |
-| `/urology-solutions` | `/specialities/urology/` | Draft speciality page replaced |
-| `/rf-ablation-pain-management` | `/specialities/pain-management/` | Draft speciality page replaced |
-| `/radiation-protection-gloves` | `/specialities/radiation-protection/` | Draft speciality page replaced |
-| `/blog/understanding-rf-ablation-pain-management` | `/specialities/pain-management/` | Closest useful equivalent |
-| `/blog/rf-ablation-chronic-pain` | `/specialities/pain-management/` | Closest useful equivalent |
-| `/blog/minimally-invasive-pain-management` | `/specialities/pain-management/` | Closest useful equivalent |
-| `/blog/urology-solutions-modern-clinical-care` | `/specialities/urology/` | Closest useful equivalent |
-| `/blog/orthopaedic-trauma-hardware-fracture-treatment` | `/specialities/orthopaedics/` | Closest available orthopaedic page. Review if the wider trauma scope is not confirmed; switch to 404 if the mismatch is unhelpful |
+| `/orthopaedic-trauma` | `/portfolio/orthopaedics/` | Draft speciality page replaced |
+| `/neuro-plating` | `/portfolio/neurosurgery/` | Draft speciality page replaced |
+| `/urology-solutions` | `/portfolio/urology/` | Draft speciality page replaced |
+| `/rf-ablation-pain-management` | `/portfolio/pain-management/` | Draft speciality page replaced |
+| `/radiation-protection-gloves` | `/portfolio/radiation-protection/` | Draft speciality page replaced |
+| `/blog/understanding-rf-ablation-pain-management` | `/portfolio/pain-management/` | Closest useful equivalent |
+| `/blog/rf-ablation-chronic-pain` | `/portfolio/pain-management/` | Closest useful equivalent |
+| `/blog/minimally-invasive-pain-management` | `/portfolio/pain-management/` | Closest useful equivalent |
+| `/blog/urology-solutions-modern-clinical-care` | `/portfolio/urology/` | Closest useful equivalent |
+| `/blog/orthopaedic-trauma-hardware-fracture-treatment` | `/portfolio/orthopaedics/` | Closest available orthopaedic page. Review if the wider trauma scope is not confirmed; switch to 404 if the mismatch is unhelpful |
 
 ### Deliberate 404s
 

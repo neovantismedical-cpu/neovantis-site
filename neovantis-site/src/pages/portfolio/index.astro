@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SpecialityCards from '../../components/SpecialityCards.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { leadPortfolio, widerPortfolio } from '../../config/site';
+
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Portfolio', href: '/portfolio/' }];
+---
+<BaseLayout
+  title="Medical Device Portfolio South Africa | Neovantis"
+  description="The Neovantis portfolio: orthopaedics, spinal surgery and neurosurgery, plus urology, interventional pain management and radiation protection."
+  breadcrumbs={crumbs}
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={crumbs} />
+      <h1>Our portfolio</h1>
+      <p class="lead">Neovantis supplies specialist medical devices, surgical implants, instruments and equipment to healthcare professionals and institutions in South Africa. Each area of the portfolio has its own page, with the product families we supply and the details that help our team respond to your enquiry.</p>
+    </div>
+  </div>
+
+  <section class="section" aria-label="Portfolio areas">
+    <div class="container">
+
+      <div class="portfolio-group">
+        <div class="portfolio-group-head">
+          <h2 class="portfolio-group-title" id="lead-heading">Surgical portfolio</h2>
+          <p>Implants, fixation components and associated instruments for orthopaedic, spinal and neurosurgical teams.</p>
+        </div>
+        <SpecialityCards slugs={leadPortfolio} headingLevel="h3" />
+      </div>
+
+      <div class="portfolio-group">
+        <div class="portfolio-group-head">
+          <h2 class="portfolio-group-title" id="wider-heading">Wider portfolio</h2>
+          <p>Urology devices, radiofrequency equipment for interventional pain management, and radiation protection gloves, each with its own product range and enquiry details.</p>
+        </div>
+        <SpecialityCards slugs={widerPortfolio} headingLevel="h3" compact />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint" aria-labelledby="unsure-heading">
+    <div class="container two-col">
+      <div>
+        <h2 id="unsure-heading">Not sure which area applies?</h2>
+        <p>Send a general enquiry describing the product or procedure area and what you need. Our team will direct it to the right part of the portfolio.</p>
+      </div>
+      <div class="panel">
+        <h3>Helpful details for any enquiry</h3>
+        <ul class="checklist">
+          <li>Product type, specification or system</li>
+          <li>Quantity</li>
+          <li>The date you are working towards</li>
+          <li>Any documentation your facility needs</li>
+        </ul>
+        <a class="text-link" href="/support/">See the full enquiry checklist →</a>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+</BaseLayout>
+
+<style>
+  .portfolio-group-title { font-size: clamp(1.45rem, 1.2rem + 1vw, 1.85rem); }
+</style>

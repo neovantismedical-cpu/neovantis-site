@@ -57,9 +57,9 @@ const related = d.related.map((r) => specialityBySlug(r)).filter(Boolean);
       )}
       <div class="prose"><Content /></div>
       {related.length > 0 && (
-        <aside class="panel panel--tint measure" style="margin-top:2.5rem" aria-label="Related specialities">
-          <h2 style="font-size:1.25rem">Related specialities</h2>
-          <ul class="checklist" style="margin:0">{related.map((s) => <li><a href={`/specialities/${s!.slug}/`}>{s!.name}</a></li>)}</ul>
+        <aside class="panel panel--tint measure" style="margin-top:2.5rem" aria-label="Related portfolio areas">
+          <h2 style="font-size:1.25rem">Related portfolio areas</h2>
+          <ul class="checklist" style="margin:0">{related.map((s) => <li><a href={`/portfolio/${s!.slug}/`}>{s!.name}</a></li>)}</ul>
         </aside>
       )}
     </div>

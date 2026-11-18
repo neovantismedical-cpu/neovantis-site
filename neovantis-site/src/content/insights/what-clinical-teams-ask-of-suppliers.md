@@ -153,7 +153,7 @@ Use or adapt these questions:
 
 ## Talk to us
 
-Neovantis supplies specialist medical devices, surgical implants, instruments and equipment across six speciality areas. If you are preparing questions like these, [send them with your enquiry](/contact/#enquiry-form) and our team will discuss what applies to the products you need. You can also read [what to include in an enquiry](/support/).
+Neovantis supplies specialist medical devices, surgical implants, instruments and equipment across six portfolio areas. If you are preparing questions like these, [send them with your enquiry](/contact/#enquiry-form) and our team will discuss what applies to the products you need. You can also read [what to include in an enquiry](/support/).
 
 ## Sources
 

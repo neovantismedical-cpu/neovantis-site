@@ -20,7 +20,7 @@ Prepared 5 November 2026.
 | Layout, SEO, JSON-LD, noindex switch, skip link | `src/layouts/BaseLayout.astro`, `src/lib/schema.ts` |
 | Header with accessible Specialities menu, footer | `src/components/Header.astro`, `Footer.astro` |
 | Reusable blocks | `SpecialityCards`, `SpecialityIcon`, `CtaBand`, `Credentials`, `ArticleCard`, `Breadcrumbs`, `EnquiryForm` |
-| Pages | `/`, `/about/`, `/specialities/` + six pages from one template, `/support/`, `/insights/` + articles, `/contact/`, three legal pages, `/thank-you/`, `404` |
+| Pages | `/`, `/about/`, `/portfolio/` + six pages from one template, `/support/`, `/insights/` + articles, `/contact/`, three legal pages, `/thank-you/`, `404` |
 | Insights (single source, draft flag) | `src/content/insights/*.md`, `src/content/config.ts`, `src/lib/insights.ts` |
 | Sitemap and robots | `src/pages/sitemap.xml.ts`, `src/pages/robots.txt.ts` |
 | Redirects | `public/_redirects` |
@@ -275,7 +275,7 @@ The two earlier drafts are unchanged. A new `order` field lists the lead article
 
 ## 13. Update (6 Nov 2026): About page
 
-- **Change:** `/about/` rebuilt from the supplied copy: intro, Our story, three practical examples, six speciality cards, standards, Neovantis offices and one closing button (`Explore our specialities`, linking to `/specialities/`).
+- **Change:** `/about/` rebuilt from the supplied copy: intro, Our story, three practical examples, six speciality cards, standards, Neovantis offices and one closing button (`Explore our specialities`, linking to `/portfolio/`).
 - **About only:** the card descriptions, standards list and styles live in `src/pages/about.astro`. Other pages keep the shorter card text from `site.ts`, and the homepage still shows the shared credentials block, including ISO.
 - **Removed from About:** the "not a manufacturer" paragraph, "Who we supply", "How we work with buyers", and the telephone number in the page body (it remains in the footer).
 - **Images:** `Neovantis-office.png` is kept, with a byte-identical copy at `neovantis-offices.png`. Resized copies: `neovantis-offices-{640,960,1280}.webp`. No SAMED, SAHPRA or B-BBEE logos are used, because none are approved.
@@ -284,7 +284,7 @@ The two earlier drafts are unchanged. A new `order` field lists the lead article
 ## 14. Update (6 Nov 2026): product discovery
 
 - **Homepage:** new "See what's available in your speciality" section directly below the banner, with a button to the speciality cards. Later sections swap their background tints so the page still alternates.
-- **Card text:** `card` in `src/config/site.ts` now holds the specific descriptions. It also feeds `/specialities/`, the 404 page and "Other specialities".
+- **Card text:** `card` in `src/config/site.ts` now holds the specific descriptions. It also feeds `/portfolio/`, the 404 page and "Other specialities".
 - **About:** "The team behind the supply" replaces the practical examples. Card text now comes from `site.ts`. The office image alt text is `Neovantis offices, Suite F1, 250 Umhlanga Rocks Drive, Umhlanga, 4051.`
 - **Speciality pages:** `range` and `guide` in `site.ts` drive two new sections below the opening copy. The agreed opening copy, enquiry buttons and enquiry panels are unchanged. Keep `range` to agreed categories, with no codes, sizes, model lists or compatibility tables.
 - **Private draft:** `NEOVANTIS_GLOVE_CASE_STORY_DRAFT.md` sits in the project root, outside `public/`, `src/` and the `dist` publish folder. It has not been committed. Do not publish it until the bracketed details are completed.

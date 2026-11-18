@@ -146,7 +146,7 @@ export const specialities: Speciality[] = [
     options: {
       heading: 'Kirschner wires in orthopaedic practice',
       text: [
-        'Kirschner wires, also called K-wires, are used in selected orthopaedic fracture fixation procedures. Neovantis supplies K-wires in a range of diameters and lengths. Individual sterile wires can be requested by size and quantity.',
+        'Kirschner wires, also called K-wires, are used in selected orthopaedic fracture fixation procedures. Neovantis supplies K-wires in a range of diameters and lengths, which can be requested by size and quantity.',
       ],
       blocks: [
         {
@@ -174,7 +174,7 @@ export const specialities: Speciality[] = [
     button: 'Enquire about K-wires',
     metaTitle: 'Kirschner Wires (K-Wires) South Africa | Neovantis',
     metaDescription:
-      'Neovantis supplies Kirschner wires for orthopaedic and trauma teams. Based in Umhlanga, Durban. Enquire about K-wire sizes, individual sterile units and quotes.',
+      'Neovantis supplies Kirschner wires for orthopaedic and trauma teams. Based in Umhlanga, Durban. Enquire about K-wire sizes, quantities and quotes.',
     image: {
       src: '/images/optimised/k-wire-tray-illustration-960.webp',
       srcset:
@@ -190,15 +190,16 @@ export const specialities: Speciality[] = [
   {
     slug: 'spinal-surgery',
     name: 'Spinal Surgery',
-    card: 'Screw and rod systems, cervical fixation components and spinal cages.',
+    card: 'Spinal fixation screws and rods, cervical and occipital components, laminar plates, iliac screws and spinal cages.',
     // Implant families only: model numbers, dimensions, product codes, pricing and compatibility details stay off the site.
     rangeHeading: 'Spinal implant and fixation range',
     range: [
       {
         items: [
-          { name: 'Screw and rod systems', text: 'Monoaxial and polyaxial screws, rods, hooks and connectors.' },
-          { name: 'Cervical fixation components', text: 'Anterior cervical plates and screws, plus posterior cervical screws and rods.' },
-          { name: 'Spinal cages', text: 'Mesh and expandable cage options. Contact our team for product information and availability.' },
+          { name: 'Screws, rods, hooks and connectors', text: 'Spinal fixation screws and rods, with hooks and connectors.' },
+          { name: 'Cervical and occipital fixation', text: 'Posterior cervical and occipital components, and anterior cervical plates and screws.' },
+          { name: 'Laminar plates and iliac screws', text: 'Laminar plates and iliac screws. Ask our team which components suit the system you’re using.' },
+          { name: 'Spinal cages', text: 'Mesh, titanium, PEEK and expandable cages. Contact our team for product information and availability.' },
         ],
       },
     ],
@@ -223,7 +224,7 @@ export const specialities: Speciality[] = [
     },
     metaTitle: 'Spinal Fixation Systems South Africa | Neovantis',
     metaDescription:
-      'Neovantis supplies spinal screw and rod systems, cervical fixation components and spinal cages. Enquire about implants and associated instruments.',
+      'Neovantis supplies spinal fixation screws and rods, cervical and occipital components, laminar plates, iliac screws and spinal cages. Enquire about implants.',
     related: [
       { label: 'Before the case: getting the implant, instruments and timing to line up', href: '/insights/before-the-case/' },
     ],
@@ -232,7 +233,7 @@ export const specialities: Speciality[] = [
         heading: 'What to include when planning a case',
         items: [
           'The system you’re looking for, if you have one in mind',
-          'Whether you need screw and rod components, cervical fixation components, spinal cages or a combination',
+          'The components you need: screws and rods, hooks and connectors, cervical or occipital components, laminar plates, iliac screws, cages or a combination',
           'The instruments you need alongside the implants',
           'Your planned procedure date',
           'Your facility or organisation name',
@@ -250,10 +251,10 @@ export const specialities: Speciality[] = [
     range: [
       {
         items: [
-          { name: 'Cranial plates', text: 'Titanium interlink plates in a range of shapes for skull flap fixation.' },
-          { name: 'Cranial fixation screws', text: 'Self-drilling screw options are listed for cranial plating and reconstruction. Ask our team to confirm the reference for your selected plate or mesh.' },
-          { name: 'Titanium mesh', text: 'Flat 2D and shaped 3D mesh options for cranial reconstruction.' },
-          { name: 'Instruments and trays', text: 'The range includes screwdrivers, mesh scissors and trays. Ask which instruments and trays can be supplied with your selected components.' },
+          { name: 'Cranial plates', text: 'Interlink, temporal, mastoid and drainage plates.' },
+          { name: 'Cranial screws', text: 'Screws for use with the cranial plating range. Ask our team to confirm the screw for your selected plate or mesh.' },
+          { name: 'Titanium mesh', text: 'Titanium mesh for cranial reconstruction.' },
+          { name: 'Instruments and trays', text: 'Associated instruments and trays. Ask which instruments and trays can be supplied with your selected components.' },
         ],
       },
     ],
@@ -278,7 +279,7 @@ export const specialities: Speciality[] = [
     },
     metaTitle: 'Cranial Plating & Titanium Mesh South Africa | Neovantis',
     metaDescription:
-      'Neovantis supplies cranial plates, screws, titanium mesh and associated instruments for neurosurgical teams. Enquire about cranial fixation in South Africa.',
+      'Neovantis supplies interlink, temporal, mastoid and drainage cranial plates, screws, titanium mesh and associated instruments and trays for neurosurgical teams.',
     related: [
       { label: 'Before the case: getting the implant, instruments and timing to line up', href: '/insights/before-the-case/' },
     ],
@@ -298,16 +299,16 @@ export const specialities: Speciality[] = [
   {
     slug: 'urology',
     name: 'Urology',
-    card: 'Urinary drainage catheters, ureteral stents, access sheaths, dilators and retrieval baskets.',
+    card: 'Urinary catheters, ureteral stents, guidewires, access sheaths, dilators, retrieval baskets and irrigation devices.',
     // Product families only: exact sizes, pack quantities, model numbers, product codes, pricing and catalogue PDFs stay off the site.
     rangeHeading: 'Urology and endourology product range',
     range: [
       {
         items: [
-          { name: 'Urinary catheters', text: 'Foley, Nelaton and hydrophilic intermittent catheters.' },
-          { name: 'Ureteral stents and drainage sets', text: 'Double-J ureteral stents and stent sets, ureteral catheters and percutaneous nephrostomy sets.' },
-          { name: 'Endourology access and dilation', text: 'Guidewires, ureteral access sheaths, and urethral and ureteral dilators.' },
-          { name: 'Stone retrieval and irrigation', text: 'Stone retrieval baskets, irrigation devices and evacuators.' },
+          { name: 'Urinary catheters', text: 'Nelaton, intermittent and hydrophilic intermittent catheters, and latex and silicone Foley catheters.' },
+          { name: 'Ureteral stents and drainage', text: 'Double-J ureteral stents and stent sets, ureteral catheters and nephrostomy sets.' },
+          { name: 'Access, guidewires and dilation', text: 'Nitinol and PTFE guidewires, ureteral access sheaths, Y-type access sheaths, and urethral and ureteral dilators.' },
+          { name: 'Retrieval and irrigation', text: 'Retrieval baskets, the Path Finder bulb irrigator and the Ellik evacuator bottle.' },
         ],
       },
     ],
@@ -335,7 +336,7 @@ export const specialities: Speciality[] = [
     },
     metaTitle: 'Urology & Endourology Supplies South Africa | Neovantis',
     metaDescription:
-      'Neovantis supplies urinary catheters, double-J ureteral stents, guidewires and endourology devices for healthcare teams in South Africa.',
+      'Neovantis supplies urinary catheters, Double-J ureteral stents, guidewires, access sheaths, dilators and retrieval baskets for urology teams in South Africa.',
     related: [
       { label: 'What makes repeat ordering easier for wards, theatres and cath labs?', href: '/insights/making-repeat-orders-easier/' },
     ],
@@ -344,17 +345,18 @@ export const specialities: Speciality[] = [
   {
     slug: 'pain-management',
     name: 'Interventional Pain Management',
-    card: 'Radiofrequency ablation equipment, electrodes and cannulae.',
+    card: 'The NT2000iX RF generator, electrodes, cannulae and grounding pads.',
     range: [
       {
-        heading: 'RF equipment',
-        items: [{ name: 'Radiofrequency ablation equipment', text: 'The generator platform, usually a longer-term decision for a department.' }],
+        heading: 'RF generator',
+        items: [{ name: 'NT2000iX RF generator', text: 'The generator platform, usually a longer-term decision for a department.' }],
       },
       {
-        heading: 'Electrodes and cannulae',
+        heading: 'Electrodes, cannulae and grounding pads',
         items: [
-          { name: 'Electrodes', text: 'Carry RF energy from the generator.' },
-          { name: 'Cannulae', text: 'Used to position the electrode.' },
+          { name: 'Electrodes', text: 'Reusable and disposable electrodes.' },
+          { name: 'Cannulae', text: 'Straight and curved cannulae.' },
+          { name: 'Grounding pads', text: 'Grounding pads for RF procedures.' },
         ],
       },
     ],
@@ -367,7 +369,7 @@ export const specialities: Speciality[] = [
     },
     h1: 'Radiofrequency equipment and accessories',
     intro: [
-      'We supply radiofrequency (RF) ablation equipment and accessories for interventional pain management, including electrodes and cannulae.',
+      'We supply the NT2000iX radiofrequency (RF) generator and accessories for interventional pain management, including electrodes, cannulae and grounding pads.',
       'If you’re evaluating a generator or ordering consumables, tell us which platform you use or are considering. Contact us to check compatibility, request product information or enquire about technical support.',
     ],
     button: 'Discuss RF equipment and accessories',
@@ -395,15 +397,15 @@ export const specialities: Speciality[] = [
           heading: 'From clinical approach to equipment selection',
           paras: [
             {
-              text: 'The Neovantis RF platform supports conventional lesioning, pulsed RF and pulsed-dose RF. When evaluating equipment, start with the approaches your team uses and confirm which electrodes, cannulae and accessories are specified for that generator.',
+              text: 'When evaluating equipment, start with the approaches your team uses and ask our team which electrodes, cannulae and grounding pads are specified for the generator.',
             },
           ],
         },
       ],
     },
-    metaTitle: 'RF Ablation Equipment and Accessories',
+    metaTitle: 'RF Generator, Electrodes & Cannulae South Africa | Neovantis',
     metaDescription:
-      'RF ablation equipment and accessories for interventional pain management, including electrodes and cannulae. Tell us your platform to check compatibility.',
+      'The NT2000iX RF generator, reusable and disposable electrodes, straight and curved cannulae and grounding pads for interventional pain management teams.',
     image: {
       src: '/images/optimised/rf-electrodes-illustration-800.webp',
       srcset: '/images/optimised/rf-electrodes-illustration-480.webp 480w, /images/optimised/rf-electrodes-illustration-800.webp 800w',
@@ -419,7 +421,7 @@ export const specialities: Speciality[] = [
         items: [
           'The make and model of the RF generator you use or are considering',
           'Whether you’re evaluating equipment, ordering consumables or both',
-          'The electrodes or cannulae you need, with any specifications you already know',
+          'The electrodes, cannulae or grounding pads you need, with any specifications you already know',
           'Expected quantities',
           'Any training or technical support question you’d like to raise',
         ],
@@ -430,9 +432,9 @@ export const specialities: Speciality[] = [
   {
     slug: 'radiation-protection',
     name: 'Radiation Protection',
-    card: 'Sterile, single-use radiation protection gloves for clinical teams.',
+    card: 'Radiation protection gloves for teams working with fluoroscopy.',
     range: [
-      { items: [{ name: 'Sterile, single-use radiation protection gloves', text: 'Gloves for clinical teams working in settings such as interventional cardiology and fluoroscopy.' }] },
+      { items: [{ name: 'Radiation protection gloves', text: 'Gloves for clinical teams working in settings such as interventional cardiology and fluoroscopy.' }] },
     ],
     // A short question and answer replaces the one-card range section. Exact attenuation figures,
     // model codes, pricing and catalogue PDFs stay off the site and are handled by direct enquiry.
@@ -447,14 +449,14 @@ export const specialities: Speciality[] = [
       heading: 'What to check before ordering radiation protection gloves',
       text: [],
       points: [
-        { name: 'Fit and material', text: 'Include the sizes your team needs and whether your facility requires latex-free gloves.' },
+        { name: 'Fit and material', text: 'Include the sizes your team needs and any material requirements your facility has. Our team will confirm what the selected glove offers.' },
         { name: 'Attenuation data', text: 'Ask for the test data for the specific glove being evaluated, including the X-ray energy and test conditions, so your radiation safety team can review it.' },
         { name: 'Packaging and repeat orders', text: 'Confirm how the selected glove is packaged. For a repeat order, share the product reference from your last order or pack label.' },
       ],
     },
     h1: 'Radiation protection gloves',
     intro: [
-      'Based in Umhlanga, Durban, Neovantis supplies sterile, single-use radiation-attenuating gloves for cath labs, interventional radiology and other teams working with fluoroscopy. The range includes latex and latex-free options.',
+      'Based in Umhlanga, Durban, Neovantis supplies radiation protection gloves for cath labs, interventional radiology and other teams working with fluoroscopy. Ask our team for the product information and test data for the glove you’re evaluating.',
     ],
     button: 'Request glove information',
     image: {
@@ -467,7 +469,7 @@ export const specialities: Speciality[] = [
     },
     metaTitle: 'Radiation Protection Gloves South Africa | Neovantis',
     metaDescription:
-      'Neovantis supplies sterile, single-use radiation-attenuating gloves for cath labs and fluoroscopy teams. Enquire about latex and latex-free options.',
+      'Neovantis supplies radiation protection gloves for cath labs, interventional radiology and fluoroscopy teams. Enquire about product information and supply.',
     related: [
       { label: 'What makes repeat ordering easier for wards, theatres and cath labs?', href: '/insights/making-repeat-orders-easier/' },
     ],
@@ -486,6 +488,10 @@ export const specialities: Speciality[] = [
     ],
   },
 ];
+
+/** Home page, Portfolio overview and menu order: lead areas first, then the wider portfolio. */
+export const leadPortfolio: SpecialitySlug[] = ['orthopaedics', 'spinal-surgery', 'neurosurgery'];
+export const widerPortfolio: SpecialitySlug[] = ['urology', 'pain-management', 'radiation-protection'];
 
 export const specialityBySlug = (slug: string) => specialities.find((s) => s.slug === slug);
 
@@ -531,7 +537,7 @@ export const regions = [
 export const nav = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about/' },
-  { label: 'Specialities', href: '/specialities/', children: true },
+  { label: 'Portfolio', href: '/portfolio/', children: true },
   { label: 'Support', href: '/support/' },
   { label: 'Insights', href: '/insights/', insights: true },
   { label: 'Contact', href: '/contact/' },

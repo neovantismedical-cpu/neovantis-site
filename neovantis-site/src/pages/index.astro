@@ -5,7 +5,7 @@ import Credentials from '../components/Credentials.astro';
 import CtaBand from '../components/CtaBand.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import { getVisibleInsights } from '../lib/insights';
-import { contactHref } from '../config/site';
+import { contactHref, leadPortfolio, widerPortfolio } from '../config/site';
 
 // Homepage features these three articles, in this order (only those visible in this build).
 const featuredSlugs = ['what-clinical-teams-ask-of-suppliers', 'before-the-case', 'making-repeat-orders-easier'];
@@ -30,7 +30,7 @@ const previews = featuredSlugs.map((slug) => visible.find((a) => a.slug === slug
       <div class="hero-copy">
         <h1 id="hero-heading">Specialist medical devices for surgical and interventional teams</h1>
         <p class="lead">Based in Umhlanga, Durban, Neovantis supplies surgical implants, instruments and equipment to healthcare professionals and hospitals.</p>
-        <a class="btn btn-light" href="#specialities">Explore our specialities</a>
+        <a class="btn btn-light" href="#portfolio">Explore our portfolio</a>
       </div>
     </div>
   </section>
@@ -42,15 +42,35 @@ const previews = featuredSlugs.map((slug) => visible.find((a) => a.slug === slug
     </div>
   </section>
 
-  <section class="section section--tint" id="specialities" aria-labelledby="specialities-heading">
+  <section class="section" id="portfolio" aria-labelledby="portfolio-heading">
     <div class="container">
       <div class="section-head">
-        <h2 id="specialities-heading">Explore by speciality</h2>
+        <h2 id="portfolio-heading">Our portfolio</h2>
         <p>We keep up with developments in medical technology through our international partnerships and conversations with surgeons about what their teams need in practice. When we introduce a product, we consider how it fits into the team’s work and what else they’ll need alongside it.</p>
-        <p>That could mean discussing the matching instruments for a cranial fixation system or helping a team understand the electrode and cannula options for their radiofrequency ablation equipment. Explore the specialities below to see the products we supply and how we can support your team.</p>
       </div>
-      <SpecialityCards />
 
+      <div class="portfolio-group">
+        <div class="portfolio-group-head">
+          <h3 id="lead-portfolio-heading">Orthopaedics, spinal surgery and neurosurgery</h3>
+          <p>Implants, fixation components and associated instruments for orthopaedic, spinal and neurosurgical teams.</p>
+        </div>
+        <SpecialityCards slugs={leadPortfolio} headingLevel="h4" />
+      </div>
+
+      <div class="portfolio-group">
+        <div class="portfolio-group-head">
+          <h3 id="wider-portfolio-heading">Our wider portfolio</h3>
+          <p>Neovantis also supplies urology devices, radiofrequency equipment for interventional pain management and radiation protection gloves. Each area has its own page.</p>
+        </div>
+        <SpecialityCards slugs={widerPortfolio} headingLevel="h4" compact />
+      </div>
+
+      <p class="portfolio-more"><a class="btn btn-primary" href="/portfolio/">View the full portfolio</a></p>
+    </div>
+  </section>
+
+  <div class="section section--tint">
+    <div class="container">
       <section class="panel theatre-support" aria-labelledby="theatre-support-heading">
         <h2 id="theatre-support-heading">Product introductions and theatre support</h2>
         <p>Meet with a Neovantis product representative to explore the devices, implants and instruments available in your speciality and discuss what your team needs.</p>
@@ -61,7 +81,7 @@ const previews = featuredSlugs.map((slug) => visible.find((a) => a.slug === slug
         </div>
       </section>
     </div>
-  </section>
+  </div>
 
   <section class="section" aria-labelledby="plan-heading">
     <div class="container">
@@ -127,7 +147,8 @@ const previews = featuredSlugs.map((slug) => visible.find((a) => a.slug === slug
   @media (min-width: 900px) { .featured-insights { grid-template-columns: repeat(3, 1fr); } }
   .featured-insights-more { margin: 1.5rem 0 0; }
 
-  .theatre-support { margin-top: clamp(1.5rem, 1rem + 2vw, 2.5rem); border-top: 3px solid var(--blue-brand); border-radius: 0 0 var(--radius) var(--radius); }
+  .portfolio-more { margin: clamp(1.75rem, 1.25rem + 1.5vw, 2.5rem) 0 0; }
+  .theatre-support { margin-top: 0; border-top: 3px solid var(--blue-brand); border-radius: 0 0 var(--radius) var(--radius); }
   .theatre-support h2 { font-size: clamp(1.35rem, 1.15rem + 0.8vw, 1.75rem); margin: 0 0 0.6rem; }
   .theatre-support p { max-width: 68ch; margin: 0 0 0.75rem; }
   .theatre-support p:last-of-type { margin-bottom: 1.25rem; }
