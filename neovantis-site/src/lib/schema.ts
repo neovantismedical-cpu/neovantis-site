@@ -7,7 +7,12 @@ export function organizationSchema() {
     '@id': `${SITE_URL}/#organization`,
     name: business.name,
     url: `${SITE_URL}/`,
-    logo: { '@type': 'ImageObject', url: `${SITE_URL}${business.logo}`, width: 461, height: 154 },
+    logo: {
+      '@type': 'ImageObject',
+      url: new URL(business.logo.src, SITE_URL).href,
+      width: business.logo.width,
+      height: business.logo.height,
+    },
     slogan: business.tagline,
     description: business.description,
     telephone: business.phone.e164,

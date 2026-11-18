@@ -34,9 +34,8 @@ export const business = {
   },
   phone: { display: '031 463 1188', href: 'tel:+27314631188', e164: '+27314631188' },
   email: 'info@neovantis.co.za', // CONFIRM: monitored inbox and routing before launch
-  logo: '/images/neovantis-logo.png',
-  // Same artwork with the baked-in tagline removed; the tagline is rendered as live text beside it.
-  logoMark: '/images/neovantis-logo-mark.png',
+  logo: { src: '/images/neovantis-logo-dark-tm.png', width: 1000, height: 312 },
+  logoOnDark: { src: '/images/neovantis-logo-white-tm.png', width: 1000, height: 313 },
   // Official company profiles, confirmed by Neovantis. Used in the footer and in Organization sameAs.
   social: [
     { name: 'LinkedIn', icon: 'linkedin', href: 'https://za.linkedin.com/company/neovantis' },
