@@ -54,7 +54,16 @@ const previews = featuredSlugs.map((slug) => visible.find((a) => a.slug === slug
           <h3 id="lead-portfolio-heading">Orthopaedics, spinal surgery and neurosurgery</h3>
           <p>Implants, fixation components and associated instruments for orthopaedic, spinal and neurosurgical teams.</p>
         </div>
-        <SpecialityCards slugs={leadPortfolio} headingLevel="h4" />
+        <SpecialityCards
+          slugs={leadPortfolio}
+          headingLevel="h4"
+          notes={{
+            'orthopaedics': 'Tell us the K-wire diameter, length, quantity and sterile supply requirements you need to discuss.',
+            'spinal-surgery': 'Discuss the fixation components and associated instruments needed for a planned procedure.',
+            'neurosurgery': 'Discuss cranial components and matching instrument or tray requirements with our team.',
+          }}
+        />
+        <p style="margin:1.5rem 0 0">Neovantis also provides product introductions and theatre support. Speak to our team about your requirements.</p>
       </div>
 
       <div class="portfolio-group">

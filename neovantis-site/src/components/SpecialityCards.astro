@@ -8,8 +8,10 @@ interface Props {
   slugs?: SpecialitySlug[];
   /** Smaller cards for the wider portfolio */
   compact?: boolean;
+  /** Extra sentence appended to a card's text, by area */
+  notes?: Partial<Record<SpecialitySlug, string>>;
 }
-const { headingLevel = 'h3', exclude, slugs, compact = false } = Astro.props;
+const { headingLevel = 'h3', exclude, slugs, compact = false, notes = {} } = Astro.props;
 const H = headingLevel;
 const base = slugs ? slugs.map((slug) => specialities.find((s) => s.slug === slug)!) : specialities;
 const list = base.filter((s) => s.slug !== exclude);
@@ -20,7 +22,7 @@ const list = base.filter((s) => s.slug !== exclude);
       <article class:list={['spec-card', { 'spec-card--compact': compact }]}>
         <span class="icon"><SpecialityIcon slug={s.slug} /></span>
         <H><a href={`/portfolio/${s.slug}/`}>{s.name}</a></H>
-        <p>{s.card}</p>
+        <p>{s.card}{notes[s.slug] && ` ${notes[s.slug]}`}</p>
         <span class="more" aria-hidden="true">View {s.name} →</span>
       </article>
     </li>
