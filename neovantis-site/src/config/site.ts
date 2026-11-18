@@ -46,7 +46,11 @@ export const business = {
 
 /** Image or icon shown at the top of a credential card */
 export type CredentialMedia =
-  | { kind: 'image'; src: string; width: number; height: number; alt: string; bordered?: boolean; href?: string }
+  | {
+      kind: 'image'; src: string; width: number; height: number; alt: string; bordered?: boolean; href?: string;
+      /** Optional second mark shown before the main image, e.g. the certification body's logo */
+      mark?: { src: string; width: number; height: number; alt: string };
+    }
   | { kind: 'icon'; name: 'document-check' | 'certificate' };
 
 export const credentials: readonly { title: string; text: string; media?: CredentialMedia }[] = [
@@ -76,6 +80,8 @@ export const credentials: readonly { title: string; text: string; media?: Creden
       height: 112,
       alt: 'ISO 13485:2016 certified: read the certification scope',
       href: '/about/#iso-13485',
+      // Certification body's mark, taken from the TNV certificate (the ISO logo itself may not be used by certified companies).
+      mark: { src: '/images/optimised/tnv-certification-mark.webp', width: 192, height: 192, alt: 'TNV Certification mark' },
     },
   },
 ];
