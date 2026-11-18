@@ -67,7 +67,8 @@ const enquiryDetails = [
       <Breadcrumbs items={crumbs} />
       <h1>Product and theatre support</h1>
       <p class="lead">Whether you’re exploring products for your speciality or preparing for an upcoming case, tell us what your team needs. We can walk you through the Neovantis range and answer questions about product options, compatible instruments, availability and supply.</p>
-      <p style="margin:0"><a class="text-link" href="#faq">Common support questions ↓</a></p>
+      <p class="hero-theatre"><strong>Theatre attendance:</strong> when theatre support is arranged, a Neovantis representative can attend the procedure to assist your surgical and theatre team.</p>
+      <p class="hero-links"><a class="text-link" href="#theatre-support">Theatre support ↓</a><a class="text-link" href="#faq">Common support questions ↓</a></p>
     </div>
   </div>
 
@@ -84,6 +85,12 @@ const enquiryDetails = [
           </li>
         ))}
       </ul>
+
+      <section class="panel theatre-panel" id="theatre-support" aria-labelledby="theatre-support-heading">
+        <h2 id="theatre-support-heading">Theatre support</h2>
+        <p>When theatre support is arranged, a Neovantis representative can attend the procedure to assist the surgical and theatre team with product and instrument information, and answer questions about the relevant Neovantis system. Contact us ahead of the case to discuss the planned date, products and support required.</p>
+        <a class="btn btn-primary" href={contactHref(undefined, 'plan-a-case')}>Discuss theatre support for a case</a>
+      </section>
     </div>
   </div>
 
@@ -164,6 +171,12 @@ const enquiryDetails = [
   .support-route h2 { font-size: 1.25rem; margin: 0 0 0.5rem; }
   .support-route p { margin: 0 0 1rem; }
   .support-route .text-link { margin-top: auto; }
+  .hero-theatre { max-width: 70ch; margin: 0 0 1rem; padding: 0.75rem 1rem; background: var(--bg-tint-2); border-left: 4px solid var(--blue-brand); border-radius: var(--radius-sm); }
+  .hero-theatre strong { color: var(--charcoal); }
+  .hero-links { margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+  .theatre-panel { margin-top: 1rem; background: var(--bg-tint-2); border: 1px solid var(--line); border-left: 4px solid var(--blue-brand); border-radius: var(--radius-sm); scroll-margin-top: calc(var(--header-h) + 1rem); }
+  .theatre-panel h2 { font-size: clamp(1.35rem, 1.15rem + 0.8vw, 1.75rem); margin: 0 0 0.6rem; }
+  .theatre-panel p { max-width: 70ch; margin: 0 0 1.25rem; }
   .enquiry-details-sub { font-size: 1.15rem; margin: 1.25rem 0 0.6rem; }
   .enquiry-details { margin: 0; padding-left: 1.2rem; display: grid; gap: 0.5rem; }
   .enquiry-details strong { color: var(--charcoal); }
