@@ -28,6 +28,8 @@ const jobs = [
   // Interventional Pain Management artwork, taken unaltered from the Neovantis brand guide.
   ['brand-pack/brand-spine-sketch.jpg', 'brand-spine-sketch', [900, 1600], { quality: 70, grey: true }],
   ['brand-pack/brand-theatre-team.jpg', 'circle-theatre-team', [320, 560], { quality: 76, extract: { left: 0, top: 260, width: 1815, height: 1815 } }],
+  // Square centred on the clinician's hands, needles and leads, so they stay inside the circle.
+  ['brand-pack/rf-treatment-lower-back.png', 'circle-rf-treatment', [320, 560], { quality: 78, extract: { left: 25, top: 75, width: 953, height: 953 } }],
   ['brand-pack/brand-clinician-spine-model.jpg', 'circle-clinician-spine-model', [320, 560], { quality: 76, extract: { left: 560, top: 0, width: 1640, height: 1640 } }],
   ['brand-pack/brand-back-anatomy-sketch.png', 'circle-back-anatomy-sketch', [320, 460], { quality: 78, extract: { left: 173, top: 0, width: 461, height: 461 } }],
 ];

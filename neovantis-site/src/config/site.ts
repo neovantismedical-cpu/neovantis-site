@@ -415,9 +415,9 @@ export const specialities: Speciality[] = [
         },
         circles: [
           {
-            src: '/images/optimised/circle-theatre-team-560.webp',
-            srcset: '/images/optimised/circle-theatre-team-320.webp 320w, /images/optimised/circle-theatre-team-560.webp 560w',
-            alt: 'A surgical team at work in an operating theatre',
+            src: '/images/optimised/circle-rf-treatment-560.webp',
+            srcset: '/images/optimised/circle-rf-treatment-320.webp 320w, /images/optimised/circle-rf-treatment-560.webp 560w',
+            alt: 'A clinician in gloves positioning radiofrequency needles with connected leads in a patient’s lower back',
           },
           {
             src: '/images/optimised/circle-clinician-spine-model-560.webp',
