@@ -308,7 +308,7 @@ export const specialities: Speciality[] = [
           { name: 'Urinary catheters', text: 'Nelaton, intermittent and hydrophilic intermittent catheters, and latex and silicone Foley catheters.' },
           { name: 'Ureteral stents and drainage', text: 'Double-J ureteral stents and stent sets, ureteral catheters and nephrostomy sets.' },
           { name: 'Access, guidewires and dilation', text: 'Nitinol and PTFE guidewires, ureteral access sheaths, Y-type access sheaths, and urethral and ureteral dilators.' },
-          { name: 'Retrieval and irrigation', text: 'Retrieval baskets, the Path Finder bulb irrigator and the Ellik evacuator bottle.' },
+          { name: 'Retrieval and irrigation', text: 'Retrieval baskets, bulb irrigators and evacuator bottles.' },
         ],
       },
     ],
@@ -345,11 +345,11 @@ export const specialities: Speciality[] = [
   {
     slug: 'pain-management',
     name: 'Interventional Pain Management',
-    card: 'The NT2000iX RF generator, electrodes, cannulae and grounding pads.',
+    card: 'RF generators, electrodes, cannulae and grounding pads.',
     range: [
       {
         heading: 'RF generator',
-        items: [{ name: 'NT2000iX RF generator', text: 'The generator platform, usually a longer-term decision for a department.' }],
+        items: [{ name: 'RF generator', text: 'The generator platform, usually a longer-term decision for a department.' }],
       },
       {
         heading: 'Electrodes, cannulae and grounding pads',
@@ -369,7 +369,7 @@ export const specialities: Speciality[] = [
     },
     h1: 'Radiofrequency equipment and accessories',
     intro: [
-      'We supply the NT2000iX radiofrequency (RF) generator and accessories for interventional pain management, including electrodes, cannulae and grounding pads.',
+      'We supply radiofrequency (RF) generators and accessories for interventional pain management, including electrodes, cannulae and grounding pads.',
       'If you’re evaluating a generator or ordering consumables, tell us which platform you use or are considering. Contact us to check compatibility, request product information or enquire about technical support.',
     ],
     button: 'Discuss RF equipment and accessories',
@@ -405,7 +405,7 @@ export const specialities: Speciality[] = [
     },
     metaTitle: 'RF Generator, Electrodes & Cannulae South Africa | Neovantis',
     metaDescription:
-      'The NT2000iX RF generator, reusable and disposable electrodes, straight and curved cannulae and grounding pads for interventional pain management teams.',
+      'RF generators, reusable and disposable electrodes, straight and curved cannulae and grounding pads for interventional pain management teams.',
     image: {
       src: '/images/optimised/rf-electrodes-illustration-800.webp',
       srcset: '/images/optimised/rf-electrodes-illustration-480.webp 480w, /images/optimised/rf-electrodes-illustration-800.webp 800w',

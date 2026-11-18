@@ -66,4 +66,4 @@ Before you send an RF enquiry, check that it includes:
 
 ## Discuss your RF requirements
 
-Neovantis supplies the NT2000iX RF generator and accessories for interventional pain management, including electrodes, cannulae and grounding pads. See our [interventional pain management page](/portfolio/pain-management/) or [contact our team](/contact/?speciality=pain-management#enquiry-form) to check compatibility or request product information.
+Neovantis supplies RF generators and accessories for interventional pain management, including electrodes, cannulae and grounding pads. See our [interventional pain management page](/portfolio/pain-management/) or [contact our team](/contact/?speciality=pain-management#enquiry-form) to check compatibility or request product information.
